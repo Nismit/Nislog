@@ -1,0 +1,22 @@
+baseURL = "https://blog.nismit.me"
+languageCode = "ja"
+title = "NISLOG"
+author = "NISMIT"
+copyright = "Copyright (c) 2017 - NIGLOG all rights reserved."
+canonifyurls = true
+paginate = 5
+pygmentsUseClasses = true
+hasCJKLanguage = true
+enableEmoji = true
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  # dateformat = "Jan 2, 2006"
+  dateformat = "2006/01/02"
+
+[outputFormats]
+[outputFormats.RSS]
+  mediatype = "application/rss"
+  baseName = "feed"

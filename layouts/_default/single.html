@@ -1,0 +1,47 @@
+{{ define "title" }}{{ .Title }} | {{ end }}
+
+{{ define "main" }}
+  <article class="article">
+    <p class="article__date">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</p>
+
+    <h1 class="article__title">{{ .Title }}</h1>
+
+    {{ if .Params.eyecatch }}
+    <div class="article__thumbnail">
+      <img src="{{ .Params.eyecatch }}"/>
+    </div>
+    {{ end }}
+
+    {{ if eq .Params.toc true }}
+    <div class="article__toc">
+      <p class="article__toc__title">目次</p>
+      {{.TableOfContents}}
+    </div>
+    {{ end }}
+
+    <div class="article__body">
+    {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+    <div class="article__tags">
+      <ul>
+        {{ range . }}
+        <li class="article__tags__item"><svg class="icon -tag"><use xlink:href="#icon-tag"/></svg><a href="{{ "/tags/" | relLangURL }}{{ lower . }}/">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+
+    {{ partial "share" . }}
+  </article>
+
+  {{ partial "advertise" . }}
+
+  {{ partial "pagenation-single" . }}
+
+  {{ partial "tagCloud" . }}
+
+  {{ partial "advertise" . }}
+{{ end }}

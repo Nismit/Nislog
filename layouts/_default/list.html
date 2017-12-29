@@ -1,0 +1,15 @@
+{{ define "title" }}{{ .Title }} | {{ end }}
+
+{{ define "main" }}
+  {{ range (.Paginator 5).Pages }}
+    {{ .Render "li" }}
+  {{ end }}
+
+  {{ partial "pagenation" . }}
+
+  {{ partial "advertise" . }}
+
+  {{ partial "tagCloud" . }}
+
+  {{ partial "advertise" . }}
+{{ end }}

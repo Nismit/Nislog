@@ -1,0 +1,10 @@
+<div class="tagBlock">
+  <h2 class="tagBlock__title">Tags</h2>
+  <ul class="tagBlock__list">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <li class="tagBlock__list__item">
+      <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" class="tagBlock__link">{{ $name }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>

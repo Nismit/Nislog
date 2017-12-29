@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {{ with .Description }}
+      <meta name="description" content="{{ . }}">
+    {{ else }}
+      {{ with .Site.Params.description }}
+        <meta name="description" content="{{ . }}">
+      {{ end }}
+    {{ end }}
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
+    {{ .Hugo.Generator }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/google_news.html" . }}
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.ico">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" media="all">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90679064-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-90679064-2');
+    </script>
+	</head>
+<body>
+
+{{ partial "svg" . }}
+
+{{ partial "hero" . }}
+
+  <div class="l-container">
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div><!-- ./l-container -->
+
+  <footer>
+    <ul class="socialList">
+      <li class="socialList__item"><a href="{{ .RSSLink }}" rel="alternate"><svg class="icon -small"><use xlink:href="#icon-feed"/></svg></a></li>
+      <li class="socialList__item"><a href="https://twitter.com/nismit_" target="_blank"><svg class="icon -small"><use xlink:href="#icon-twitter"/></svg></a></li>
+      <li class="socialList__item"><svg class="icon -small -heart"><use xlink:href="#icon-heart"/></svg></li>
+      <li class="socialList__item"><a href="https://github.com/Nismit" target="_blank"><svg class="icon -small"><use xlink:href="#icon-github"/></svg></a></li>
+      <li class="socialList__item"><a href="https://ca.linkedin.com/in/nismit" target="_blank"><svg class="icon -small"><use xlink:href="#icon-linkedin"/></svg></a></li>
+    </ul>
+
+    <p class="copyright">&copy; 2017 - NISLOG<br>
+    Created with <svg class="icon -ex-small -heart"><use xlink:href="#icon-heart"/></svg> | Powered by <a href="https://gohugo.io/" tagert="_blank">Hugo</a></p>
+  </footer>
+  </body>
+</html>
