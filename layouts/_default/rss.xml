@@ -25,7 +25,16 @@
 			<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>
 			{{end}}
 			<guid>{{ .Permalink }}</guid>
-			<description>{{ .Params.description | html }}</description>
+			<description>
+      <![CDATA[
+      {{ if .Params.eyecatch }}
+      <img src="{{ .Params.eyecatch }}">
+      {{ else }}
+      <img src="{{ .Site.BaseURL }}images/og_image.jpg">
+      {{ end }}
+      {{ .Params.description | html }}
+      ]]>
+      </description>
 		</item>
 		{{ end }}
 	</channel>
