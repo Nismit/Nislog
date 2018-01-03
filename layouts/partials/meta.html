@@ -1,0 +1,30 @@
+{{ with .Params.description }}
+    <meta name="description" content="{{ . }}">
+{{ else }}
+{{ with .Site.Params.description }}
+    <meta name="description" content="{{ . }}">
+{{ end }}
+{{ end }}
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ if .Params.eyecatch }}
+    <meta property="og:image" content="{{ .Params.eyecatch }}">
+    {{ else }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
+    {{ end }}
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ replaceRE "\n" "" (.Params.description | default .Site.Params.description) }}">
+    <meta property="og:locale" content="ja_JP">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@nismit_" />
+    <meta name="twitter:site" content="{{ .Site.Title }}">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta name="twitter:description" content="{{ replaceRE "\n" "" (.Params.description | default .Site.Params.description) }}">
+    {{ if .Params.eyecatch }}
+    <meta property="og:image" content="{{ .Params.eyecatch }}">
+    {{ else }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
+    {{ end }}
