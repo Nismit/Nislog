@@ -1,5 +1,9 @@
 {{ define "title" }}{{ .Title }} | {{ end }}
 
+{{ define "meta" }}
+{{ partial "meta.html" . }}
+{{ end }}
+
 {{ define "main" }}
   <article class="article">
     <p class="article__date">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</p>

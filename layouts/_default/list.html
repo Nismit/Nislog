@@ -1,5 +1,10 @@
 {{ define "title" }}{{ .Title }} | {{ end }}
 
+{{ define "meta" }}
+  <meta name="keywords" content="{{ .Site.Params.keywords }}">
+{{ partial "meta.html" . }}
+{{ end }}
+
 {{ define "main" }}
   {{ range (.Paginator 5).Pages }}
     {{ .Render "li" }}
