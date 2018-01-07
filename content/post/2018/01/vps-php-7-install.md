@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2018-01-06T13:13:02-08:00
 title = "CentOS7.2 PHP7.xのインストール方法"
 description = "CentOS 7.2での最新版PHPの7.x系インストール方法の備忘録です。"

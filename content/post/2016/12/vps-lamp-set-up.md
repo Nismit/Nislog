@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2016-12-07T19:02:34Z
 title = "[VPS]CentOS7.2の初期設定(2) -LAMPインストール編"
 description = "ConoHa VPSでCentOS7.2の初期設定 LAMP環境の構築編です。MariaDB(MySQL),PHPのインストールとApache/MariaDBの起動と自動起動の設定を行います。"
