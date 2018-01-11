@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2016-12-07T19:04:13Z
 title = "[VPS]CentOS7.2の初期設定(4) -WordPress編-"
 description = "CentOS7.2の初期設定 その4 WordPress編です。MariaDBのデータベース作成から、wp-config.phpの追加の方法とBackWPupやphpmyadminからエクスポートしたsqlファイルを追加する方法等を記載してます。"
