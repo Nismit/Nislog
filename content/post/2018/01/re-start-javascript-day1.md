@@ -35,12 +35,12 @@ toc = false
 さらっとおさらいしておく、変数宣言。ECMAScript 2015/ES6 から `let`, `const` 変数が追加されてた。
 ここはES6を学ぶ時にもう少し深く理解したい。
 
-<iframe width="100%" height="300" src="//jsfiddle.net/nismit/1esatv6j/embedded/js,result/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<script async src="//jsfiddle.net/nismit/1esatv6j/embed/js,result/"></script>
 
 次はデータの型。JavaScriptは `number`, `string`, `boolean`, `undefined`, `null` と `object`
 ほとんどのものがオブジェクト。
 
-<iframe width="100%" height="300" src="//jsfiddle.net/nismit/b7hzohd0/embedded/js,result/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<script async src="//jsfiddle.net/nismit/b7hzohd0/embed/js,result/"></script>
 
 最後にリテラル。固定値。
 配列のリテラルなどは、他のプログラミング言語でも大体同じですね。
