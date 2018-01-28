@@ -47,10 +47,10 @@ let b = 2;
 a = 3;
 b = 5;
 
-let c; // Uncaught SyntaxError
-let c = 10;
+const c; // Uncaught SyntaxError -> 値と共に宣言する
+const c = 10;
 
-c = 20; // Assignment to constant variable
+c = 20; // Assignment to constant variable -> 再代入は不可
 ```
 
 ## もう少し深く
