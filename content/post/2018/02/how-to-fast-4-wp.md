@@ -1,6 +1,6 @@
 +++
 draft = false
-date = 2018-01-30T22:00:31-08:00
+date = 2018-02-04T22:00:31-08:00
 title = "WordPressの高速化のテクニック"
 description = "ある程度WordPressを使ったサイトなどを作っていると行き着くのがサイト高速化。フロントエンドからバックエンドまで様々なテクニックがあるので一度整理しておこうと思います！"
 tags = ["wordpress", "performance"]
