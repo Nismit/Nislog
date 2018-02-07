@@ -4,7 +4,7 @@ date = 2018-01-24T21:12:41-08:00
 title = "基礎からやっていくJavaScript再入門 - #1"
 description = "フロントエンドでは今や必須スキルとなったJavaScriptを再入門して、ほぼ最新レベルまで理解するまでの備忘録です"
 tags = ["javascript", "js-series"]
-eyecatch = ""
+eyecatch = "images/eyecatch/eye-javascript.png"
 toc = true
 +++
 

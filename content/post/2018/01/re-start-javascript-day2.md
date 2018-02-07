@@ -4,7 +4,7 @@ date = 2018-01-25T20:46:46-08:00
 title = "基礎からやっていくJavaScript再入門 - #2"
 description = "JavaScriptの基本の文法やJSにまつわる慣例的な書き方を勉強しました"
 tags = ["javascript", "js-series"]
-eyecatch = ""
+eyecatch = "images/eyecatch/eye-javascript.png"
 toc = true
 +++
 
