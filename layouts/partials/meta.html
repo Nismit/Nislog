@@ -10,7 +10,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ .Permalink }}">
     {{ if .Params.eyecatch }}
-    <meta property="og:image" content="{{ .Params.eyecatch }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.eyecatch }}">
     {{ else }}
     <meta property="og:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
     {{ end }}
@@ -24,8 +24,3 @@
     <meta name="twitter:url" content="{{ .Permalink }}">
     <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
     <meta name="twitter:description" content="{{ replaceRE "\n" "" (.Params.description | default .Site.Params.description) }}">
-    {{ if .Params.eyecatch }}
-    <meta property="og:image" content="{{ .Params.eyecatch }}">
-    {{ else }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
-    {{ end }}

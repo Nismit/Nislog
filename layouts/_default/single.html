@@ -12,7 +12,7 @@
 
     {{ if .Params.eyecatch }}
     <div class="article__thumbnail">
-      <img src="{{ .Params.eyecatch }}"/>
+      <img src="{{ .Site.BaseURL }}{{ .Params.eyecatch }}"/>
     </div>
     {{ end }}
 
