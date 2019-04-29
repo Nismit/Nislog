@@ -1,22 +1,18 @@
 version: 2.1
 jobs:
   build:
+    # https://circleci.com/docs/ja/2.0/configuration-reference/#branches
+    branches:
+      only:
+        - master
     docker:
-      - image: circleci/node:11.11.0-stretch
+      - image: nismit/hugo-firebase
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install-packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: build
-          command: npm run build
+          name: Build Hugo
+          command: hugo
+      - deploy:
+          name: Deploy to Firebase Hosting
+          branch: master
+          command: firebase deploy --token $FIREBASE_TOKEN
