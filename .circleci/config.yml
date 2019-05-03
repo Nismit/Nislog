@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Init Submodule & Update
+          command: git submodule sync && git submodule update --init
+      - run:
           name: Build Hugo
           command: hugo -t humble --ignoreCache
       - deploy:
