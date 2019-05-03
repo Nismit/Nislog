@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Build Hugo
-          command: hugo
+          command: hugo -t humble
       - deploy:
           name: Deploy to Firebase Hosting
           branch: master

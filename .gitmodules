@@ -1,0 +1,3 @@
+[submodule "themes/humble"]
+	path = themes/humble
+	url = https://github.com/Nismit/humble.git
