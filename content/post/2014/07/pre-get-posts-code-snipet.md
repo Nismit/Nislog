@@ -4,7 +4,7 @@ date = 2014-07-18T11:16:28Z
 title = "[WP]pre_get_postsを使いこなす！pre_get_posts使い方まとめ"
 description = "Wordpressのバージョン4ベータ版がリリースされましたね。そろそろメジャーアップデートで次のステージ4へ上がって行きます。そんな中かなり遅れてpre_gets_postsについて紹介しておこうかなと思います・・・w 非常に便利ですので、是非使用してみてください"
 tags = ["wordpress"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-wordpress.jpg"
 toc = true
 +++
 
@@ -178,3 +178,7 @@ functionsに書き込んでいくのは最初はやっかいかもしれませ�
 [query_postsを捨てよ、pre_get_postsを使おう](http://notnil-creative.com/blog/archives/1688) - [notnil creation weblog](http://notnil-creative.com/blog/)\
 [プラグイン API/アクションフック一覧/pre get posts](http://wpdocs.sourceforge.jp/%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3_API/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%83%83%E3%82%AF%E4%B8%80%E8%A6%A7/pre_get_posts) - [WordPress Codex 日本語版](http://wpdocs.sourceforge.jp/Main_Page)\
 [関数リファレンス/WP Query](http://wpdocs.sourceforge.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/WP_Query) - [WordPress Codex 日本語版](http://wpdocs.sourceforge.jp/Main_Page)
+
+**Change Log**
+
+2019/09/21 - サムネイル画像を追加

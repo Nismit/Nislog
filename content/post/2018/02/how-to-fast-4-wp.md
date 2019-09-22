@@ -4,7 +4,7 @@ date = 2018-02-04T22:00:31-08:00
 title = "WordPressの高速化のテクニック"
 description = "ある程度WordPressを使ったサイトなどを作っていると行き着くのがサイト高速化。フロントエンドからバックエンドまで様々なテクニックがあるので一度整理しておこうと思います！"
 tags = ["wordpress", "performance"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-wordpress.jpg"
 toc = true
 +++
 
@@ -103,3 +103,7 @@ KUSANAGIなど専用OSでWordPressに特化したパッケージの導入もパ�
 
 # まとめ
 WordPressサイトの高速化もかなり多岐に渡ると思いますが、やっぱり最終的にはサーバーサイドでの処理が大幅にサイト速度を爆速に出来るとは思いますのでこの辺りは色々と試して知見を貯めていきたいですね🙌
+
+**Change Log**
+
+2019/09/21 - サムネイル画像を追加
