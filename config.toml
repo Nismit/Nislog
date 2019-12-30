@@ -11,6 +11,12 @@ enableGitInfo = true
 enableEmoji = true
 theme = "humble"
 
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = true
+
 [taxonomies]
   tag = "tags"
 
