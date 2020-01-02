@@ -4,7 +4,7 @@ date = 2019-05-04T00:13:40-07:00
 title = "レイオフから約一週間で就職した話"
 description = "レイオフされたその後わずか一週間程度で次の就職まで漕ぎ着けた話をつらつらと書いています"
 tags = ["blog", "vancouver"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-layoff-after-story.jpg"
 toc = true
 +++
 
@@ -111,3 +111,7 @@ LinkedInやIndeedをみつつ、レジュメのアップデートの作業を始
 絶対に見られないけど、前職のトップMilesに凄く感謝しています。
 
 今後はよりFull-stack Developerとしてプロペーションを生き残ります！
+
+**Change Log**
+
+2020/01/01 - サムネイル画像を追加
