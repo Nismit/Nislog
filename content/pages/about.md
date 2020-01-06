@@ -40,7 +40,20 @@ toc = false
 - React/Vue.jsの基本的なスキル
 - WordPressのスターターキットテーマでの実務経験(Underscores/Sage)
 
-現在、技術的に伸ばそうと思っているのは、[こちらの記事]({{< ref "happy-new-year-2018.md" >}})で書いています
+# 現在のスキルセット
+2020年1月1日時点でのスキルセットです。
+
+- セマンティックHTML (ArticleやSection, Navなど)
+- CSS (keyframeなどを使ったアニメーションやCSS Gridなどを使ったレイアウト等)
+- JavaScript (ES2015+)
+- WebGL/Three.js (シェーダーを用いた簡単な表現)
+- React/Vue + Fluxの基本的な概念
+- Firebase (Hosting/Real-time Database/Functions)
+- WordPress
+- Webサーバーの構築+DNSの設定等
+- Docker
+- Hugo
+- CIを用いた自動化
 
 # パーソナリティ
 FPSゲーマー。(主にCoDシリーズ、BFシリーズが好きです)\
