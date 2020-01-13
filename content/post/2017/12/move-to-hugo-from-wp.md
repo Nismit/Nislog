@@ -4,12 +4,12 @@ date = 2017-12-28T23:09:33-08:00
 title = "WordPressからHugoに移行しました"
 description = "WordPressでブログをしていましたが、今回新しく始めるにあたってブログシステムをHugoに移行しました"
 tags = ["blog", "hugo"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-move-to-hugo.jpg"
 toc = true
 +++
 
 # ブログを新たに始めました
-以前は、[Emiac-Works](https://emiac-works.com/) というブログをしていたのですが、
+以前は、<del>[Emiac-Works](https://emiac-works.com/)</del> というブログをしていたのですが、
 だんだんと更新頻度が落ち、ほぼ更新しなくなってしまいました。理由としては以下のものがありました。
 
 - カナダに移ってから書く時間が無くなった
@@ -68,3 +68,7 @@ Hugoも出てから時間が経っている事もあり、ユーザーが作成�
 Hugoなどの静的サイトジェネレーターは非常に記事を書くという点において良いと思います。
 ローカルで書きながらささっとチェック出来るのは非常に便利ですね。
 ブログを一から始めようと思いますのでどうぞよろしくお願いします🙏
+
+**Change Log**
+
+2020/01/12 - サムネイル画像を追加

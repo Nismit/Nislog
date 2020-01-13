@@ -4,7 +4,7 @@ date = 2018-12-15T11:45:57-08:00
 title = "バンクーバーのあるWeb製作会社の開発環境"
 description = "こちらはFrog Advent Calendar 2018の15日目の記事です! バンクーバーのあるWeb製作会社の開発環境についてつらつらと書いています"
 tags = ["blog", "vancouver", "advent-calendar"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-frog-advent-2018.jpg"
 toc = true
 +++
 
@@ -74,3 +74,7 @@ Gitは個人ブランチ、devブランチ、stagingブランチで分けてま�
 # おまけ
 どんなエディタを使って作業しているか聞いてみた所、10人中9人がメインエディタとして[VS Code](https://code.visualstudio.com/)で、1人だけ[PHPStorm](https://www.jetbrains.com/phpstorm/)という感じでした。特に指定はされてないですが、自然にこうなりました。今ではおすすめのプラグインなどを共有したりしてます。
 サブエディタとしてはみんな色んなものを使っていて、[Atom](https://atom.io/), [Coda](https://panic.com/coda/), Vimなどでした。
+
+**Change Log**
+
+2020/01/12 - サムネイル画像を追加
