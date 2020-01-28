@@ -4,7 +4,7 @@ date = 2018-01-25T20:46:46-08:00
 title = "基礎からやっていくJavaScript再入門 - #2"
 description = "JavaScriptの基本の文法やJSにまつわる慣例的な書き方を勉強しました"
 tags = ["javascript", "js-series"]
-eyecatch = "images/eyecatch/eye-javascript.png"
+eyecatch = "/images/eyecatch/eye-javascript.png"
 toc = true
 +++
 
@@ -186,3 +186,7 @@ var that = this;
 # お願い
 なるべく間違いがないように、しっかりと自分の中で勉強、実際にコードを書いて確認した上で書いていますが間違った考えやさらに良い案などがあれば、是非是非教えてください。\
 ものすごく感謝します！！ めっちゃフランクに言ってください [@nismit_](https://twitter.com/nismit_) ✨
+
+**Change Log**
+
+2020/01/27 - サムネイル画像のパスを修正
