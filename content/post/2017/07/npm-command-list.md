@@ -4,7 +4,7 @@ date = 2017-07-19T08:05:10Z
 title = "[npm]意外と忘れてしまうnpmコマンドまとめ"
 description = "Web制作者の方々の大半は入れてあるだろうnode.jsのパッケージ管理ツールであるnpm。package.jsonをある程度作ったら後はnpm installするだけになってしまい、他のコマンドを忘れがちではないでしょうか？私自身忘れてしまう為備忘録としてnpmのコマンドをまとめました。"
 tags = ["npm"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-npm.jpg"
 toc = false
 +++
 
@@ -80,3 +80,6 @@ npm uninstall package_name --save
 // package.jsonのdevDependencies項目から削除
 npm uninstall package_name --save-dev
 ```
+**Change Log**
+
+2020/01/27 - サムネイル画像を追加
