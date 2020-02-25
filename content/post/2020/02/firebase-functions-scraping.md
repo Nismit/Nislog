@@ -92,10 +92,20 @@ exports.scraping = functions.runWith(runtimeOpts).pubsub.schedule('0 0 * * 0').o
 
     // Something Todo
 
-    await browser.close();
+    return await browser.close();
 });
 ```
 
 このままデプロイすると、URLは発行されず定期的に実行されるのでまずはhttpでアクセス出来る形式でテストした後に定期実行に変えると良いです。手動で実行出来るのかなと思ったんですが、いまいちわかりませんでした。また、https形式からスケジュール形式に変えてデプロイすると失敗します。一度 `firebase functions:delete scraping` で設定した関数名を指定して関数を削除してあげてから再度デプロイすると成功します。
 
 実際のものは複数ページを並列にアクセスさせて `Promise.all()` でデータベースへの書き込みも含め、全て終了するまで待たせています。5サイトにアクセスさせてデータベースへの書き込みを行った場合は約1.4GBのメモリ使用率でした。もうちょっと増えると2GBの範囲を越えてエラーで終了してしまうので、そうなった場合はFunctionを分けるしか方法はなさそうです。機会があればPlaywrightでも試してみたい。
+
+# 追記
+スケジューラーに設定したFirebase Functionsがエラーで落ちていました。
+
+```
+TimeoutError: Timed out after 30000 ms while trying to connect to the browser! Only Chrome at revision r722234 is guaranteed to work.
+```
+
+どうやらスケジューラー設定しているものは `Promise`　か `await` でresolveして返さないと即時終了してしまうようです。上のサンプルコードも最後を修正して
+`return await browser.close();` にしてちゃんとresolveするようにしました。最初テストした時は何故か動いていたので全く気にしてなかったです。逆に何で動いたんだろ。。もし参考にしている方いたら大変申し訳ないです🙇‍♂️
