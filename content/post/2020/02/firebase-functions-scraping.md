@@ -47,6 +47,19 @@ const puppeteer = require('puppeteer');
 
 話はそれますが、Puppeteerとか最近出たMicrosoft製の[Playwright](https://github.com/microsoft/playwright)とか使ってVisual Regressionテストをして見たいなーと思ってます。上手くいったら実践投入してなるべくクロスブラウザのチェックの負担軽減とかnpmのパッケージのアップデートとかを気軽に出来るようにしたいですね。
 
+<div class="advertisement">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-6436791468025792"
+        data-ad-slot="9485583251"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 # Firebase Functionsと組みわせる
 いくつかここには落とし穴があって、まずはFirebase Functionsと組み合わせる場合Puppeteerは少しメモリを食います。デフォルトでは128MBに設定されているので1GBに変更した方が良いです。[ドキュメント](https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation)にも載っているのですが、`runWith` メソッドに設定を追加してあげるとメモリとタイムアウトの時間を変更出来ます。
 
