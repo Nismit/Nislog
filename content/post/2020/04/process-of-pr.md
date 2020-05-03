@@ -47,6 +47,19 @@ toc = true
 また職種はWeb Developerで[NOC](https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html) Aと言う部類に入る職種である事と日本でも同じ職種で実務経験が2年半程あった為、[BCPNP](https://www.welcomebc.ca/Immigrate-to-B-C/B-C-Provincial-Nominee-Program) というプログラムで申請を考えていました。自力で永住権申請は無理だと思ったので素直にコンサルへ相談する事にしました。
 最初に相談した時点でのビザの残り期間は半年以上猶予がありました:)
 
+<div class="advertisement">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client="ca-pub-6436791468025792"
+        data-ad-slot="9485583251"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 # 永住権を申請するのにした事
 結構色んな事をしました。同じようなプログラムで申請する場合は大体似てると思います。
 
