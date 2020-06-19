@@ -1,10 +1,10 @@
 +++
-draft = true
-date = 2020-06-17T22:25:46-07:00
-title = "Firebase Functions + Nodemailerでサーバーレスメール送信を作ってみた"
+draft = false
+date = 2020-06-18T22:25:46-07:00
+title = "Firebase Functions + Nodemailerでサーバーレスメール送信機能を作ってみた"
 description = "ReactやVueなどでアプリやサイトを作っていて、メールフォームをどうしたら良いのか悩んでいたのですが、Nodemailerというものを見つけたのでFirebase Functionsと組み合わせてサーバーレスなメーラーを作ってみました。"
 tags = ["firebase", "nodemailer"]
-eyecatch = ""
+eyecatch = "/images/eyecatch/eye-firebase-nodemailer.jpg"
 toc = false
 +++
 
@@ -21,7 +21,8 @@ toc = false
 作ったのは[GitHubで公開](https://github.com/Nismit/cffnm)しています。フォークして改造してもらっても良いし、PRなどがあれば是非是非お願いします。良さげだね！と思ったらスターでも付けてください🙇🏻
 
 # プロジェクトのセットアップ
-Firebaseの良い所はCLIでプロジェクトが作れてしまう所ですね。ちょっとしたものとかテストしたい時にさらっと構築出来るのは非常に良いです。
+Firebaseの良い所はCLIでプロジェクトが作れてしまう所ですね。ちょっとしたものとかテストしたい時にさらっと構築出来るのは非常に良いです。前に書いたFirebaseの記事はセットアップについて書いてなかったので一応今回は書いておこうかなと思います。
+
 firebase-toolsをインストールしてなければ、`npm install -g firebase-tools` でグローバルにインストールして、
 Firebaseにログインをしていなければ、 `firebase login` を実行でブラウザが立ち上がって現在使っているGoogleアカウントでのFirebase CLIの許可を求められます。他のアカウントでしたい場合は `firebase logout` でログアウトしてまたログインからし直せば切り替え出来ます。
 
@@ -34,7 +35,8 @@ Firebaseにログインをしていなければ、 `firebase login` を実行で
 
 ![Firebase-2](/images/2020/cffnm-firebase-2.png)
 
-ちょっとしたらプロジェクトと開発環境一式がダウンロードされるのでnpmからパッケージをインストールする場合はyesを選択
+ちょっとしたらプロジェクトの作成が完了します。
+その後、開発環境一式がダウンロードされるのでnpmからパッケージをインストールする場合はyesを選択
 
 ![Firebase-4](/images/2020/cffnm-firebase-4.png)
 
@@ -58,7 +60,7 @@ Gmailのサービスを利用するにはログインが必要で、コードの
 const key = functions.config().someservice.key;
 ```
 
-何入れたか忘れた時は `firebase functions:config:get` のコマンドで確認出来る。
+何入れたか忘れた時は `firebase functions:config:get` のコマンドで確認出来るので忘れた時はこれでチェックしましょう。
 
 ## メールの本文などの設定
 これは作ったものからの抜粋ですが `mailOptions`で設定が可能です。
@@ -89,10 +91,10 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
 送り先はFirebase Functionsからのクエリを受け取って設定してます。ここでは `dest` というクエリ名にしています。
 URLはこんな感じになります。 `https://us-central1-your-project-name.cloudfunctions.net/sendMail?dest=example@example.com`
-コードの詳細などは[GitHub](https://github.com/Nismit/cffnm)を見てみてください。READMEにセットアップなども英語ですが書いています。(簡単に書いてるから絶対読めます)
+コードの詳細などは[GitHub](https://github.com/Nismit/cffnm)を見てみてください。READMEにセットアップなども英語ですが書いています。(簡単に書いてるから絶対読めますw)
 
 ## その他のトラブル
-もう一つ私はエラーが出たんですが、 `Error: Invalid login: 534-5.7.14 534-5.7.14 Please log in via your web browser and then try again.` というエラーでなんでだろうと思っていたら、これはブラウザやアプリからログインをしていないのでGoogleのCaptchaが反応してアクセス出来ないようにしているみたいでした。
+もう一つ私はエラーが出たんですが、 `Error: Invalid login: 534-5.7.14 534-5.7.14 Please log in via your web browser and then try again.` というエラーでなんでだろうと思っていたら、これはブラウザやアプリからログインをしていないのでBOTなどをブロックするGoogleのCaptchaが反応してアクセス出来ないようにしているみたいでした。
 https://support.google.com/accounts/answer/2461835?hl=en
 
 上のリンクにもこれが載っているだけなんだけどちゃんとソースがある方が信用出来ると思ったので載せています。面倒な人はこちらにアクセス。
