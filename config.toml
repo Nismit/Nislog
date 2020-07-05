@@ -2,7 +2,7 @@ baseURL = "https://blog.nismit.me"
 languageCode = "ja"
 title = "NISLOG"
 author = "NISMIT"
-copyright = "Copyright (c) 2017 - NIGLOG all rights reserved."
+copyright = "NISLOG"
 canonifyurls = true
 paginate = 5
 pygmentsUseClasses = true
@@ -29,11 +29,20 @@ theme = "humble"
   description = "フロントエンドやバックエンドに関する情報や勉強した事をアウトプットしています。カナダのバンクーバー在住ならではの情報なども少し書いています。"
   images = ["images/og_image.jpg"]
 
+  authorModule = true
+  authorImage = "/images/profile.png"
+  author = "Michinobu Nishimoto (<a href=\"https://twitter.com/nismit_\" target=\"_blank\">@nismit_</a>)"
+  authorDescription = "記事を書いてる人: 日本のWeb制作会社に約2年半フロントエンドとして働いた後、カナダのバンクーバーで語学学校->専門学校->現地のWeb制作会社にフロントエンドとして就職。<br> 詳しく知りたい方は<a href=\"/pages/about/\">こちら</a>へ。"
+
+  twitter = "https://twitter.com/nismit_"
+  github = "https://github.com/Nismit"
+  linkedin = "https://ca.linkedin.com/in/nismit"
+
 [outputs]
   home = ["HTML", "RSS"]
   posts = ["HTML", "RSS"]
   page = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
+  # taxonomy = ["HTML", "RSS"]
 
 [related]
   threshold = 80
