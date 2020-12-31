@@ -1,7 +1,7 @@
 +++
 draft = false
 date = 2020-12-31T09:49:04-08:00
-title = "2020年の振り返り"
+title = "2020年の振り返りと2021年への抱負"
 description = "徐々に毎年恒例の記事になりつつある振り返り記事。今年も何があったか、どうだったかを振り返っておこうと思います"
 tags = ["vancouver", "blog"]
 eyecatch = "/images/eyecatch/eye-retrospective-2020.jpg"
