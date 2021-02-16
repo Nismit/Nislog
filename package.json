@@ -1,0 +1,44 @@
+{
+  "name": "blog",
+  "version": "2.0.0",
+  "description": "Blog Development Tools",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nismit/Nislog.git"
+  },
+  "author": "Nismit <nismit.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nismit/Nislog/issues"
+  },
+  "homepage": "https://github.com/Nismit/Nislog#readme",
+  "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.5",
+    "next-mdx-remote": "^2.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remark-breaks": "^2.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/react": "^6.1.14",
+    "@types/node": "^14.14.21",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "fast-glob": "^3.2.5",
+    "typescript": "^4.1.3"
+  }
+}
