@@ -1,0 +1,37 @@
+import Head from 'next/head';
+import data from '../site.json';
+import MetaType from '../../types/meta';
+
+type Props = {
+    tags: MetaType
+}
+
+const HeadMeta: React.FC<Props> = ({ tags }) => {
+    return (
+        <Head>
+            <title key="title">{tags.title ? tags.title : data.siteName}</title>
+            <meta name="description" key="description" content={tags.description ? tags.description : data.siteDescription}/>
+
+            {tags.date ? <meta property="article:published_time" content={tags.date} /> : null}
+            {tags.lastmod ? <meta property="article:modified_time" content={tags.lastmod} /> : null}
+
+            <meta property="og:type" key="og_type" content={tags.type ? tags.type : 'website'}/>
+            <meta property="og:title" key="og_title" content={tags.title ? tags.title : data.siteName}/>
+            <meta property="og:description" key="og_description" content={tags.description ? tags.description : data.siteDescription}/>
+            <meta property="og:url" key="og_URL" content={tags.slug ? tags.slug : ''}/>
+            <meta property="og:image" key="og_image" content={tags.eyecatch ? tags.eyecatch : ''}/>
+            <meta property="og:site_name" key="og_site_name" content={tags.title ? tags.title : data.siteName}/>
+
+            <meta name="twitter:card" key="twitter_card" content="summary_large_image"/>
+            <meta name="twitter:description" key="twitter_description" content={tags.description ? tags.description : data.siteDescription}/>
+            <meta name="twitter:site" key="twitter_site" content={`@${data.twitter}`}/>
+            <meta name="twitter:image:src" key="twitter_img" content={tags.eyecatch ? tags.eyecatch : ''}/>
+
+            {/* <meta name="robots" content={`${tags.robots}`}/> */}
+
+            <link rel="canonical" key="canonical" href={tags.slug ? tags.slug : ''}/>
+        </Head>
+    )
+}
+
+export default HeadMeta;
