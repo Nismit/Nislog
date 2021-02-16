@@ -1,0 +1,67 @@
+:root {
+    --body-background-color: #fefefe;
+    --body-font-color: #333;
+    --secondly-font-color: #247ba0;
+    --primary-link-color: #8aa2d3;
+    --secondly-link-color: #736dac;
+    --highlight-color: #69d2e7;
+    --code-background-color: rgba(36, 46, 56, 0.15);
+    --pre-background-color: #e5ecf3;
+    --main-border-color: #ddd;
+    --pager-hover-color: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background-color: #191A22;
+        --body-font-color: #C1C4D1;
+        --primary-link-color: #8DAFDD;
+        --secondly-link-color: #89B8C2;
+        --highlight-color: #126284;
+        --code-background-color: rgba(69, 88, 106, 0.3);
+        --pre-background-color: #1E2131;
+        --main-border-color: rgba(221, 221, 221, 0.4);
+        --pager-hover-color: rgba(24, 24, 24, 0.6);
+    }
+}
+
+body {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    font-kerning: normal;
+    color: var(--body-font-color);
+    background-color: var(--body-background-color);
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+a {
+    text-decoration: underline;
+    color: var(--primary-link-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--secondly-link-color);
+}
+
+header {
+    margin: 2em auto;
+    text-align: center;
+}
+
+header svg {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 7px;
+    fill: var(--body-font-color);
+}
+
+svg.root {
+    position: absolute; 
+    width: 0; 
+    height: 0; 
+    overflow: hidden;
+}
