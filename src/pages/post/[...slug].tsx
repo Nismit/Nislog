@@ -1,7 +1,6 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import hydrate from 'next-mdx-remote/hydrate';
-import RemarkBreak from 'remark-breaks';
 import { MdxRemote } from 'next-mdx-remote/types';
 import renderToString from 'next-mdx-remote/render-to-string';
 import { getAllPosts, getPostBySlug, getPostsFromTag } from '../../lib/api';
@@ -38,8 +37,6 @@ const Post: React.FC<Props> = ({ post, relatedPosts }) => {
         type: 'article'
     }
 
-    // console.log('Router', router);
-
     if(!router.isFallback && !post?.slug) {
         return <ErrorPage statusCode={404} />
     }
@@ -75,7 +72,6 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
     params.slug.unshift('content');
     params.slug.unshift('post');
-    // console.log('Params:', params);
     const slug = params.slug.join('/');
     const post = getPostBySlug(slug, [
         'title',
