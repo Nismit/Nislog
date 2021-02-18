@@ -42,11 +42,12 @@ const _Pagination = styled.ul`
 
     .pagination__item {
         display: inline-block;
-        margin: 0 .3rem;
+        margin: 0 .3rem .5rem;
     }
 
     .pagination__link {
-        padding: .5em .8em;
+        display: inline-block;
+        padding: .2em .8em;
         text-decoration: none;
         -webkit-transition: all .35s;
         transition: all .35s;
