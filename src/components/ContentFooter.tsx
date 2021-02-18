@@ -10,7 +10,7 @@ const ContentFooter: React.FC<Props> = ({ slug, title }) => {
         <_ContentFooter>
             <ul className="single-share">
                 <li className="single-share__item">
-                    <a className="single-share__link twitter" href={`https://twitter.com/intent/tweet?url=${slug}&text=${title}&tw_p=tweetbutton`}
+                    <a className="single-share__link twitter" href={`https://twitter.com/intent/tweet?url=${process.env.NEXT_PUBLIC_BASE_URL}/${slug}&text=${title}&tw_p=tweetbutton`}
                         title="Twitterでシェア"
                         target="_blank"
                         rel="noreferrer"
@@ -18,14 +18,14 @@ const ContentFooter: React.FC<Props> = ({ slug, title }) => {
                         <svg 
                             className="icon -share"
                             xmlns="http://www.w3.org/2000/svg"
-			                xmlnsXlink="http://www.w3.org/1999/xlink"
+		                    xmlnsXlink="http://www.w3.org/1999/xlink"
                         >
                             <use xlinkHref="#icon-twitter" />
                         </svg>
                     </a>
                 </li>
                 <li className="single-share__item">
-                    <a className="single-share__link facebook" href={`https://www.facebook.com/sharer.php?u=${slug}}&t=${title}`} 
+                    <a className="single-share__link facebook" href={`https://www.facebook.com/sharer.php?u=${process.env.NEXT_PUBLIC_BASE_URL}/${slug}&t=${title}`} 
                         title="Facebookでシェア" 
                         target="_blank"
                         rel="noreferrer"
@@ -40,7 +40,7 @@ const ContentFooter: React.FC<Props> = ({ slug, title }) => {
                     </a>
                 </li>
                 <li className="single-share__item">
-                    <a className="single-share__link hatena" href={`https://b.hatena.ne.jp/entry/${slug}`} 
+                    <a className="single-share__link hatena" href={`https://b.hatena.ne.jp/entry/${process.env.NEXT_PUBLIC_BASE_URL}/${slug}`} 
                         title="はてなブックマークに保存" 
                         target="_blank"
                         rel="noreferrer"
@@ -55,7 +55,7 @@ const ContentFooter: React.FC<Props> = ({ slug, title }) => {
                     </a>
                 </li>
                 <li className="single-share__item">
-                    <a className="single-share__link pocket" href={`https://getpocket.com/edit?url=${slug}&title=${title}`} 
+                    <a className="single-share__link pocket" href={`https://getpocket.com/edit?url=${process.env.NEXT_PUBLIC_BASE_URL}/${slug}&title=${title}`} 
                         title="Pocketに保存" 
                         target="_blank"
                         rel="nofollow" 
@@ -70,7 +70,7 @@ const ContentFooter: React.FC<Props> = ({ slug, title }) => {
                     </a>
                 </li>
                 <li className="single-share__item">
-                    <a className="single-share__link feedly" href="https://feedly.com/i/subscription/feed/https://blog.nismit.me/feed.xml" 
+                    <a className="single-share__link feedly" href={`https://feedly.com/i/subscription/feed/${process.env.NEXT_PUBLIC_BASE_URL}/feed.xml`}
                         title="Feedlyに登録する"
                         target="_blank"
                         rel="nofollow"

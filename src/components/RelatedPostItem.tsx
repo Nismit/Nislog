@@ -16,7 +16,10 @@ const RelatedPostItem: React.FC<Props> = ({ post }) => {
             <a className="related-articles--item">
                 <div>
                     <img 
-                        src={`${process.env.NEXT_PUBLIC_BASE_URL}${post.eyecatch}`} 
+                        src={post.eyecatch ? 
+                            `${process.env.NEXT_PUBLIC_BASE_URL}${post.eyecatch}`
+                            : `${process.env.NEXT_PUBLIC_BASE_URL}/no-image.jpg`
+                        } 
                         width="130" 
                         height="68" 
                         alt="thumbnail" 
