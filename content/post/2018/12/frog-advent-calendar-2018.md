@@ -1,12 +1,16 @@
-+++
-draft = false
-date = 2018-12-15T11:45:57-08:00
-title = "バンクーバーのあるWeb製作会社の開発環境"
-description = "こちらはFrog Advent Calendar 2018の15日目の記事です! バンクーバーのあるWeb製作会社の開発環境についてつらつらと書いています"
-tags = ["blog", "vancouver", "advent-calendar"]
-eyecatch = "/images/eyecatch/eye-frog-advent-2018.jpg"
-toc = true
-+++
+---
+date: "2018-12-15T11:45:57-08:00"
+description: こちらはFrog Advent Calendar 2018の15日目の記事です! バンクーバーのあるWeb製作会社の開発環境についてつらつらと書いています
+draft: false
+eyecatch: /images/eyecatch/eye-frog-advent-2018.jpg
+lastmod: "2020-01-12T18:41:01-08:00"
+tags:
+- blog
+- vancouver
+- advent-calendar
+title: バンクーバーのあるWeb製作会社の開発環境
+toc: true
+---
 
 # はじめに
 こちらは[Frog Advent Calendar 2018](https://adventar.org/calendars/2875)の15日目の記事になります！

@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-02-19T22:36:34-08:00
-title = "Firebase FunctionsとPuppeteerでスクレイピングの定期実行するのを作ってみた"
-description = "以前からFirebaseのCould Functionsを使って定期的に処理させる何かを作りたかったんですが、ようやく自分で使いたいアイデアが出てきたので作ってみました。"
-tags = ["firebase", "puppeteer"]
-eyecatch = "/images/eyecatch/eye-firebase-functions-scraping.jpg"
-toc = true
-+++
+---
+date: "2020-02-19T22:36:34-08:00"
+description: 以前からFirebaseのCould Functionsを使って定期的に処理させる何かを作りたかったんですが、ようやく自分で使いたいアイデアが出てきたので作ってみました。
+draft: false
+eyecatch: /images/eyecatch/eye-firebase-functions-scraping.jpg
+lastmod: "2020-05-30T20:32:03-07:00"
+tags:
+- firebase
+- puppeteer
+title: Firebase FunctionsとPuppeteerでスクレイピングの定期実行するのを作ってみた
+toc: true
+---
 
 # 作ったもの
 フロント側は全く作ってないんですが、私が住んでいるバンクーバーのFront End Developerの平均給与をいくつかのサイトからスクレイピングしてFirebaseのデータベースへ格納するといったとてもシンプルなものを作りました。日本ではどれぐらいあるのかわからないんですが、こっちだとポジションの平均給与がユーザーからの自己申請で出てます。調べてて思ったんですが、サイトによってすごくばらつきがありました。
@@ -49,19 +52,6 @@ const puppeteer = require('puppeteer');
 たったこれだけでGoogleにアクセスしてスクリーンショットまで撮れます。
 
 話はそれますが、Puppeteerとか最近出たMicrosoft製の[Playwright](https://github.com/microsoft/playwright)とか使ってVisual Regressionテストをして見たいなーと思ってます。上手くいったら実践投入してなるべくクロスブラウザのチェックの負担軽減とかnpmのパッケージのアップデートとかを気軽に出来るようにしたいですね。
-
-<div class="advertisement">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-        style="display:block; text-align:center;"
-        data-ad-layout="in-article"
-        data-ad-format="fluid"
-        data-ad-client="ca-pub-6436791468025792"
-        data-ad-slot="9485583251"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
 
 # Firebase Functionsと組みわせる
 いくつかここには落とし穴があって、まずはFirebase Functionsと組み合わせる場合Puppeteerは少しメモリを食います。デフォルトでは128MBに設定されているので1GBに変更した方が良いです。[ドキュメント](https://firebase.google.com/docs/functions/manage-functions#set_timeout_and_memory_allocation)にも載っているのですが、`runWith` メソッドに設定を追加してあげるとメモリとタイムアウトの時間を変更出来ます。

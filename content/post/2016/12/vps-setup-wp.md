@@ -1,26 +1,27 @@
-+++
-draft = false
-date = 2016-12-07T19:04:13Z
-title = "[VPS]CentOS7.2の初期設定(4) -WordPress編-"
-description = "CentOS7.2の初期設定 その4 WordPress編です。MariaDBのデータベース作成から、wp-config.phpの追加の方法とBackWPupやphpmyadminからエクスポートしたsqlファイルを追加する方法等を記載してます。"
-tags = ["server", "vps"]
-eyecatch = ""
-toc = true
-+++
+---
+date: "2016-12-07T19:04:13Z"
+description: CentOS7.2の初期設定 その4 WordPress編です。MariaDBのデータベース作成から、wp-config.phpの追加の方法とBackWPupやphpmyadminからエクスポートしたsqlファイルを追加する方法等を記載してます。
+draft: false
+eyecatch: ""
+lastmod: "2018-01-10T22:15:21-08:00"
+tags:
+- server
+- vps
+title: '[VPS]CentOS7.2の初期設定(4) -WordPress編-'
+toc: true
+---
 
-以前のブログで書いた記事を再編集しました。(2018/01/06)\
-[前回]({{< ref "vps-db-apache-settings.md" >}})Apacheの設定とMariaDBの設定をしました。
+以前のブログで書いた記事を再編集しました。(2018/01/06)  
+[前回](/post/2016/12/vps-db-apache-settings)Apacheの設定とMariaDBの設定をしました。
 
-今回は最後のWordPressのインストールとバックアップファイルからのリストアの方法を記載します。
+今回は最後のWordPressのインストールとバックアップファイルからのリストアの方法を記載します。WordPressを新規でインストールした後、リストアの方法を記載します。
 
-WordPressを新規でインストールした後、リストアの方法を記載します。
-
-設定環境\
-ローカル: MacOS: Mac Sierra\
-VPS: [ConoHa VPS](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)\
-OS: CentOS Linux release 7.2.1511 (Core)\
-作業用ユーザ名: devuser\
-SFTPユーザ名: sfuser\
+設定環境  
+ローカル: MacOS: Mac Sierra  
+VPS: [ConoHa VPS](https://www.conoha.jp/)  
+OS: CentOS Linux release 7.2.1511 (Core)  
+作業用ユーザ名: devuser  
+SFTPユーザ名: sfuser  
 
 
 # MariaDBのデータベース設定
@@ -40,10 +41,10 @@ Query OK, 0 rows affected (0.00 sec)
 MariaDB [(none)]> EXIT
 Bye
 ```
-今回はテストとして\
-データベース名: `db_wp_test`\
-データベースユーザ名: `test_wp`\
-データベースパスワード: `pass_wordpress`\
+今回はテストとして  
+データベース名: `db_wp_test`  
+データベースユーザ名: `test_wp`  
+データベースパスワード: `pass_wordpress`  
 として作成していきます！
 
 ## WordPressのインストール
@@ -122,7 +123,7 @@ $ mysql -u root -p < xxxx.sql
 パーミッションが全てFTPクライアントの設定でアップロードした際に書き換わっていました。
 
 ## プラグイン/バージョンの更新をSFTPで行う
-これは予期していなかったのですが、WordPressはSFTPでの通信はまだサポートされていません。\
+これは予期していなかったのですが、WordPressはSFTPでの通信はまだサポートされていません。  
 なので、私はSSH SFTP Updater Supportというプラグインを利用しています。
 SSH2を選択し、秘密鍵のアップロードもしくはペーストしパスフレーズを設定している場合は、パスワードの欄に記入してください。
 今回の設定だと、FTPのポートは解放していないのでSFTP以外で通信している場合は、アップデートが失敗するはずです。
@@ -134,9 +135,7 @@ SSH2を選択し、秘密鍵のアップロードもしくはペーストしパ�
 
 おかしい部分やセキュリティ的にこの設定は危ない等ありましたら是非教えてください！
 番外編として、
-Let’s Encryptを取得してサイトをHTTPS化にする
-PHPアクセラレーション等を駆使してWordPressの高速化を図る の2つの記事も書いてます。
-
+<del>Let’s Encryptを取得してサイトをHTTPS化にする/PHPアクセラレーション等を駆使してWordPressの高速化を図る の2つの記事も書いてます。</del>
 
 # 参考サイト
-[Centos7にWordpressを新規導入のあれこれ(1) - Qiita](http://qiita.com/wynnkengeofu/items/89d2454fd92b9cfd932f)
+[Centos7にWordpressを新規導入のあれこれ(1) - Qiita](https://qiita.com/wynnkengeofu/items/89d2454fd92b9cfd932f)

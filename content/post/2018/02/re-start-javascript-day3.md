@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2018-02-20T23:18:15-08:00
-title = "基礎からやっていくJavaScript再入門 - #3"
-description = "JavaScriptにおけるデータ型とリテラルについて勉強しました"
-tags = ["javascript", "js-series"]
-eyecatch = "/images/eyecatch/eye-javascript.png"
-toc = true
-+++
+---
+date: "2018-02-20T23:18:15-08:00"
+description: JavaScriptにおけるデータ型とリテラルについて勉強しました
+draft: false
+eyecatch: /images/eyecatch/eye-javascript.png
+lastmod: "2018-02-21T22:31:36-08:00"
+tags:
+- javascript
+- js-series
+title: '基礎からやっていくJavaScript再入門 - #3'
+toc: true
+---
 
 # データ型
 JavaScriptでのデータ型は7つしかないので、他のプログラミング言語よりかは少ない。

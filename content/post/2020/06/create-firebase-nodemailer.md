@@ -1,12 +1,16 @@
-+++
-draft = false
-date = 2020-06-18T22:25:46-07:00
-title = "Firebase Functions + Nodemailerでサーバーレスメール送信機能を作ってみた"
-description = "ReactやVueなどでアプリやサイトを作っていて、メールフォームをどうしたら良いのか悩んでいたのですが、Nodemailerというものを見つけたのでFirebase Functionsと組み合わせてサーバーレスなメーラーを作ってみました。"
-tags = ["firebase", "nodemailer"]
-eyecatch = "/images/eyecatch/eye-firebase-nodemailer.jpg"
-toc = false
-+++
+---
+date: "2020-06-18T22:25:46-07:00"
+description: ReactやVueなどでアプリやサイトを作っていて、メールフォームをどうしたら良いのか悩んでいたのですが、Nodemailerというものを見つけたのでFirebase
+  Functionsと組み合わせてサーバーレスなメーラーを作ってみました。
+draft: false
+eyecatch: /images/eyecatch/eye-firebase-nodemailer.jpg
+lastmod: "2020-06-18T23:23:13-07:00"
+tags:
+- firebase
+- nodemailer
+title: Firebase Functions + Nodemailerでサーバーレスメール送信機能を作ってみた
+toc: false
+---
 
 # Firebase FunctionsとNodemailerを使ってメール送信機能を作ってみました
 前々からReact等でアプリやサイトを作ってた時にメールフォームとかどうしたら良いのかなーって思ってました。普段はWordPressを触っているので、そもそもPHPでメールは送れるしプラグインでメールフォームもサクッと実装出来てしまうので深く考えた事はなかったです。

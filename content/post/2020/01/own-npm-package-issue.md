@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-01-27T21:49:34-08:00
-title = "初めて作ったライブラリが変なエラーで困ってた話"
-description = "初めて自作パッケージを作ってnpm上に公開していたんですが、Reactで使ってみるとエラーが出てなんとか解決したという話です。"
-tags = ["npm", "javascript"]
-eyecatch = "/images/eyecatch/eye-npm.jpg"
-toc = false
-+++
+---
+date: "2020-01-27T21:49:34-08:00"
+description: 初めて自作パッケージを作ってnpm上に公開していたんですが、Reactで使ってみるとエラーが出てなんとか解決したという話です。
+draft: false
+eyecatch: /images/eyecatch/eye-npm.jpg
+lastmod: "2020-01-27T22:32:14-08:00"
+tags:
+- npm
+- javascript
+title: 初めて作ったライブラリが変なエラーで困ってた話
+toc: false
+---
 
 # npmパッケージを公開してみた
 2019年になりますが、自作ライブラリを作ってnpm上に公開してみました。初めてだったので色々調べながら作っていました。無事に公開したのでReactで使ってみようと思ってインストールしてみると変なエラーが出てしまいました。

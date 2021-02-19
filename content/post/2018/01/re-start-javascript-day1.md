@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2018-01-24T21:12:41-08:00
-title = "基礎からやっていくJavaScript再入門 - #1"
-description = "フロントエンドでは今や必須スキルとなったJavaScriptを再入門して、ほぼ最新レベルまで理解するまでの備忘録です"
-tags = ["javascript", "js-series"]
-eyecatch = "/images/eyecatch/eye-javascript.png"
-toc = true
-+++
+---
+date: "2018-01-24T21:12:41-08:00"
+description: フロントエンドでは今や必須スキルとなったJavaScriptを再入門して、ほぼ最新レベルまで理解するまでの備忘録です
+draft: false
+eyecatch: /images/eyecatch/eye-javascript.png
+lastmod: "2020-01-27T22:40:24-08:00"
+tags:
+- javascript
+- js-series
+title: '基礎からやっていくJavaScript再入門 - #1'
+toc: true
+---
 
 # はじめに
 このシリーズの記事は、自分自身がJavaScriptの基礎を再入門して最新のJavaScriptやフレームワークを理解するまでに行ったこと、
@@ -18,7 +21,7 @@ toc = true
 
 ## テスト環境
 最新版のChrome / Firefox / Safariで動作確認を一応してます。
-また、[その他便利リンク]({{< relref "#その他便利リンク" >}})内のブラウザ対応状況を見て基本的に使えるものの範囲内で勉強を進めます。
+また、[その他便利リンク](#その他便利リンク)内のブラウザ対応状況を見て基本的に使えるものの範囲内で勉強を進めます。
 
 ## 再入門する際に決めた事
 とにかく **自分自身** でコードを書いて結果を確認するのを徹底する事にしました。
@@ -33,13 +36,13 @@ toc = true
 他のサイトで調べるような進めていきます。
 
 ## その他便利リンク
-[jsfiddle](https://jsfiddle.net/)\
+[jsfiddle](https://jsfiddle.net/)  
 オンライン上でHTML/CSS/JavaScriptのコードテストがサクッと試せるWebサービス。何かと便利。
 
-[JavaScriptの入門書](https://asciidwango.github.io/js-primer/)\
+[JavaScriptの入門書](https://asciidwango.github.io/js-primer/)  
 現時点(2018/01/23) 段階ではまだ製作中だけど懇切丁寧に各項目について書かれている。これが完成したら僕のサイトは見なくて大丈夫です😇
 
-[ECMAScript 5 compatibility table](https://kangax.github.io/compat-table/es5/)\
+[ECMAScript 5 compatibility table](https://kangax.github.io/compat-table/es5/)  
 ES5のブラウザ対応状況一覧。ES6もあるのでブックマークしていて損はない便利サイト✨
 
 # クイックリンク

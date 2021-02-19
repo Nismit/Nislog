@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2017-07-19T08:05:10Z
-title = "[npm]意外と忘れてしまうnpmコマンドまとめ"
-description = "Web制作者の方々の大半は入れてあるだろうnode.jsのパッケージ管理ツールであるnpm。package.jsonをある程度作ったら後はnpm installするだけになってしまい、他のコマンドを忘れがちではないでしょうか？私自身忘れてしまう為備忘録としてnpmのコマンドをまとめました。"
-tags = ["npm"]
-eyecatch = "/images/eyecatch/eye-npm.jpg"
-toc = false
-+++
+---
+date: "2017-07-19T08:05:10Z"
+description: Web制作者の方々の大半は入れてあるだろうnode.jsのパッケージ管理ツールであるnpm。package.jsonをある程度作ったら後はnpm
+  installするだけになってしまい、他のコマンドを忘れがちではないでしょうか？私自身忘れてしまう為備忘録としてnpmのコマンドをまとめました。
+draft: false
+eyecatch: /images/eyecatch/eye-npm.jpg
+lastmod: "2020-01-27T22:31:51-08:00"
+tags:
+- npm
+title: '[npm]意外と忘れてしまうnpmコマンドまとめ'
+toc: false
+---
 
 # グローバルパッケージ
 

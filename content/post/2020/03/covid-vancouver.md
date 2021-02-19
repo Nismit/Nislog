@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-03-25T22:03:05-07:00
-title = "COVID-19とバンクーバー"
-description = "2020年初頭から3月の後半の現在でも猛威を振るうCovid-19と僕が住んでいるバンクーバーの現在を残しておこうと思います。"
-tags = ["blog", "vancouver"]
-eyecatch = "/images/eyecatch/eye-covid-vancouver.jpg"
-toc = false
-+++
+---
+date: "2020-03-25T22:03:05-07:00"
+description: 2020年初頭から3月の後半の現在でも猛威を振るうCovid-19と僕が住んでいるバンクーバーの現在を残しておこうと思います。
+draft: false
+eyecatch: /images/eyecatch/eye-covid-vancouver.jpg
+lastmod: "2020-03-25T23:16:13-07:00"
+tags:
+- blog
+- vancouver
+title: COVID-19とバンクーバー
+toc: false
+---
 
 # バンクーバーの現在
 ロックダウンから一週間程度ですが、状況は一変しました。また日々状況は徐々にですが、悪化しています。例えば、

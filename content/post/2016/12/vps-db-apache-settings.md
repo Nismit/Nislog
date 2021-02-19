@@ -1,27 +1,30 @@
-+++
-draft = false
-date = 2016-12-07T19:03:06Z
-title = "[VPS]CentOS7.2の初期設定(3) -MariaDB/Apache編"
-description = "CentOS7.2の初期設定 その3 MariaDB/Apache編です。Apache2.4.6 (CentOS)とMariaDBの初期設定の方法と最低限のセキュリティ設定を行なっていきます。またMariaDBのアップデートの方法も記載してます。"
-tags = ["server", "vps"]
-eyecatch = ""
-toc = true
-+++
+---
+date: "2016-12-07T19:03:06Z"
+description: CentOS7.2の初期設定 その3 MariaDB/Apache編です。Apache2.4.6 (CentOS)とMariaDBの初期設定の方法と最低限のセキュリティ設定を行なっていきます。またMariaDBのアップデートの方法も記載してます。
+draft: false
+eyecatch: ""
+lastmod: "2018-01-09T22:23:05-08:00"
+tags:
+- server
+- vps
+title: '[VPS]CentOS7.2の初期設定(3) -MariaDB/Apache編'
+toc: true
+---
 
-以前のブログで書いた記事を再編集しました。(2018/01/09)\
-[前回]({{< ref "vps-lamp-set-up.md" >}})LAMP環境をひとまず整える所まできたと思いますが、今回はApacheはバーチャルドメインの方法とMariaDBの初期設定をしていきたいと思います。
+以前のブログで書いた記事を再編集しました。(2018/01/09)  
+[前回](/post/2016/12/vps-lamp-set-up)LAMP環境をひとまず整える所まできたと思いますが、今回はApacheはバーチャルドメインの方法とMariaDBの初期設定をしていきたいと思います。
 
-設定環境\
-ローカル: Mac/OS: Mac Sierra\
-VPS: [ConoHa VPS](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)\
-OS: CentOS Linux release 7.2.1511 (Core)\
+設定環境  
+ローカル: Mac/OS: Mac Sierra  
+VPS: [ConoHa VPS](https://www.conoha.jp/)  
+OS: CentOS Linux release 7.2.1511 (Core)  
 作業用ユーザ名: devuser
 
 # MariaDBの最新バージョンへのアップデート
 
 一応、MariaDBのバージョンをアップデートが可能なので方法を載せておきます。
 必ず上げる必要はないので、したい方は参考にしてみてください。
-アップデートの方法はMariaDBの公式サイトに書かれているものです。\
+アップデートの方法はMariaDBの公式サイトに書かれているものです。  
 https://mariadb.com/kb/en/mariadb/yum/#after-installation
 
 全文コピーしてペーストして完了です。
@@ -65,7 +68,7 @@ mysql 9307 9150 0 Nov12 ? 00:00:55　-省略-
 -SIGTERMオプションが終了シグナルを送信と書いていましたが、正直よくわかってないです。。
 今回の場合は、単純に kill PID番号 でも問題なかったかもしれません。
 
-[Linuxコマンド集 &#8211; 【 kill 】 プロセスおよびジョブを強制終了する：ITpro](http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230806/?rt=nocnt)
+[Linuxコマンド集 &#8211; 【 kill 】 プロセスおよびジョブを強制終了する：ITpro](https//itpro.nikkeibp.co.jp/article/COLUMN/20060227/230806/?rt=nocnt)
 
 ```
 $ sudo kill -SIGTERM 9307
@@ -83,7 +86,7 @@ mysql  Ver 15.1 Distrib 10.1.29-MariaDB, for Linux (x86_64) using readline 5.1
 
 以下のサイトを参考にしました。
 
-[CentOS 7 MariaDB インストール、及び初期設定 &#8211; eTuts+ Server Tutorial](http://server.etutsplus.com/centos-7-mariadb-install-and-mysql-secure-installation/)
+[CentOS 7 MariaDB インストール、及び初期設定 &#8211; eTuts+ Server Tutorial](https://server.etutsplus.com/centos-7-mariadb-install-and-mysql-secure-installation/)
 
 [MariaDBのインストールと初期設定 | CentOS 7 &#8211; ex1-lab](https://ex1.m-yabe.com/archives/2062)
 
@@ -504,7 +507,7 @@ ServerName localhost:80
 ServerNameの部分をlocalhostに設定しました。
 `apachectl` コマンドを実行して問題がないかチェックします。
 またrootで `apachectl` コマンドを実行しない場合、ログのパスへアクセス出来ずエラーが出る場合があります。
-エラーが出る場合はrootで一度実行してみてください。\
+エラーが出る場合はrootで一度実行してみてください。  
 最後にhttpdを再起動して新しい設定を適用させます。
 
 ```
@@ -539,7 +542,7 @@ $ systemctl restart httpd
 ![ConoHa DNS](/images/2016/conoha-6.jpg)
 
 
-サブドメインについてはタイプの選択でCNAMEを使って指定するか、今後、Let&#8217;s Encryptを使ってHTTPS化する場合はタイプA（レコード）で一つづつサブドメインを作成した方がいいかもしれません。\
+サブドメインについてはタイプの選択でCNAMEを使って指定するか、今後、Let&#8217;s Encryptを使ってHTTPS化する場合はタイプA（レコード）で一つづつサブドメインを作成した方がいいかもしれません。  
 またDNSを設定した後は最大で72時間程、切り替わるまでかかるかもしれません。私の場合は20分程で切り替わってました。
 ネットに公開されているツールを使用して確認してました。
 DNSも色々と奥が深いです。
@@ -593,24 +596,24 @@ RequestHeader unset Proxy
 以下のページを参考にしました。各項目の詳しい説明が記載されているので、
 是非読んでください。
 
-[Apacheセキュリティ設定 &#8211; Qiita](http://qiita.com/bezeklik/items/1c4145652661cf5b2271)
+[Apacheセキュリティ設定 &#8211; Qiita](https://qiita.com/bezeklik/items/1c4145652661cf5b2271)
 
 この辺りで一通りの設定が出来たかと思います。
 ConoHaの場合だと、スナップショットという機能がありいわゆるバックアップです。
-サーバを本格起動させる前に一度スナップショットを取っておく事を強くおすすめします。何故なら、スナップショットを取る際は一度VPS自体をシャットダウンした状態でしかスナップショットが取れません。\
+サーバを本格起動させる前に一度スナップショットを取っておく事を強くおすすめします。何故なら、スナップショットを取る際は一度VPS自体をシャットダウンした状態でしかスナップショットが取れません。  
 次回はいよいよ初期設定の最終回、MariaDBのデータベースとユーザの作成からWordPress公開までを行います。
 
 # 参考サイト
-[Apacheセキュリティ設定 &#8211; Qiita](http://qiita.com/bezeklik/items/1c4145652661cf5b2271)
+[Apacheセキュリティ設定 &#8211; Qiita](https://qiita.com/bezeklik/items/1c4145652661cf5b2271)
 
-[chrootされたsftp専用ユーザを作るメモ &#8211; Qiita](http://qiita.com/kawaz/items/53d1c837dd762337eb3b)
+[chrootされたsftp専用ユーザを作るメモ &#8211; Qiita](https://qiita.com/kawaz/items/53d1c837dd762337eb3b)
 
-[Centos7(apache2.4)のバーチャルホスト（virtual host）の設定 | システムエンジニアの徒然日記](http://itinfo.d-easy.jp/server/post-127)
+[Centos7(apache2.4)のバーチャルホスト（virtual host）の設定 | システムエンジニアの徒然日記](https://itinfo.d-easy.jp/server/post-127)
 
-[ConoHaVPS VALUE-DOMAINで取得した独自ドメインを設定(DNS設定) | 学習B5デスノート](http://fernweh.jp/b/conohavps-custom-domain/)
+[ConoHaVPS VALUE-DOMAINで取得した独自ドメインを設定(DNS設定) | 学習B5デスノート](https://fernweh.jp/b/conohavps-custom-domain/)
 
-[DNSサーバの変更の際の手順。 | 技術系メモ](http://wp.kaz.bz/tech/2013/04/15/1606.html)
+[DNSサーバの変更の際の手順。 | 技術系メモ](https://wp.kaz.bz/tech/2013/04/15/1606.html)
 
-[俺のDNS &#8211; 脱・初心者のためのメモ &#8211; Qiita](http://qiita.com/Ogaaaan/items/b3ceb8827e98ce40f5f2)
+[俺のDNS &#8211; 脱・初心者のためのメモ &#8211; Qiita](https://qiita.com/Ogaaaan/items/b3ceb8827e98ce40f5f2)
 
 [Apache 2.4 でバーチャルホスト (仮想ホスト) を利用してHTTP Webサーバーを構築する](https://www.ipentec.com/document/document.aspx?page=linux-apache-using-virtual-host)

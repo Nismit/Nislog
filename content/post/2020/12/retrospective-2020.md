@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-12-31T09:49:04-08:00
-title = "2020年の振り返りと2021年への抱負"
-description = "徐々に毎年恒例の記事になりつつある振り返り記事。今年も何があったか、どうだったかを振り返っておこうと思います"
-tags = ["vancouver", "blog"]
-eyecatch = "/images/eyecatch/eye-retrospective-2020.jpg"
-toc = true
-+++
+---
+date: "2020-12-31T09:49:04-08:00"
+description: 徐々に毎年恒例の記事になりつつある振り返り記事。今年も何があったか、どうだったかを振り返っておこうと思います
+draft: false
+eyecatch: /images/eyecatch/eye-retrospective-2020.jpg
+lastmod: "2020-12-31T11:08:43-08:00"
+tags:
+- vancouver
+- blog
+title: 2020年の振り返りと2021年への抱負
+toc: true
+---
 
 # 2020年の振り返り
 
