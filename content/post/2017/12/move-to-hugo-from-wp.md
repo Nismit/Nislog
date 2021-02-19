@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2017-12-28T23:09:33-08:00
-title = "WordPressからHugoに移行しました"
-description = "WordPressでブログをしていましたが、今回新しく始めるにあたってブログシステムをHugoに移行しました"
-tags = ["blog", "hugo"]
-eyecatch = "/images/eyecatch/eye-move-to-hugo.jpg"
-toc = true
-+++
+---
+date: "2017-12-28T23:09:33-08:00"
+description: WordPressでブログをしていましたが、今回新しく始めるにあたってブログシステムをHugoに移行しました
+draft: false
+eyecatch: /images/eyecatch/eye-move-to-hugo.jpg
+lastmod: "2020-01-12T18:41:01-08:00"
+tags:
+- blog
+- hugo
+title: WordPressからHugoに移行しました
+toc: true
+---
 
 # ブログを新たに始めました
 以前は、<del>[Emiac-Works](https://emiac-works.com/)</del> というブログをしていたのですが、
@@ -31,7 +34,7 @@ WordPressは非常に良く出来たブログシステムだと思います。�
 仕事でもWordPressを使ってサイトを作成しています。
 僕の場合は運用していくに連れて、段々サイト高速化に取り組むようになりました。
 WordPressはPHPとDBで動いているので、フロント側で出来る事をしてしまうと最終的にサーバーサイドでの最適化になりました。
-もちろん自分にとって新しい分野だったので最初は楽しんでいましたが、段々とそういった事を考えるのが疲れてしまいました😇\
+もちろん自分にとって新しい分野だったので最初は楽しんでいましたが、段々とそういった事を考えるのが疲れてしまいました😇  
 もっとシンプルに記事を管理して、書けたらなぁと感じていました。
 
 ### ネット環境
@@ -41,8 +44,8 @@ WordPressの場合下書きを保存しておくのもネットが必要です�
 こんな事を考えるなんて、思ってもなかったですw
 
 ## Hugoとは
-Hugoは少し前に話題になったGo言語で作られた静的サイトジェネレーター(Static Site Generator)です。\
-静的サイトジェネレーターは現在ではかなりポピュラーなものだと思うので、説明は省きますが\
+Hugoは少し前に話題になったGo言語で作られた静的サイトジェネレーター(Static Site Generator)です。  
+静的サイトジェネレーターは現在ではかなりポピュラーなものだと思うので、説明は省きますが  
 有名なものは以下のものだと思います。
 
 - [Jekyll](https://jekyllrb-ja.github.io/) (Ruby製)

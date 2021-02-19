@@ -1,12 +1,16 @@
-+++
-draft = false
-date = 2020-01-04T22:29:10-08:00
-title = "バンクーバーでの就活と再就活を経て最低限すべき事と感じた事"
-description = "過去のメモや実際に就活して思った事をまとめています。個人的に必要だと思うポイントとフロントエンドで就活する事と前提にしています"
-tags = ["vancouver", "blog", "job-hunt"]
-eyecatch = "/images/eyecatch/eye-vancouver-jobhunting-todo.jpg"
-toc = true
-+++
+---
+date: "2020-01-04T22:29:10-08:00"
+description: 過去のメモや実際に就活して思った事をまとめています。個人的に必要だと思うポイントとフロントエンドで就活する事と前提にしています
+draft: false
+eyecatch: /images/eyecatch/eye-vancouver-jobhunting-todo.jpg
+lastmod: "2020-01-04T23:24:54-08:00"
+tags:
+- vancouver
+- blog
+- job-hunt
+title: バンクーバーでの就活と再就活を経て最低限すべき事と感じた事
+toc: true
+---
 
 # バンクーバーでの就活
 おそらく今バンクーバーで働いているフロントエンドの方々のほとんどがそれなりに就活は苦労したと思います。私自身も最初の就活はおよそ50社以上にはレジュメを送ったりと決まるまでは結構苦労しました。

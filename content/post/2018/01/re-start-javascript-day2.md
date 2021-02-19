@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2018-01-25T20:46:46-08:00
-title = "基礎からやっていくJavaScript再入門 - #2"
-description = "JavaScriptの基本の文法やJSにまつわる慣例的な書き方を勉強しました"
-tags = ["javascript", "js-series"]
-eyecatch = "/images/eyecatch/eye-javascript.png"
-toc = true
-+++
+---
+date: "2018-01-25T20:46:46-08:00"
+description: JavaScriptの基本の文法やJSにまつわる慣例的な書き方を勉強しました
+draft: false
+eyecatch: /images/eyecatch/eye-javascript.png
+lastmod: "2020-01-27T22:40:24-08:00"
+tags:
+- javascript
+- js-series
+title: '基礎からやっていくJavaScript再入門 - #2'
+toc: true
+---
 
 # JavaScript と ECMAScript
 ここ最近、ES5やECMAScriptという言葉を目にするようになって何か違うのか気になって調べたのでメモ。
@@ -34,7 +37,7 @@ ES5からStrict Mode(厳格モード)が実装されました。今までエラ�
 ## 2つの新しい変数宣言
 早速、ES2015が関係している内容になります😱\
 ES2015から新しい変数宣言が登場。`let`, `const`です。今やよく見るやつ。
-IE11, その他のモダンブラウザで基本的にそのまま使うことが出来るのでどんどん活用していく。\
+IE11, その他のモダンブラウザで基本的にそのまま使うことが出来るのでどんどん活用していく。
 
 `var, let` と `const` にはわかりやすい大きな違いが一つ。理由は **再代入不可** かどうか。
 つまり `const` は定数的扱いとして宣言する。
@@ -184,7 +187,7 @@ var that = this;
 ```
 
 # お願い
-なるべく間違いがないように、しっかりと自分の中で勉強、実際にコードを書いて確認した上で書いていますが間違った考えやさらに良い案などがあれば、是非是非教えてください。\
+なるべく間違いがないように、しっかりと自分の中で勉強、実際にコードを書いて確認した上で書いていますが間違った考えやさらに良い案などがあれば、是非是非教えてください。  
 ものすごく感謝します！！ めっちゃフランクに言ってください [@nismit_](https://twitter.com/nismit_) ✨
 
 **Change Log**

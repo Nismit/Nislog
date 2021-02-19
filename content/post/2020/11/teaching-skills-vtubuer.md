@@ -1,19 +1,21 @@
-+++
-draft = false
-date = 2020-11-10T16:25:10-08:00
-title = "Vtuberから学ぶ人に教える技術"
-description = "少し前にインターネットで少し話題になったVtuberが積分を教えるという配信を実際にみて、人に教えるという事についてや配信の感想などを残しています"
-tags = ["blog"]
-eyecatch = "/images/eyecatch/eye-teaching-skill-vtuber.jpg"
-toc = false
-+++
+---
+date: "2020-11-10T16:25:10-08:00"
+description: 少し前にインターネットで少し話題になったVtuberが積分を教えるという配信を実際にみて、人に教えるという事についてや配信の感想などを残しています
+draft: false
+eyecatch: /images/eyecatch/eye-teaching-skill-vtuber.jpg
+lastmod: "2020-11-10T22:59:33-08:00"
+tags:
+- blog
+title: Vtuberから学ぶ人に教える技術
+toc: false
+---
 
 # はじめに
 ここ数ヶ月Vtuberにハマってしまい、色々な動画や配信を見ています。特に好きなのはホロライブのメンバー達を中心に見ています。サメちゃん可愛いし英語の発音がキレイで聞き取りやすくて勉強がてらに生放送など見てます！
 
 そんな事は置いといて、見た動画はコレ。
 
-<iframe width="100%" height="386" style="margin-bottom: 1rem;" src="https://www.youtube.com/embed/A10g9qAC2vQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/A10g9qAC2vQ" />
 
 にじさんじというVtuberグループ会社所属の魔界ノりりむとグウェル・オス・ガール(以下りりむとグウェルとします)の二人の配信です。数学ガールの著者である結城浩さんがツイートしてたり、一時期ネット上で少し話題になりました。
 そして二人で配信した放送はりりむが積分の問題を解けるまで終われない耐久放送で8時間にも及ぶ超大作なんですがこれが色んなドラマがあって最後は少し感動してしまうレベルでした。私は特にグウェルの教える方法やスタンスが凄く良かったので自分なりに感じたものをメモしておこうと思いました。

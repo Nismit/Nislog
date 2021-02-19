@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2018-01-06T13:13:02-08:00
-title = "CentOS7.2 PHP7.xのインストール方法"
-description = "CentOS 7.2での最新版PHPの7.x系インストール方法の備忘録です。"
-tags = ["centos", "php"]
-eyecatch = ""
-toc = false
-+++
+---
+date: "2018-01-06T13:13:02-08:00"
+description: CentOS 7.2での最新版PHPの7.x系インストール方法の備忘録です。
+draft: false
+eyecatch: ""
+lastmod: "2018-01-06T22:41:30-08:00"
+tags:
+- centos
+- php
+title: CentOS7.2 PHP7.xのインストール方法
+toc: false
+---
 
 CentOS7の標準レポジトリのPHP5.4ですが、PHPの現時点での最新バージョンは`7.2.1` です。
 (2018/01/06 時点)
@@ -31,7 +34,7 @@ $ rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 ```
 
 ### 古いPHPの削除
-yumで管理されていたPHP5を念のため削除します。\
+yumで管理されていたPHP5を念のため削除します。  
 この際にphp.iniを色々書き換えている場合はバックアップを取っておいた方が良いと思います。
 新しいPHPをインストールした時点で、php.iniが書き換わる為です。
 

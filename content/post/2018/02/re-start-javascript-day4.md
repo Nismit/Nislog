@@ -1,12 +1,15 @@
-+++
-draft = true
-date = 2018-02-18T23:18:15-08:00
-title = "基礎からやっていくJavaScript再入門 - #4"
-description = "JavaScriptにおいて最も重要な要素であるオブジェクトについて調べてみた"
-tags = ["javascript", "js-series"]
-eyecatch = "/images/eyecatch/eye-javascript.png"
-toc = true
-+++
+---
+date: "2018-02-18T23:18:15-08:00"
+description: JavaScriptにおいて最も重要な要素であるオブジェクトについて調べてみた
+draft: true
+eyecatch: /images/eyecatch/eye-javascript.png
+lastmod: "2019-12-28T19:58:54-08:00"
+tags:
+- javascript
+- js-series
+title: '基礎からやっていくJavaScript再入門 - #4'
+toc: true
+---
 
 # オブジェクト
 JavaScriptにおいて、最も重要で奥が深いオブジェクトの基礎周りについて調べてみました✨ 少しづつ理解していけば多分大丈夫なハズ！着実に学んで行きましょう:)

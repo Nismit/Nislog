@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-08-02T18:50:38-07:00
-title = "5億年ぶりぐらいにdotfilesを更新/改良した"
-description = "5億年は全くの嘘ですが3年ぶりぐらいにdotfilesを更新しました。作った当初は使っていましたが環境の変化などで使わなくなってしまいましたが気分転換もかねて久々に大更新をしました"
-tags = ["dotfiles", "shell"]
-eyecatch = "/images/eyecatch/eye-update-dotfiles.jpg"
-toc = false
-+++
+---
+date: "2020-08-02T18:50:38-07:00"
+description: 5億年は全くの嘘ですが3年ぶりぐらいにdotfilesを更新しました。作った当初は使っていましたが環境の変化などで使わなくなってしまいましたが気分転換もかねて久々に大更新をしました
+draft: false
+eyecatch: /images/eyecatch/eye-update-dotfiles.jpg
+lastmod: "2020-08-02T19:12:20-07:00"
+tags:
+- dotfiles
+- shell
+title: 5億年ぶりぐらいにdotfilesを更新/改良した
+toc: false
+---
 
 # 久しぶりにdotfilesを更新した
 初めて作ったのは3年前で、確か半年ぐらいはちゃんとその設定で使っていたんですが環境の変化などもあり全く触っていませんでした。触らなくなった理由としては、

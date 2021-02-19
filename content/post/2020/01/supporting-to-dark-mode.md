@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-01-10T00:16:53-08:00
-title = "ブログのテーマをダークモードに対応した"
-description = "会社のマシンや個人のマシンもダークモードにしたり、携帯もダークモードにしていてブログを見ると少しキツかったのでついにダークモードに対応しました。"
-tags = ["blog", "css"]
-eyecatch = "/images/eyecatch/eye-supporting-to-darkmode.jpg"
-toc = false
-+++
+---
+date: "2020-01-10T00:16:53-08:00"
+description: 会社のマシンや個人のマシンもダークモードにしたり、携帯もダークモードにしていてブログを見ると少しキツかったのでついにダークモードに対応しました。
+draft: false
+eyecatch: /images/eyecatch/eye-supporting-to-darkmode.jpg
+lastmod: "2020-01-10T00:52:34-08:00"
+tags:
+- blog
+- css
+title: ブログのテーマをダークモードに対応した
+toc: false
+---
 
 # ダークモードについて
 今日ではMacOSやiPhone/Androidがダークモードをサポートしており、様々なアプリやサービスも追従してダークモードをサポートしています。ダークモードの始まりはスマートフォンの有機ELディスプレイが出たからだと思います。

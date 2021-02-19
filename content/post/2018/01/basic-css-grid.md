@@ -1,12 +1,15 @@
-+++
-draft = true
-date = 2018-01-28T18:47:39-08:00
-title = "CSS Grid Layoutを調べて、サンプルを作って見た"
-description = "IEのみプレフィックスがいるものの、モダンブラウザでは実装済みのCSS Grid Layoutを試して見た"
-tags = ["css", "css-grid"]
-eyecatch = ""
-toc = true
-+++
+---
+date: "2018-01-28T18:47:39-08:00"
+description: IEのみプレフィックスがいるものの、モダンブラウザでは実装済みのCSS Grid Layoutを試して見た
+draft: true
+eyecatch: ""
+lastmod: "2019-04-28T15:17:16-07:00"
+tags:
+- css
+- css-grid
+title: CSS Grid Layoutを調べて、サンプルを作って見た
+toc: true
+---
 
 # CSS Grid Layoutとは
 簡単にいうとグリッド状に配置出来るやつです。テーブルに近いけども、基本形はテーブルよりもタグは少ないです。

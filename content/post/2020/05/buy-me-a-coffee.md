@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2020-05-16T15:38:59-07:00
-title = "Buy Me A Coffeeというサービスを導入してみました"
-description = "Buy Me A Coffeeはいわゆる投げ銭+サブスクリプションが合わさったサービスで気になったので自分のブログに入れてみる事にしました。"
-tags = ["blog", "vancouver"]
-eyecatch = "/images/eyecatch/eye-buy-me-a-coffee.jpg"
-toc = false
-+++
+---
+date: "2020-05-16T15:38:59-07:00"
+description: Buy Me A Coffeeはいわゆる投げ銭+サブスクリプションが合わさったサービスで気になったので自分のブログに入れてみる事にしました。
+draft: false
+eyecatch: /images/eyecatch/eye-buy-me-a-coffee.jpg
+lastmod: "2020-05-16T19:48:25-07:00"
+tags:
+- blog
+- vancouver
+title: Buy Me A Coffeeというサービスを導入してみました
+toc: false
+---
 
 # Buy Me A Coffeeというサービスを導入してみました
 このサービスは所謂、YouTubeでいうスーパーチャットとスポンサーと同じです。投げ銭とサブスクリプションの機能がついたプラットフォームです。コーヒー1杯を買ってあげるというネーミングに惹かれたので使ってみる事にしました。

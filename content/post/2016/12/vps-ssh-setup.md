@@ -1,24 +1,26 @@
-+++
-draft = false
-date = 2016-12-07T19:01:51Z
-title = "[VPS]CentOS7.2の初期設定(1) -SSH編"
-description = "CentOS7.2の初期設定 その1 SSH編です。サーバーを立てた段階では色々と設定が必要ですが、まずはセキュアな通信を行いサーバーにアクセスする必要があります。今回は、作業用ユーザを作成後、ポート変更や公開鍵方式のログイン、ローカルからのSSH接続のショートカットの設定を行います。"
-tags = ["server", "vps"]
-eyecatch = ""
-toc = true
-+++
+---
+date: "2016-12-07T19:01:51Z"
+description: CentOS7.2の初期設定 その1 SSH編です。サーバーを立てた段階では色々と設定が必要ですが、まずはセキュアな通信を行いサーバーにアクセスする必要があります。今回は、作業用ユーザを作成後、ポート変更や公開鍵方式のログイン、ローカルからのSSH接続のショートカットの設定を行います。
+draft: false
+eyecatch: ""
+lastmod: "2018-01-06T13:24:51-08:00"
+tags:
+- server
+- vps
+title: '[VPS]CentOS7.2の初期設定(1) -SSH編'
+toc: true
+---
 
 # はじめに
-以前のブログで書いた記事を再編集しました。(2018/01/06)\
+以前のブログで書いた記事を再編集しました。(2018/01/06)  
 VPSは今回が初めてで知識レベルとしてはほぼ初心者であり、Webで色々調べながら設定をしています。
-間違った設定ではないと思いますが、回りくどい設定をしている可能性があります。その点はご了承ください！\
-参考までに、Macのターミナルを使ったことがあり、viエディタの文字挿入、保存などのコマンドも理解している程度です。\
-\
-設定環境\
-ローカル: MacOS: Mac Sierra\
-VPS: [ConoHa VPS](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)\
-OS: CentOS Linux release 7.2.1511 (Core)
+間違った設定ではないと思いますが、回りくどい設定をしている可能性があります。その点はご了承ください！  
+参考までに、Macのターミナルを使ったことがあり、viエディタの文字挿入、保存などのコマンドも理解している程度です。  
 
+設定環境  
+ローカル: MacOS: Mac Sierra  
+VPS: [ConoHa VPS](https://www.conoha.jp/)  
+OS: CentOS Linux release 7.2.1511 (Core)
 ## SSHでの接続
 VPSは起動したまま、IPアドレスがマシンに割り当てられてるはずなので以下のコマンドをMacのターミナルで実行。
 
@@ -26,8 +28,8 @@ VPSは起動したまま、IPアドレスがマシンに割り当てられてる
 ssh root@xxx.xxx.xxx.xxx
 ```
 
-先程設定したrootパスワードを入力\
-初めての接続なので、Are you sure you want to continue connecting? と聞かれるはずです。\
+先程設定したrootパスワードを入力  
+初めての接続なので、Are you sure you want to continue connecting? と聞かれるはずです。
 
 ```
 The authenticity of host ‘xxx.xxx.xxx.xxx (xxx.xxx.xxx.xxx)' can't be established.
@@ -39,9 +41,8 @@ root@xxx.xxx.xxx.xxx's password: //パスワードを入力
 [root@xxx.xxx.xxx.xxx ~]#
 ```
 
-これで、アクセスが出来ました。\
-今後は省略として、#はrootでのコマンドライン、$は後ほど設定する作業用ユーザまたはローカル環境のコマンドラインとします。\
-
+これで、アクセスが出来ました。  
+今後は省略として、#はrootでのコマンドライン、$は後ほど設定する作業用ユーザまたはローカル環境のコマンドラインとします。  
 ## パッケージのアップデート
 
 ```
@@ -74,7 +75,7 @@ wheelというグループに所属させる、という感じですが、wheel�
 # gpasswd -a devuser wheel
 ```
 
-suコマンドを制限する\
+suコマンドを制限する  
 suコマンドはユーザの切り替えが可能である為、セキュリティを少しでも上げる為にwheelグループ以外からのsuコマンドを実行出来ないようにします。
 
 ```
@@ -92,7 +93,7 @@ auth required pam_wheel.so use_uid
 [devuser@xxx.xxx.xxx.xxx ~]$
 ```
 
-ターミナルの左側の名前がrootから作業用ユーザ名に切り替わっていればOK!\
+ターミナルの左側の名前がrootから作業用ユーザ名に切り替わっていればOK!  
 作業用ユーザに切り替えたら、sudoコマンドが実行できるかチェックしておきます。
 
 ```
@@ -199,7 +200,7 @@ $ chmod 600 test.pub
 $ mv test.pub authorized_keys
 ```
 
-これは、[ConoHa](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)のサーバーのSSHの設定で公開鍵のファイル名がこうなっているので変更しておきます。
+これは、[ConoHa](https://www.conoha.jp/)のサーバーのSSHの設定で公開鍵のファイル名がこうなっているので変更しておきます。
 
 ## サーバに公開鍵をアップロード
 
@@ -261,7 +262,7 @@ GSSAPIAuthentication no
 ひとまず、SSHのconfigファイルを触りましたが接続するポートを変更しているので、ポートの設定を変更します。
 Cent OS7.x系では、iptablesからfirewallというものに変更になりコマンド等が大きく違うようです。
 
-[ConoHa](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)ではデフォルトでfirewallが自動起動になっていると思いますが、念のためチェック。
+[ConoHa](https://www.conoha.jp/)ではデフォルトでfirewallが自動起動になっていると思いますが、念のためチェック。
 
 ```
 $ systemctl status firewalld.service
@@ -292,7 +293,7 @@ port=“22” から “59876”に変更します。
 
 この時点でもかなり初めての方には大変だと思います。詳しい説明は、以下のリンクにて書かれております。時間があるときにゆっくりと読んでみてください。
 
-[CentOS7のfirewalldをまじめに使うはじめの一歩（systemdも少し） - Qiita](http://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
+[CentOS7のfirewalldをまじめに使うはじめの一歩（systemdも少し） - Qiita](https://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
 
 書き換わったことを確認して、firewallのリロードを行います。
 
@@ -368,10 +369,10 @@ $ ssh conoha
 またショートカットを作成しない場合はsshのオプション `-i /path/to/rsa_key` という感じで指定してあげます。
 それでも接続出来ない場合は、私が見落としていたポイントを列挙します。
 
-- サーバ側の.sshディレクトリのパーミッション変更忘れ</li>
-- 秘密/公開鍵のパーミッション変更忘れ</li>
-- sshd_configファイルの設定漏れ</li>
-- sshdの設定の再読み込みのし忘れ</li>
+- サーバ側の.sshディレクトリのパーミッション変更忘れ
+- 秘密/公開鍵のパーミッション変更忘れ
+- sshd_configファイルの設定漏れ
+- sshdの設定の再読み込みのし忘れ
 
 SSHで接続出来なくても、[ConoHa](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)のサーバページからコンソールで直接アクセス可能ですので、諦めないでください。
 
@@ -379,10 +380,10 @@ SSHで接続出来なくても、[ConoHa](https://www.conoha.jp/referral/?token=
 本当に詰まった時はサーバ再構築も可能ですので失敗を恐れずにどんどん試してみましょう！
 
 # 参考サイト
-[ConohaにVPSを設置して、SSHログイン、ポート番号変更、rootログイン禁止までを30分で！ - Qiita](http://qiita.com/ongaeshi/items/bb17ebfbd4d22057c8fd)\
+[ConohaにVPSを設置して、SSHログイン、ポート番号変更、rootログイン禁止までを30分で！ - Qiita](https://qiita.com/ongaeshi/items/bb17ebfbd4d22057c8fd)
 
-[サーバをセキュアにするために最低限やっておくべきOpenSSHの設定 | CentOS | daily memorandum 3.0.0](http://lovepeers.org/2012/09/18/openssh-minimum-configs/)\
+[サーバをセキュアにするために最低限やっておくべきOpenSSHの設定 | CentOS | daily memorandum 3.0.0](https://lovepeers.org/2012/09/18/openssh-minimum-configs/)
 
-[ConoHaでVPSを借りて、SSH接続などの初期設定 - tkm_71のブログ](http://tkm-71.hatenablog.com/entry/2016/03/20/153825)\
+[ConoHaでVPSを借りて、SSH接続などの初期設定 - tkm_71のブログ](https://tkm-71.hatenablog.com/entry/2016/03/20/153825)
 
 [TCPやUDPにおけるポート番号の一覧 - Wikipedia](https://ja.wikipedia.org/wiki/TCP%E3%82%84UDP%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%9D%E3%83%BC%E3%83%88%E7%95%AA%E5%8F%B7%E3%81%AE%E4%B8%80%E8%A6%A7)

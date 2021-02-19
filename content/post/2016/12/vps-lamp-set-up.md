@@ -1,29 +1,32 @@
-+++
-draft = false
-date = 2016-12-07T19:02:34Z
-title = "[VPS]CentOS7.2の初期設定(2) -LAMPインストール編"
-description = "ConoHa VPSでCentOS7.2の初期設定 LAMP環境の構築編です。MariaDB(MySQL),PHPのインストールとApache/MariaDBの起動と自動起動の設定を行います。"
-tags = ["server", "vps"]
-eyecatch = ""
-toc = true
-+++
+---
+date: "2016-12-07T19:02:34Z"
+description: ConoHa VPSでCentOS7.2の初期設定 LAMP環境の構築編です。MariaDB(MySQL),PHPのインストールとApache/MariaDBの起動と自動起動の設定を行います。
+draft: false
+eyecatch: ""
+lastmod: "2018-01-06T22:41:30-08:00"
+tags:
+- server
+- vps
+title: '[VPS]CentOS7.2の初期設定(2) -LAMPインストール編'
+toc: true
+---
 
-以前のブログで書いた記事を再編集しました。(2018/01/06)\
+以前のブログで書いた記事を再編集しました。(2018/01/06)  
 CentOS7.2の初期設定 LAMPインストール編
-[前回]({{< ref "vps-ssh-setup.md" >}})の続きとなりますが、設定環境及び作業用ユーザ名は以下となります。
+[前回](/post/2016/12/vps-ssh-setup)の続きとなりますが、設定環境及び作業用ユーザ名は以下となります。
 
-設定環境\
-ローカル: MacOS: Mac Sierra\
-VPS: [ConoHa VPS](https://www.conoha.jp/referral/?token=LzqWKoEVPLE9NxlhMZLBT_RTAnBxkAThfKmD8lDJirkrQsD0cYg-GD6)\
-OS: CentOS Linux release 7.2.1511 (Core)\
+設定環境  
+ローカル: MacOS: Mac Sierra  
+VPS: [ConoHa VPS](https://www.conoha.jp/)  
+OS: CentOS Linux release 7.2.1511 (Core)  
 作業用ユーザ名: devuser
 
 
-SSHの設定、SSHのショートカットコマンドについては、[前回の投稿]({{< ref "vps-ssh-setup.md" >}})の最後で説明しております。
+SSHの設定、SSHのショートカットコマンドについては、[前回の投稿](/post/2016/12/vps-ssh-setup)の最後で説明しております。
 
 # PHPのインストール
-サーバーにアクセスしたら、早速yumでphpのファイル群をインストールします。\
-最新のPHP7をインストールには[こちら]({{< ref "vps-php-7-install.md" >}})の記事をご覧ください。
+サーバーにアクセスしたら、早速yumでphpのファイル群をインストールします。  
+最新のPHPをインストールには[こちら](/post/2018/01/vps-php-7-install)の記事をご覧ください。
 
 ```
 $ ssh conoha
@@ -58,7 +61,7 @@ Copyright (c) 1997-2013 The PHP Group
 Zend Engine v2.4.0, Copyright (c) 1998-2013 Zend Technologies
 ```
 
-最新のPHP7をインストールには[こちら]({{< ref "vps-php-7-install.md" >}})の記事をご覧ください。
+最新のPHP7をインストールには[こちら](/post/2018/01/vps-php-7-install)の記事をご覧ください。
 
 ## php.ini の設定
 PHPをインストールしたら、php.iniの設定を行います。
@@ -83,7 +86,7 @@ short_open_tag = Off
 # MariaDB(MySQL)のインストール
 CentOS7.x から MySQLでは無く、互換性のあるMariaDBに変更になったようです。
 気になる点と言えば、<del>WordPressが問題なく動作するかどうかなので、色々調べましたが大丈夫そうです。
-ですが、私のように移行を考えている方は、LAMP環境を整えた後にテスト環境を構築して、一度テストする事を強くお勧めします。</del>\
+ですが、私のように移行を考えている方は、LAMP環境を整えた後にテスト環境を構築して、一度テストする事を強くお勧めします。</del>  
 なんの問題もなくWordPressは動作しています(2018/01/06)
 
 ```
@@ -117,9 +120,9 @@ $ sudo yum -y install httpd
 ```
 
 # MariaDBとApacheの自動起動の設定
-MariaDB,Apacheのインストールが完了しましたが、データベースもWebサーバーもまだ動いていません。\
+MariaDB,Apacheのインストールが完了しましたが、データベースもWebサーバーもまだ動いていません。  
 また、DBやApacheの起動後にVPSの再起動などを行うと自動起動が有効になっていないため、手動で動かす必要があります。
-それぞれの起動と自動起動の設定手順となります。\
+それぞれの起動と自動起動の設定手順となります。  
 サーバー上でMariaDBとApacheが起動しているのかをチェックします。
 
 ```
@@ -177,7 +180,7 @@ $ systemctl list-unit-files | grep mariadb
 mariadb.service enabled
 ```
 
-enabledで有効となっています。\
+enabledで有効となっています。  
 Apacheも同じように起動と自動起動の登録を行います。
 
 ```
@@ -259,14 +262,14 @@ rich rules:
 
 servicesの項目に、httpが追加されていると思います。これでhttpのポートは開いています。
 
-[CentOS7のfirewalldをまじめに使うはじめの一歩（systemdも少し） - Qiita](http://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
+[CentOS7のfirewalldをまじめに使うはじめの一歩（systemdも少し） - Qiita](https://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
 
 Webブラウザで http://xxx.xxx.xxx.xxx でApacheのテストページが表示されると思います。
 次回は、Apache/MariaDBの設定を行います。
 
 # 参考サイト
-[CentOS 7 でLAMP(Apache+MariaDB(MySQL)+PHP)インストールからWordPressを動かすまで(Apache編) | レンタルサーバー・自宅サーバー設定・構築のヒント](http://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
+[CentOS 7 でLAMP(Apache+MariaDB(MySQL)+PHP)インストールからWordPressを動かすまで(Apache編) | レンタルサーバー・自宅サーバー設定・構築のヒント](https://qiita.com/shrkw/items/8410e9cb65eb789a40e1)
 
-[ConoHaでCentOS7.1入れてウェブサーバ建てた備忘録（２） - shuto_log.aep](http://shutosg.hatenadiary.com/entry/2015/12/01/125220)
+[ConoHaでCentOS7.1入れてウェブサーバ建てた備忘録（２） - shuto_log.aep](https://shutosg.hatenadiary.com/entry/2015/12/01/125220)
 
-[【PHP】PHPをインストールしたらやっておきたい設定 - Qiita](http://qiita.com/knife0125/items/0e1af52255e9879f9332)
+[【PHP】PHPをインストールしたらやっておきたい設定 - Qiita](https://qiita.com/knife0125/items/0e1af52255e9879f9332)

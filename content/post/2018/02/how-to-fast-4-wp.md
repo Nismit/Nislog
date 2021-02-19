@@ -1,12 +1,15 @@
-+++
-draft = false
-date = 2018-02-04T22:00:31-08:00
-title = "WordPressの高速化のテクニック"
-description = "ある程度WordPressを使ったサイトなどを作っていると行き着くのがサイト高速化。フロントエンドからバックエンドまで様々なテクニックがあるので一度整理しておこうと思います！"
-tags = ["wordpress", "performance"]
-eyecatch = "/images/eyecatch/eye-wordpress.jpg"
-toc = true
-+++
+---
+date: "2018-02-04T22:00:31-08:00"
+description: ある程度WordPressを使ったサイトなどを作っていると行き着くのがサイト高速化。フロントエンドからバックエンドまで様々なテクニックがあるので一度整理しておこうと思います！
+draft: false
+eyecatch: /images/eyecatch/eye-wordpress.jpg
+lastmod: "2019-09-21T22:10:20-07:00"
+tags:
+- wordpress
+- performance
+title: WordPressの高速化のテクニック
+toc: true
+---
 
 # はじめに
 WordPressの高速化をするために出来る事を書いています。詳しく手法までは知識のみでしか知らなかったりします。その知識も曖昧だったりします。いつもどんな事して高速化を図っているかなと思ったので書いてみました。よく使っているWebサービスとかプラグインがあればリンクを載せています。また最近知ったもの、知っているものの試せていないもの等も書いています。
@@ -93,7 +96,7 @@ PHP5.5以降からはこのAPCuと言うものが使えます。APCuはPHPでメ
 - [W3 Total Cache](https://ja.wordpress.org/plugins/w3-total-cache/) - Super Cacheの対抗馬的プラグイン
 
 ## サーバー
-キャッシュも強力ではありますが、そもそものサーバー自体の処理能力が低い場合はサーバー自体の引っ越しをすることで変わると思います。\
+キャッシュも強力ではありますが、そもそものサーバー自体の処理能力が低い場合はサーバー自体の引っ越しをすることで変わると思います。  
 またApacheからNginxにWEBサーバーを変更することでもパフォーマンスが改善出来るかもしれません。Apache/Nginxはそれぞれメリット/デメリットがあるのでサイトの構造などを考えた上で決めていくといいと思います。
 
 ## WordPress専用OS
