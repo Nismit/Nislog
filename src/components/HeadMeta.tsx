@@ -19,7 +19,7 @@ const HeadMeta: React.FC<Props> = ({ tags }) => {
             <meta property="og:title" key="og_title" content={tags.title ? tags.title : data.siteName}/>
             <meta property="og:description" key="og_description" content={tags.description ? tags.description : data.siteDescription}/>
             <meta property="og:url" key="og_URL" content={tags.slug ? tags.slug : ''}/>
-            <meta property="og:image" key="og_image" content={tags.eyecatch ? tags.eyecatch : ''}/>
+            <meta property="og:image" key="og_image" content={tags.eyecatch ? tags.eyecatch : data.siteImage}/>
             <meta property="og:site_name" key="og_site_name" content={tags.title ? tags.title : data.siteName}/>
 
             <meta name="twitter:card" key="twitter_card" content="summary_large_image"/>
@@ -29,7 +29,7 @@ const HeadMeta: React.FC<Props> = ({ tags }) => {
 
             {/* <meta name="robots" content={`${tags.robots}`}/> */}
 
-            <link rel="canonical" key="canonical" href={tags.slug ? tags.slug : ''}/>
+            {tags.slug ? <link rel="canonical" key="canonical" href={tags.slug}/> : null}
         </Head>
     )
 }
