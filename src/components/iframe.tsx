@@ -2,8 +2,9 @@ type Props = {
     url: string
 }
 
-const iframeComponent = (url: string) => {
-    const code = `
+const Iframe: React.FC<Props> = ({ url }) => {
+    return <div dangerouslySetInnerHTML={{ 
+        __html: `
         <iframe 
             width="100%" 
             height="386" 
@@ -11,16 +12,10 @@ const iframeComponent = (url: string) => {
             src="${url}" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
-    `;
-
-    return {
-        __html: code
-    }
-}
-
-const Iframe: React.FC<Props> = ({ url }) => {
-    return <div dangerouslySetInnerHTML={ iframeComponent(url) } />
+            allowfullscreen>
+        </iframe>
+        `
+    }} />
 }
 
 export default Iframe;
