@@ -18,18 +18,18 @@ const HeadMeta: React.FC<Props> = ({ tags }) => {
             <meta property="og:type" key="og_type" content={tags.type ? tags.type : 'website'}/>
             <meta property="og:title" key="og_title" content={tags.title ? tags.title : data.siteName}/>
             <meta property="og:description" key="og_description" content={tags.description ? tags.description : data.siteDescription}/>
-            <meta property="og:url" key="og_URL" content={tags.slug ? tags.slug : ''}/>
-            <meta property="og:image" key="og_image" content={tags.eyecatch ? tags.eyecatch : data.siteImage}/>
+            <meta property="og:url" key="og_URL" content={tags.slug ? `${process.env.NEXT_PUBLIC_BASE_URL}/${tags.slug}` : ''}/>
+            <meta property="og:image" key="og_image" content={tags.eyecatch ? `${process.env.NEXT_PUBLIC_BASE_URL}/${tags.eyecatch}` : data.siteImage}/>
             <meta property="og:site_name" key="og_site_name" content={tags.title ? tags.title : data.siteName}/>
 
             <meta name="twitter:card" key="twitter_card" content="summary_large_image"/>
             <meta name="twitter:description" key="twitter_description" content={tags.description ? tags.description : data.siteDescription}/>
             <meta name="twitter:site" key="twitter_site" content={`@${data.twitter}`}/>
-            <meta name="twitter:image:src" key="twitter_img" content={tags.eyecatch ? tags.eyecatch : ''}/>
+            <meta name="twitter:image:src" key="twitter_img" content={tags.eyecatch ? `${process.env.NEXT_PUBLIC_BASE_URL}/${tags.eyecatch}` : ''}/>
 
             {/* <meta name="robots" content={`${tags.robots}`}/> */}
 
-            {tags.slug ? <link rel="canonical" key="canonical" href={tags.slug}/> : null}
+            {tags.slug ? <link rel="canonical" key="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL}/${tags.slug}`}/> : null}
         </Head>
     )
 }
