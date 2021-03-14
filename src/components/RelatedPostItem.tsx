@@ -7,8 +7,7 @@ type Props = {
 
 const RelatedPostItem: React.FC<Props> = ({ post }) => {
     const convertedDate = new Date(post.date);
-    const dateOption = { year: 'numeric', month: '2-digit', day: '2-digit' }
-    const formattedDate = convertedDate.toLocaleDateString('ja-JP', dateOption);
+    const formattedDate = convertedDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' });
 
     return (
         <>
