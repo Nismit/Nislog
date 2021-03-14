@@ -19,14 +19,15 @@ import RelatedPosts from '../../components/RelatedPosts';
 
 type Props = {
     post: PostType,
+    mdxSource: MdxRemote.Source,
     relatedPosts: PostType[]
 }
 
 const components: MdxRemote.Components = { Iframe }
 
-const Post: React.FC<Props> = ({ post, relatedPosts }) => {
+const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
     const router = useRouter();
-    const content = hydrate(post.content, { components });
+    const content = hydrate(mdxSource, { components });
     const meta = {
         slug: post.slug,
         title: post.title,
@@ -86,7 +87,7 @@ export async function getStaticProps({ params }: Params) {
         'tags',
     ]);
 
-    const content = await renderToString(post.content, { components });
+    const mdxSource = await renderToString(post.content, { components });
     const tags: string[] = [...new Set(post.tags)];
     
     const postsFromTags = await getPostsFromTag(tags, [
@@ -103,10 +104,8 @@ export async function getStaticProps({ params }: Params) {
 
     return {
         props: {
-            post: {
-                ...post,
-                content,
-            },
+            post: { ...post },
+            mdxSource: mdxSource,
             relatedPosts: filteredPostsFromTags
         },
     }
