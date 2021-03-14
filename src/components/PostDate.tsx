@@ -9,8 +9,7 @@ const PostDate: React.FC<Props> = ({ publishDate, lastModifiedDate = null }) => 
     const isModified = lastModifiedDate !== null ? true : false;
     const lastEditDate = lastModifiedDate !== null ? lastModifiedDate : publishDate;
     const convertedDate = new Date(lastEditDate);
-    const dateOption = { year: 'numeric', month: '2-digit', day: '2-digit' }
-    const formattedDate = convertedDate.toLocaleDateString('ja-JP', dateOption);
+    const formattedDate = convertedDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' });
 
     return (
         <_PostDate>
