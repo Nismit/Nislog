@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -24,19 +24,19 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "gray-matter": "^4.0.2",
-    "next": "^10.0.5",
+    "next": "^10.1.3",
     "next-mdx-remote": "^2.1.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "remark-breaks": "^2.0.1"
+    "remark-breaks": "^2.0.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.1.21",
     "@storybook/react": "^6.1.14",
-    "@types/node": "^14.14.35",
+    "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.2",
+    "@types/react-dom": "^17.0.3",
     "babel-loader": "^8.2.2",
     "fast-glob": "^3.2.5",
     "typescript": "^4.2.3"
