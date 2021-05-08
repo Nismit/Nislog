@@ -1,8 +1,5 @@
-import hydrate from 'next-mdx-remote/hydrate';
-import renderToString from 'next-mdx-remote/render-to-string';
-import { MdxRemote } from 'next-mdx-remote/types';
-import PostType from '../../types/post';
-import { getAllPosts, getAllTags } from '../lib/api';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import HeadMeta from '../components/HeadMeta';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
@@ -10,7 +7,7 @@ import Footer from '../components/Footer';
 import Content from '../components/Content';
 
 type Props = {
-    source: MdxRemote.Source
+    source: MDXRemoteSerializeResult
 }
 
 const article = `
@@ -74,20 +71,21 @@ FPSゲーマー。(主にCoDシリーズ、BFシリーズが好きです)\
 
 const About: React.FC<Props> = ({ source }) => {
     const meta = {}
-    const content = hydrate(source, {});
 
     return (
         <Layout>
             <HeadMeta tags={meta} />
             <Header />
-            <Content content={content} />
+            <Content>
+                <MDXRemote {...source} />
+            </Content>
             <Footer />
         </Layout>
     )
 }
 
 export async function getStaticProps() {
-    const mdxSource = await renderToString(article, {});
+    const mdxSource = await serialize(article);
     return { 
         props: { 
             source: mdxSource 
