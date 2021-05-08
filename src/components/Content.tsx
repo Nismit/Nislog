@@ -2,13 +2,13 @@ import { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 type Props = {
-    content: ReactNode
+    children: JSX.Element
 }
 
-const Content: React.FC<Props> = ({ content }) => {
+const Content: React.FC<Props> = ({ children }) => {
     return (
         <section className="full-bleed">
-            <_Content>{content}</_Content>
+            <_Content>{children}</_Content>
         </section>
     )
 }

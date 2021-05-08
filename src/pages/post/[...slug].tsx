@@ -1,8 +1,7 @@
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
-import hydrate from 'next-mdx-remote/hydrate';
-import { MdxRemote } from 'next-mdx-remote/types';
-import renderToString from 'next-mdx-remote/render-to-string';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { getAllPosts, getPostBySlug, getPostsFromTag } from '../../lib/api';
 import PostType from '../../../types/post';
 import HeadMeta from '../../components/HeadMeta';
@@ -19,15 +18,14 @@ import RelatedPosts from '../../components/RelatedPosts';
 
 type Props = {
     post: PostType,
-    mdxSource: MdxRemote.Source,
+    mdxSource: MDXRemoteSerializeResult,
     relatedPosts: PostType[]
 }
 
-const components: MdxRemote.Components = { Iframe }
+const components = { Iframe }
 
 const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
     const router = useRouter();
-    const content = hydrate(mdxSource, { components });
     const meta = {
         slug: post.slug,
         title: post.title,
@@ -52,7 +50,9 @@ const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
                     lastmod={post.lastmod} 
                     eyecatch={post.eyecatch} 
                 />
-                <Content content={content} />
+                <Content>
+                    <MDXRemote {...mdxSource} components={components} />
+                </Content>
                 <Tags data={post.tags} />
                 <ContentFooter slug={post.slug} title={post.title} />
                 <AuthorCard />
@@ -87,7 +87,7 @@ export async function getStaticProps({ params }: Params) {
         'tags',
     ]);
 
-    const mdxSource = await renderToString(post.content, { components });
+    const mdxSource = await serialize(post.content);
     const tags: string[] = [...new Set(post.tags)];
     
     const postsFromTags = await getPostsFromTag(tags, [
