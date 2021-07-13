@@ -23,6 +23,7 @@
     ],
     "include": [
         "next-env.d.ts",
+        "gtag.d.ts",
         "**/*.ts",
         "**/*.tsx"
     ]
