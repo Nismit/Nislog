@@ -8,5 +8,6 @@ updates:
     schedule:
       interval: "daily"
     target-branch: "develop"
+    open-pull-requests-limit: 10
     reviewers:
       - "Nismit"
