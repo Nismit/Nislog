@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,6 @@
     "@types/node": "^16.11.6",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
-    "babel-loader": "^8.2.3",
     "fast-glob": "^3.2.7",
     "typescript": "^4.4.3"
   }
