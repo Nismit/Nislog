@@ -25,7 +25,7 @@ const HeadMeta: React.FC<Props> = ({ tags }) => {
             <meta name="twitter:card" key="twitter_card" content="summary_large_image"/>
             <meta name="twitter:description" key="twitter_description" content={tags.description ? tags.description : data.siteDescription}/>
             <meta name="twitter:site" key="twitter_site" content={`@${data.twitter}`}/>
-            <meta name="twitter:image:src" key="twitter_img" content={tags.eyecatch ? `${process.env.NEXT_PUBLIC_BASE_URL}/${tags.eyecatch}` : ''}/>
+            <meta name="twitter:image:src" key="twitter_img" content={tags.eyecatch ? `${process.env.NEXT_PUBLIC_BASE_URL}/${tags.eyecatch}` : data.siteImage}/>
 
             {/* <meta name="robots" content={`${tags.robots}`}/> */}
 
