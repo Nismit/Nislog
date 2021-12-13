@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -21,23 +21,23 @@
   },
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
-    "@emotion/react": "^11.6.0",
+    "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
     "gray-matter": "^4.0.3",
-    "next": "^12.0.4",
+    "next": "^12.0.7",
     "next-mdx-remote": "^3.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark-breaks": "^3.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/react": "^6.3.12",
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.35",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "@types/node": "^16.11.12",
+    "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "fast-glob": "^3.2.7",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.3"
   }
 }
