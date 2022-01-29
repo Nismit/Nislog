@@ -32,7 +32,7 @@
     "remark-breaks": "^3.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.4.13",
+    "@storybook/addon-essentials": "^6.4.16",
     "@storybook/addon-links": "^6.4.13",
     "@storybook/react": "^6.4.13",
     "@types/node": "^17.0.8",
