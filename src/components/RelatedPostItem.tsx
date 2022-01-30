@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import PostType from '../../types/post';
 
@@ -14,13 +15,13 @@ const RelatedPostItem: React.FC<Props> = ({ post }) => {
       <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/${post.slug}`}>
         <a className="related-articles--item">
           <div>
-            <img 
+            <Image 
               src={post.eyecatch ? 
                   `${process.env.NEXT_PUBLIC_BASE_URL}${post.eyecatch}`
                   : `${process.env.NEXT_PUBLIC_BASE_URL}/no-image.jpg`
               } 
               width="130" 
-              height="68" 
+              height="76" 
               alt="thumbnail" 
             />
           </div>
