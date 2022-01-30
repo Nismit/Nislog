@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'blog.nismit.me'],
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
