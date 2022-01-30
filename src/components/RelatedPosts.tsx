@@ -38,6 +38,7 @@ const _RelatedPosts = styled.section`
 
     .related-articles--item {
         display: flex;
+        gap: 1rem;
         padding: 1rem;
         margin-bottom: 1rem;
         text-decoration: none;
@@ -46,10 +47,8 @@ const _RelatedPosts = styled.section`
         transition: all .2s;
         position: relative;
 
-        img {
-            width: 130px;
-            height: auto;
-            margin-right: 1rem;
+        > div:first-of-type {
+            display: flex;
         }
 
         time {
