@@ -2,7 +2,7 @@ type Props = {
     url: string
 }
 
-const Iframe: React.FC<Props> = ({ url }) => {
+const Iframe = ({ url }: Props) => {
     return <div dangerouslySetInnerHTML={{ 
         __html: `
         <iframe 
