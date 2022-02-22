@@ -1,114 +1,119 @@
-import ErrorPage from 'next/error';
-import { useRouter } from 'next/router';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { getAllPosts, getPostBySlug, getPostsFromTag } from '../../lib/api';
-import PostType from '../../../types/post';
-import HeadMeta from '../../components/HeadMeta';
-import Layout from '../../components/Layout';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Iframe from '../../components/iframe';
-import Tags from '../../components/tags';
-import Content from '../../components/Content';
-import ContentHeader from '../../components/ContentHeader';
-import ContentFooter from '../../components/ContentFooter';
-import AuthorCard from '../../components/AuthorCard';
-import RelatedPosts from '../../components/RelatedPosts';
+import ErrorPage from "next/error";
+import { useRouter } from "next/router";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { getAllPosts, getPostBySlug, getPostsFromTag } from "../../lib/api";
+import PostType from "../../../types/post";
+import HeadMeta from "../../components/HeadMeta";
+import Layout from "../../components/Layout";
+import Header from "../../components/Header";
+import Article from "../../components/Article";
+import Footer from "../../components/Footer";
+import Iframe from "../../components/iframe";
+import Tags from "../../components/Tags";
+import Content from "../../components/Content";
+import ContentHeader from "../../components/ContentHeader";
+import ContentFooter from "../../components/ContentFooter";
+import AuthorCard from "../../components/AuthorCard";
+import RelatedPosts from "../../components/RelatedPosts";
 
 type Props = {
-    post: PostType,
-    mdxSource: MDXRemoteSerializeResult,
-    relatedPosts: PostType[]
-}
+  post: PostType;
+  mdxSource: MDXRemoteSerializeResult;
+  relatedPosts: PostType[];
+};
 
-const components = { Iframe }
+const components = { Iframe };
 
 const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
-    const router = useRouter();
-    const meta = {
-        slug: post.slug,
-        title: post.title,
-        date: post.date,
-        lastmod: post.lastmod,
-        eyecatch: post.eyecatch,
-        description: post.description,
-        type: 'article'
-    }
+  const router = useRouter();
+  const meta = {
+    slug: post.slug,
+    title: post.title,
+    date: post.date,
+    lastmod: post.lastmod,
+    eyecatch: post.eyecatch,
+    description: post.description,
+    type: "article",
+  };
 
-    if(!router.isFallback && !post?.slug) {
-        return <ErrorPage statusCode={404} />
-    }
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
 
-    return (
-        <Layout>
-            <Header />
-                <HeadMeta tags={meta} />
-                <ContentHeader 
-                    title={post.title} 
-                    date={post.date} 
-                    lastmod={post.lastmod} 
-                    eyecatch={post.eyecatch} 
-                />
-                <Content>
-                    <MDXRemote {...mdxSource} components={components} />
-                </Content>
-                <Tags data={post.tags} />
-                <ContentFooter slug={post.slug} title={post.title} />
-                <AuthorCard />
-                <RelatedPosts posts={relatedPosts} />
-            <Footer />
-        </Layout>
-    )
-}
+  return (
+    <Layout>
+      <HeadMeta tags={meta} />
+      <Header />
+      <Article>
+        <ContentHeader
+          title={post.title}
+          date={post.date}
+          lastmod={post.lastmod}
+          eyecatch={post.eyecatch}
+        />
+        <Content>
+          <MDXRemote {...mdxSource} components={components} />
+        </Content>
+        <Tags data={post.tags} />
+        <ContentFooter slug={post.slug} title={post.title} />
+      </Article>
+      <AuthorCard />
+      <RelatedPosts posts={relatedPosts} />
+      <Footer />
+    </Layout>
+  );
+};
 
 export default Post;
 
 type Params = {
-    params: {
-        slug: [string]
-    }
-}
+  params: {
+    slug: [string];
+  };
+};
 
 export async function getStaticProps({ params }: Params) {
-    params.slug.unshift('content');
-    params.slug.unshift('post');
-    const slug = params.slug.join('/');
-    const post = getPostBySlug(slug, [
-        'title',
-        'description',
-        'date',
-        'lastmod',
-        'slug',
-        'draft',
-        'eyecatch',
-        'content',
-        'toc',
-        'tags',
-    ]);
+  params.slug.unshift("content");
+  params.slug.unshift("post");
+  const slug = params.slug.join("/");
+  const post = getPostBySlug(slug, [
+    "title",
+    "description",
+    "date",
+    "lastmod",
+    "slug",
+    "draft",
+    "eyecatch",
+    "content",
+    "toc",
+    "tags",
+  ]);
 
-    const mdxSource = await serialize(post.content);
-    const tags: string[] = [...new Set(post.tags)];
-    
-    const postsFromTags = await getPostsFromTag(tags, [
-        'tags',
-        'date',
-        'slug',
-        'draft',
-        'title',
-        'eyecatch'
-    ]);
+  const mdxSource = await serialize(post.content);
+  const tags: string[] = [...new Set(post.tags)];
 
-    const removeDuplicate = postsFromTags.posts.filter((_post) => _post.slug !== post.slug);
-    const filteredPostsFromTags = removeDuplicate.filter((_post) => !_post.draft);
+  const postsFromTags = await getPostsFromTag(tags, [
+    "tags",
+    "date",
+    "slug",
+    "draft",
+    "title",
+    "eyecatch",
+  ]);
 
-    return {
-        props: {
-            post: { ...post },
-            mdxSource: mdxSource,
-            relatedPosts: filteredPostsFromTags
-        },
-    }
+  const removeDuplicate = postsFromTags.posts.filter(
+    (_post) => _post.slug !== post.slug
+  );
+  const filteredPostsFromTags = removeDuplicate.filter((_post) => !_post.draft);
+
+  return {
+    props: {
+      post: { ...post },
+      mdxSource: mdxSource,
+      relatedPosts: filteredPostsFromTags,
+    },
+  };
 }
 
 // Using Dynamic Routing
@@ -117,20 +122,19 @@ export async function getStaticProps({ params }: Params) {
 // Current array is ['post', '2020', '01', 'something']
 // post is fixed path, so the slug should be ['2020','01','something']
 export async function getStaticPaths() {
-    const allPosts = await getAllPosts(['slug']);
+  const allPosts = await getAllPosts(["slug"]);
 
-    return {
-        paths: allPosts.posts.map((posts) => {
-            const path = posts.slug.split('\/');
-            path.shift();
+  return {
+    paths: allPosts.posts.map((posts) => {
+      const path = posts.slug.split("/");
+      path.shift();
 
-            return {
-                params: {
-                    slug: path,
-                },
-            }
-        }),
-        fallback: false,
-    }
+      return {
+        params: {
+          slug: path,
+        },
+      };
+    }),
+    fallback: false,
+  };
 }
-
