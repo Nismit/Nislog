@@ -1,14 +1,14 @@
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import HeadMeta from '../components/HeadMeta';
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Content from '../components/Content';
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import HeadMeta from "../components/HeadMeta";
+import Layout from "../components/Layout";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Content from "../components/Content";
 
 type Props = {
-    source: MDXRemoteSerializeResult
-}
+  source: MDXRemoteSerializeResult;
+};
 
 const article = `
 誰が得をするのか全くわからない僕の簡単なプロフィールです🚀 良かったら見てください🙇🏻
@@ -70,27 +70,27 @@ FPSゲーマー。(主にCoDシリーズ、BFシリーズが好きです)\
 `;
 
 const About: React.FC<Props> = ({ source }) => {
-    const meta = {}
+  const meta = {};
 
-    return (
-        <Layout>
-            <HeadMeta tags={meta} />
-            <Header />
-            <Content>
-                <MDXRemote {...source} />
-            </Content>
-            <Footer />
-        </Layout>
-    )
-}
+  return (
+    <Layout>
+      <HeadMeta tags={meta} />
+      <Header />
+      <Content>
+        <MDXRemote {...source} />
+      </Content>
+      <Footer />
+    </Layout>
+  );
+};
 
 export async function getStaticProps() {
-    const mdxSource = await serialize(article);
-    return { 
-        props: { 
-            source: mdxSource 
-        } 
-    }
+  const mdxSource = await serialize(article);
+  return {
+    props: {
+      source: mdxSource,
+    },
+  };
 }
 
 export default About;
