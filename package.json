@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.2.12",
+  "version": "2.2.13",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
