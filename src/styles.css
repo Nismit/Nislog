@@ -36,6 +36,22 @@
   --logo-color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: hsl(215, 4%, 95%);
+    --secondary: hsl(215, 4%, 80%);
+    --tertiary: hsl(215, 6%, 60%);
+    --accent: hsl(215, 6%, 40%);
+    --card: hsl(215, 11%, 15%);
+    --background: hsl(215, 20%, 20%);
+    --cta: hsl(215, 85%, 68%);
+    --ctaInvert: hsl(215, 65%, 80%);
+    --code-background-color: rgba(200, 211, 221, 0.15);
+    --main-border-color: rgba(221, 221, 221, 0.4);
+    --logo-color: #fff;
+  }
+}
+
 body {
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
