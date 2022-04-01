@@ -1,6 +1,6 @@
 // import React from "react";
 import * as NextImage from "next/image";
-import "../src/styles-prepare.css";
+import "../src/styles.css";
 // import { ThemeProvider } from "../src/components/ThemeProvider";
 export const parameters = {
   darkMode: {
