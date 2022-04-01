@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import * as gtag from "../lib/gtag";
 import { ThemeProvider } from "../components/ThemeProvider";
 
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </Head>
+      <Script src="/initTheme.js" strategy="beforeInteractive" />
       <ThemeProvider>
         <Component {...pageProps} />
       </ThemeProvider>

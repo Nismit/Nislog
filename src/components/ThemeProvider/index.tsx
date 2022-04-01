@@ -21,19 +21,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     const root = window.document.documentElement;
-    const userPreference = localStorage.getItem(COLOR_THEME_KEY);
-    const isSystemDarkMode =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initColorMode =
-      userPreference !== null
-        ? (userPreference as THEME_TYPE)
-        : isSystemDarkMode
-        ? THEME_COLORS.DARK
-        : THEME_COLORS.LIGHT;
-    root.className = "";
-    root.classList.add(initColorMode);
-    _setColorMode(initColorMode);
+    const rootClassName = root.getAttribute("class") as THEME_TYPE;
+    localStorage.setItem(COLOR_THEME_KEY, rootClassName);
+    _setColorMode(rootClassName);
   }, []);
 
   const contextValue = useMemo(() => {
