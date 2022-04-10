@@ -5,7 +5,7 @@ name: "Chromatic"
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 # List of jobs
 jobs:
