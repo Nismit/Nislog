@@ -6,7 +6,7 @@ type Props = {
   title: string;
 };
 
-const ContentFooter: React.VFC<Props> = ({ slug, title }) => (
+const ContentFooter: React.FC<Props> = ({ slug, title }) => (
   <_ContentFooter>
     <a
       className="single-share__link twitter"

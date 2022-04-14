@@ -5,7 +5,7 @@ type Props = {
   imagePath: string;
 };
 
-const AuthorImage: React.VFC<Props> = ({ imagePath }) => (
+const AuthorImage: React.FC<Props> = ({ imagePath }) => (
   <_AuthorImage>
     <Image src={imagePath} width="300" height="300" alt="Author" />
   </_AuthorImage>

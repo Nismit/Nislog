@@ -8,7 +8,7 @@ type Props = {
   post: PostType;
 };
 
-const RelatedPostItem: React.VFC<Props> = ({ post }) => (
+const RelatedPostItem: React.FC<Props> = ({ post }) => (
   <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/${post.slug}`} passHref>
     <_RelatedPostItem className="related-articles--item">
       <div>

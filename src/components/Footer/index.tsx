@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { SocialList } from "../../../types/social";
 import Social from "../Social";
 
-const Footer: React.VFC = () => (
+const Footer: React.FC = () => (
   <_Footer>
     <_SocialContainer>
       <Social

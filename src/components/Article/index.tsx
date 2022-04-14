@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 
-const Article: React.FC = ({ children }) => (
+type Props = {
+  children: React.ReactNode;
+};
+
+const Article: React.FC<Props> = ({ children }) => (
   <_Article className="full-bleed">{children}</_Article>
 );
 
