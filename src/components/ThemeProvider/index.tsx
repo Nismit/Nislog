@@ -2,6 +2,10 @@ import React, { useState, useEffect, useMemo, createContext } from "react";
 
 const COLOR_THEME_KEY = "colorTheme";
 
+type Props = {
+  children: React.ReactNode;
+};
+
 type ContextType = {
   colorMode: string | undefined;
   setColorMode: (value: THEME_TYPE) => void;
@@ -16,7 +20,7 @@ type THEME_TYPE = typeof THEME_COLORS[keyof typeof THEME_COLORS];
 
 export const ThemeContext = createContext({} as ContextType);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [colorMode, _setColorMode] = useState<THEME_TYPE | undefined>();
 
   useEffect(() => {
