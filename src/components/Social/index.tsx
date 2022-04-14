@@ -15,7 +15,7 @@ const SocialMapping = {
   [SocialList.RSS]: RssListItem,
 };
 
-const Social: React.VFC<Props> = ({ items }) => {
+const Social: React.FC<Props> = ({ items }) => {
   if (items.length <= 0) return <></>;
 
   return (

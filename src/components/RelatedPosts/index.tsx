@@ -6,7 +6,7 @@ type Props = {
   posts: PostType[];
 };
 
-const RelatedPosts: React.VFC<Props> = ({ posts }) => {
+const RelatedPosts: React.FC<Props> = ({ posts }) => {
   const sliced = posts.slice(0, 5);
 
   return (

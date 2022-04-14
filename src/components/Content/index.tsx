@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 type Props = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 const Content: React.FC<Props> = ({ children }) => (

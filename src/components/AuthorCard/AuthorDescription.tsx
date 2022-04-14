@@ -10,7 +10,7 @@ type Props = {
   detailLink?: string;
 };
 
-const AuthorDescription: React.VFC<Props> = ({
+const AuthorDescription: React.FC<Props> = ({
   name,
   description,
   detailLink,

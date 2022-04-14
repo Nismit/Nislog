@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styled from "@emotion/styled";
 import { THEME_COLORS, ThemeContext } from "../ThemeProvider";
 
-const ColorToggle = () => {
+const ColorToggle: React.FC = () => {
   const { colorMode, setColorMode } = useContext(ThemeContext);
 
   return (

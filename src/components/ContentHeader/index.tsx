@@ -9,12 +9,7 @@ type Props = {
   eyecatch?: string;
 };
 
-const ContentHeader: React.VFC<Props> = ({
-  title,
-  date,
-  lastmod,
-  eyecatch,
-}) => (
+const ContentHeader: React.FC<Props> = ({ title, date, lastmod, eyecatch }) => (
   <_ContentHeader>
     <PostDate publishDate={date} lastModifiedDate={lastmod} />
 

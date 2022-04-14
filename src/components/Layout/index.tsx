@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 
-const Layout: React.FC = ({ children }) => <_Layout>{children}</_Layout>;
+type Props = {
+  children: React.ReactNode;
+};
+
+const Layout: React.FC<Props> = ({ children }) => <_Layout>{children}</_Layout>;
 
 const _Layout = styled.main`
   display: grid;

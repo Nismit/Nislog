@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Logo } from "../Icons";
 import ColorToggle from "../ColorToggle";
 
-const Header = () => (
+const Header: React.FC = () => (
   <_Header>
     <Link href="/">
       <a title="NISLOG" className="logoLink">

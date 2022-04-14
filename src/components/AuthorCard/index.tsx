@@ -6,7 +6,7 @@ type Props = {
   authorImagePath?: string;
 };
 
-const AuthorCard: React.VFC<Props> = ({ authorImagePath }) => (
+const AuthorCard: React.FC<Props> = ({ authorImagePath }) => (
   <_AuthorCard className="author">
     <div className="author__picture--wrapper">
       <AuthorImage

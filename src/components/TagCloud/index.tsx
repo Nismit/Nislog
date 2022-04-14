@@ -4,7 +4,7 @@ type Props = {
   tags: Array<string>;
 };
 
-const TagCloud: React.VFC<Props> = ({ tags }) => (
+const TagCloud: React.FC<Props> = ({ tags }) => (
   <_TagCloud>
     <h2 className="h4 tagCloud__title">Tags</h2>
 
