@@ -14,7 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     # Job steps
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
       - name: Install dependencies
         run: yarn
         # 👇 Adds Chromatic as a step in the workflow
@@ -22,6 +25,5 @@ jobs:
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
