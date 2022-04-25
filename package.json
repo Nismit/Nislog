@@ -40,7 +40,7 @@
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
     "chromatic": "^6.5.4",
-    "eslint": "8.13.0",
+    "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
     "fast-glob": "^3.2.11",
     "storybook-dark-mode": "^1.0.9",
