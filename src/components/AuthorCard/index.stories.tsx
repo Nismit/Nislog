@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof AuthorCardComponent> = (args) => (
 export const AuthorCard = Template.bind({});
 
 AuthorCard.args = {
-  authorImagePath: "https://source.unsplash.com/500x500/?beach",
+  authorImagePath: "https://source.unsplash.com/uwrWzRKRd3M/500x500/",
 };
