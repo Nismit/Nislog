@@ -5,7 +5,7 @@ export const PostMock: PostType = {
   title: "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら",
   date: "2021/02/28",
   lastmod: "2021/03/01",
-  eyecatch: "https://source.unsplash.com/uwrWzRKRd3M/1200x630/",
+  eyecatch: "/images/1200x630-mock.jpeg",
   description:
     "あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波",
   tags: ["blog", "vancouver"],
