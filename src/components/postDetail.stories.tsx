@@ -159,7 +159,7 @@ const Template: ComponentStory<any> = () => (
       <Tags data={["test", "vancouver", "mock"]} />
       <ContentFooter slug={post.slug} title={post.title} />
     </Article>
-    <AuthorCard authorImagePath="https://source.unsplash.com/500x500/?beach" />
+    <AuthorCard authorImagePath="https://source.unsplash.com/uwrWzRKRd3M/500x500/" />
     <RelatedPosts posts={relatedPostsMock} />
     <Footer />
   </Layout>
