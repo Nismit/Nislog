@@ -9,6 +9,7 @@
 }
 
 :root.light {
+  color-scheme: light;
   --primary: hsl(215, 90%, 10%);
   --secondary: hsl(215, 90%, 20%);
   --tertiary: hsl(215, 6%, 60%);
@@ -23,6 +24,7 @@
 }
 
 :root.dark {
+  color-scheme: dark;
   --primary: hsl(215, 4%, 95%);
   --secondary: hsl(215, 4%, 80%);
   --tertiary: hsl(215, 6%, 60%);
@@ -38,6 +40,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --primary: hsl(215, 4%, 95%);
     --secondary: hsl(215, 4%, 80%);
     --tertiary: hsl(215, 6%, 60%);
