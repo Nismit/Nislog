@@ -16,6 +16,13 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.defaultFormatter": "vscode.markdown-language-features",
+  },
   "editor.lineNumbers": "on",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
