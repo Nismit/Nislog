@@ -39,7 +39,7 @@
     "@types/node": "^17.0.42",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
-    "chromatic": "^6.5.6",
+    "chromatic": "^6.6.2",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "fast-glob": "^3.2.11",
