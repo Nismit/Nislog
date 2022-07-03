@@ -23,17 +23,17 @@ toc: false
 //youtube.com/watch?v=**xTU0K5q7Zbo**  
 太字の部分ですね。自分でアップした動画からサムネイルを取って、一覧にしましたので、ご参考になれば幸いです。
 
-画像|サイズ|URL
+| 画像 | サイズ | URL |
 ---|---|---
-![120×90](/images/2015/default.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/default.jpg
-![120×90](/images/2015/1.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/1.jpg
-![120×90](/images/2015/2.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/2.jpg
-![120×90](/images/2015/3.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/3.jpg
-![320x180](/images/2015/mqdefault.jpg)|320&#215;180|http://i.ytimg.com/vi/xTU0K5q7Zbo/mqdefault.jpg
-![480x360](/images/2015/hqdefault.jpg)|480&#215;360|http://i.ytimg.com/vi/xTU0K5q7Zbo/hqdefault.jpg
-![480x360](/images/2015/0.jpg)|480&#215;360|http://i.ytimg.com/vi/xTU0K5q7Zbo/0.jpg
-![640x480](/images/2015/sddefault.jpg)|640&#215;480|http://i.ytimg.com/vi/xTU0K5q7Zbo/sddefault.jpg
-![1280x720](/images/2015/maxresdefault.jpg)|1280&#215;720|http://i.ytimg.com/vi/xTU0K5q7Zbo/maxresdefault.jpg
+![!120×90](/images/2015/default.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/default.jpg
+![!120×90](/images/2015/1.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/1.jpg
+![!120×90](/images/2015/2.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/2.jpg
+![!120×90](/images/2015/3.jpg)|120&#215;90|http://i.ytimg.com/vi/xTU0K5q7Zbo/3.jpg
+![!320x180](/images/2015/mqdefault.jpg)|320&#215;180|http://i.ytimg.com/vi/xTU0K5q7Zbo/mqdefault.jpg
+![!480x360](/images/2015/hqdefault.jpg)|480&#215;360|http://i.ytimg.com/vi/xTU0K5q7Zbo/hqdefault.jpg
+![!480x360](/images/2015/0.jpg)|480&#215;360|http://i.ytimg.com/vi/xTU0K5q7Zbo/0.jpg
+![!640x480](/images/2015/sddefault.jpg)|640&#215;480|http://i.ytimg.com/vi/xTU0K5q7Zbo/sddefault.jpg
+![!1280x720](/images/2015/maxresdefault.jpg)|1280&#215;720|http://i.ytimg.com/vi/xTU0K5q7Zbo/maxresdefault.jpg
 
 
 動画をアップした際にYouTube側で自動的に抽出される、3つのサムネイルがそれぞれあるみたいですね。
