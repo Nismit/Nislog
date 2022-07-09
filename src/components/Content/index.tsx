@@ -132,6 +132,7 @@ const _Content = styled.section`
     border-radius: 5px;
 
     > code {
+      margin: 0;
       padding: 0;
       font-size: 100%;
       background-color: transparent;

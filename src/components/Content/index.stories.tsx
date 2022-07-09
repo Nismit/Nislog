@@ -89,6 +89,14 @@ const ExampleContent = () => (
         住みにくさが高じると、安い所へ引き越したくなる。どこへ越しても住みにくいと悟った時、詩が生れて、画が出来る。
       </p>
     </blockquote>
+    <p>Code Block</p>
+    <pre>
+      <code>
+        {`#define RGBLED_NUM 54
+#undef RGBLED_SPLIT
+#define RGBLED_SPLIT { 27, 27 }`}
+      </code>
+    </pre>
   </>
 );
 
