@@ -14,10 +14,10 @@ Object.defineProperty(NextImage, "default", {
     ),
 });
 
-Object.defineProperty(NextImage, "__esModule", {
-  configurable: true,
-  value: true,
-});
+// Object.defineProperty(NextImage, "__esModule", {
+//   configurable: true,
+//   value: true,
+// });
 
 // import { ThemeProvider } from "../src/components/ThemeProvider";
 export const parameters = {
