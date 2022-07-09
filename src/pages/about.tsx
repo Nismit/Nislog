@@ -1,5 +1,8 @@
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import React from "react";
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeReact, { Options } from "rehype-react";
+import { markdownToHtml } from "../lib/transpiler";
 import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
@@ -7,8 +10,19 @@ import Footer from "../components/Footer";
 import Content from "../components/Content";
 
 type Props = {
-  source: MDXRemoteSerializeResult;
+  content: string;
 };
+
+const rehypeReactOptions: Options = {
+  passNode: true,
+  Fragment: React.Fragment,
+  createElement: React.createElement,
+  components: {},
+};
+
+const processor = unified()
+  .use(rehypeParse, { fragment: true })
+  .use(rehypeReact, rehypeReactOptions);
 
 const article = `
 誰が得をするのか全くわからない僕の簡単なプロフィールです🚀 良かったら見てください🙇🏻
@@ -44,18 +58,14 @@ const article = `
 - WordPressのスターターキットテーマでの実務経験(Underscores/Sage)
 
 # 現在のスキルセット
-2020年1月1日時点でのスキルセットです。
+2022年7月1日時点でのスキルセットです。
 
-- セマンティックHTML (ArticleやSection, Navなど)
-- CSS (keyframeなどを使ったアニメーションやCSS Gridなどを使ったレイアウト等)
-- JavaScript (ES2015+)
+- HTML/CSS
+- JavaScript (ES2020+)
 - WebGL/Three.js (シェーダーを用いた簡単な表現)
-- React/Vue + Fluxの基本的な概念
-- Firebase (Hosting/Real-time Database/Functions)
-- WordPress
-- Webサーバーの構築+DNSの設定等
-- Docker
-- Hugo
+- React
+- TypeScript
+- Firebase
 - CIを用いた自動化
 
 # パーソナリティ
@@ -69,26 +79,25 @@ FPSゲーマー。(主にCoDシリーズ、BFシリーズが好きです)\
 &nbsp;\
 `;
 
-const About: React.FC<Props> = ({ source }) => {
+const About: React.FC<Props> = ({ content }) => {
   const meta = {};
 
   return (
     <Layout>
       <HeadMeta tags={meta} />
       <Header />
-      <Content>
-        <MDXRemote {...source} />
-      </Content>
+      <Content>{processor.processSync(content).result}</Content>
       <Footer />
     </Layout>
   );
 };
 
 export async function getStaticProps() {
-  const mdxSource = await serialize(article);
+  const contentHTML = await markdownToHtml(article);
+  const content = contentHTML.toString();
   return {
     props: {
-      source: mdxSource,
+      content: content,
     },
   };
 }

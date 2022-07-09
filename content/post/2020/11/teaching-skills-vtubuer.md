@@ -15,7 +15,7 @@ toc: false
 
 そんな事は置いといて、見た動画はコレ。
 
-<Iframe url="https://www.youtube.com/embed/A10g9qAC2vQ" />
+<iframe width="100%" height="386" src="https://www.youtube.com/embed/A10g9qAC2vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 にじさんじというVtuberグループ会社所属の魔界ノりりむとグウェル・オス・ガール(以下りりむとグウェルとします)の二人の配信です。数学ガールの著者である結城浩さんがツイートしてたり、一時期ネット上で少し話題になりました。
 そして二人で配信した放送はりりむが積分の問題を解けるまで終われない耐久放送で8時間にも及ぶ超大作なんですがこれが色んなドラマがあって最後は少し感動してしまうレベルでした。私は特にグウェルの教える方法やスタンスが凄く良かったので自分なりに感じたものをメモしておこうと思いました。

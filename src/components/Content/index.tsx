@@ -63,6 +63,16 @@ const _Content = styled.section`
     vertical-align: bottom;
   }
 
+  figure {
+    margin: 2rem 0 2.5rem;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.92rem;
+    opacity: 0.9;
+  }
+
   // Horizontal Rule
   hr {
     border: 0;
@@ -122,6 +132,7 @@ const _Content = styled.section`
     border-radius: 5px;
 
     > code {
+      margin: 0;
       padding: 0;
       font-size: 100%;
       background-color: transparent;

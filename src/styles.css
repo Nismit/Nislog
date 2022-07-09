@@ -15,10 +15,11 @@
   --tertiary: hsl(215, 6%, 60%);
   --accent: hsl(215, 6%, 40%);
   --card: hsl(215, 11%, 15%);
-  --background: hsl(215, 20%, 97%);
+  --background: hsl(215, 20%, 95%);
   --cta: hsl(215, 80%, 40%);
   --ctaInvert: hsl(215, 25%, 60%);
   --code-background-color: rgba(36, 46, 56, 0.15);
+  --pre-background-color: #e5ecf3;
   --main-border-color: #ddd;
   --logo-color: #333;
 }
@@ -34,6 +35,7 @@
   --cta: hsl(215, 85%, 68%);
   --ctaInvert: hsl(215, 65%, 80%);
   --code-background-color: rgba(200, 211, 221, 0.15);
+  --pre-background-color: #1E2131;
   --main-border-color: rgba(221, 221, 221, 0.4);
   --logo-color: #fff;
 }
@@ -50,6 +52,7 @@
     --cta: hsl(215, 85%, 68%);
     --ctaInvert: hsl(215, 65%, 80%);
     --code-background-color: rgba(200, 211, 221, 0.15);
+    --pre-background-color: #1E2131;
     --main-border-color: rgba(221, 221, 221, 0.4);
     --logo-color: #fff;
   }

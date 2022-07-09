@@ -1,31 +1,45 @@
+import React from "react";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeReact, { Options } from "rehype-react";
 import { getAllPosts, getPostBySlug, getPostsFromTag } from "../../lib/api";
+import { markdownToHtml } from "../../lib/transpiler";
 import PostType from "../../../types/post";
 import HeadMeta from "../../components/HeadMeta";
 import Layout from "../../components/Layout";
 import Header from "../../components/Header";
 import Article from "../../components/Article";
 import Footer from "../../components/Footer";
-import Iframe from "../../components/iframe";
 import Tags from "../../components/Tags";
 import Content from "../../components/Content";
 import ContentHeader from "../../components/ContentHeader";
 import ContentFooter from "../../components/ContentFooter";
 import AuthorCard from "../../components/AuthorCard";
 import RelatedPosts from "../../components/RelatedPosts";
+import Picture from "../../components/Picture";
 
 type Props = {
   post: PostType;
-  mdxSource: MDXRemoteSerializeResult;
+  content: string;
   relatedPosts: PostType[];
 };
 
-const components = { Iframe };
+const rehypeReactOptions: Options = {
+  passNode: true,
+  Fragment: React.Fragment,
+  createElement: React.createElement,
+  components: {
+    img: Picture,
+  },
+};
 
-const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
+const processor = unified()
+  .use(rehypeParse, { fragment: true })
+  .use(rehypeReact, rehypeReactOptions);
+
+const Post: React.FC<Props> = ({ post, content, relatedPosts }) => {
   const router = useRouter();
   const meta = {
     slug: post.slug,
@@ -52,14 +66,12 @@ const Post: React.FC<Props> = ({ post, mdxSource, relatedPosts }) => {
           lastmod={post.lastmod}
           eyecatch={post.eyecatch}
         />
-        <Content>
-          <MDXRemote {...mdxSource} components={components} />
-        </Content>
+        <Content>{processor.processSync(content).result}</Content>
         <Tags data={post.tags} />
         <ContentFooter slug={post.slug} title={post.title} />
       </Article>
       <AuthorCard />
-      <RelatedPosts posts={relatedPosts} />
+      {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
       <Footer />
     </Layout>
   );
@@ -90,9 +102,10 @@ export async function getStaticProps({ params }: Params) {
     "tags",
   ]);
 
-  const mdxSource = await serialize(post.content);
-  const tags: string[] = [...new Set(post.tags)];
+  const contentHTML = await markdownToHtml(post.content);
+  const content = contentHTML.toString();
 
+  const tags: string[] = [...new Set(post.tags)];
   const postsFromTags = await getPostsFromTag(tags, [
     "tags",
     "date",
@@ -110,7 +123,7 @@ export async function getStaticProps({ params }: Params) {
   return {
     props: {
       post: { ...post },
-      mdxSource: mdxSource,
+      content: content,
       relatedPosts: filteredPostsFromTags,
     },
   };
