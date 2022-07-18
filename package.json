@@ -43,7 +43,7 @@
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
     "@storybook/react": "^6.5.9",
-    "@types/node": "^18.0.5",
+    "@types/node": "^18.0.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "chromatic": "^6.6.3",
