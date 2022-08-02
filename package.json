@@ -4,9 +4,10 @@
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
+    "start": "next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
