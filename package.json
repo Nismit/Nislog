@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "gray-matter": "^4.0.3",
-    "next": "^12.3.0",
+    "next": "^12.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-parse": "^8.0.4",
@@ -44,14 +44,14 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
     "@storybook/react": "^6.5.12",
-    "@types/node": "^18.7.18",
-    "@types/react": "^18.0.18",
+    "@types/node": "^18.8.5",
+    "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "chromatic": "^6.9.0",
     "eslint": "8.23.1",
-    "eslint-config-next": "12.3.0",
+    "eslint-config-next": "12.3.1",
     "fast-glob": "^3.2.12",
     "storybook-dark-mode": "^1.1.2",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   }
 }
