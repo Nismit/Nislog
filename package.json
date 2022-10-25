@@ -45,7 +45,7 @@
     "@storybook/addon-links": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "@types/node": "^18.8.5",
-    "@types/react": "^18.0.21",
+    "@types/react": "^18.0.23",
     "@types/react-dom": "^18.0.6",
     "chromatic": "^6.9.0",
     "eslint": "8.23.1",
