@@ -5,14 +5,14 @@ import ColorToggle from "../ColorToggle";
 
 const Header: React.FC = () => (
   <_Header>
-    <Link href="/">
-      <a title="NISLOG" className="logoLink">
-        <Logo />
-      </a>
+    <Link href="/" className="logoLink" title="NISLOG">
+      <Logo />
     </Link>
     <div className="subMenu">
       <ColorToggle />
-      <Link href="/about">About</Link>
+      <Link href="/about" title="About">
+        About
+      </Link>
     </div>
   </_Header>
 );

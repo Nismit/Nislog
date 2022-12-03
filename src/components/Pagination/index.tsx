@@ -25,8 +25,11 @@ const Pagination: React.FC<Props> = ({ totalCounts, currentPageNumber }) => {
 
     links.push(
       <li className={dynamicClass} key={i}>
-        <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/page/${i}`}>
-          <a className="pagination__link">{i}</a>
+        <Link
+          className="pagination__link"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/page/${i}`}
+        >
+          {i}
         </Link>
       </li>
     );
