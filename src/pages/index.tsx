@@ -1,4 +1,5 @@
 import PostType from "../../types/post";
+import { MAX_DISPLAY_ITEM } from "../const";
 import { getAllPosts, getAllTags } from "../lib/api";
 import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/Layout";
@@ -46,7 +47,7 @@ export async function getStaticProps() {
   ]);
 
   const filteredPosts = allPosts.posts.filter((post) => !post.draft);
-  const slicedPosts = filteredPosts.slice(0, 5);
+  const slicedPosts = filteredPosts.slice(0, MAX_DISPLAY_ITEM);
 
   const allTags = await getAllTags();
 

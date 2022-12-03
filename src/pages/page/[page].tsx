@@ -1,3 +1,4 @@
+import { MAX_DISPLAY_ITEM } from "../../const";
 import PostType from "../../../types/post";
 import { getAllPosts, getAllTags } from "../../lib/api";
 import HeadMeta from "../../components/HeadMeta";
@@ -51,11 +52,11 @@ export async function getStaticProps({ params }: StaticProps) {
     "description",
   ]);
 
-  const nextNumberOfPosts = 5 * params.page; // 5 * 2 (current page)
+  const nextNumberOfPosts = MAX_DISPLAY_ITEM * (params.page - 1);
   const filteredPosts = allPosts.posts.filter((post) => !post.draft);
   const slicedPosts = filteredPosts.slice(
-    nextNumberOfPosts - 5,
-    nextNumberOfPosts
+    nextNumberOfPosts,
+    nextNumberOfPosts + MAX_DISPLAY_ITEM
   );
 
   const allTags = await getAllTags();
@@ -73,7 +74,11 @@ export async function getStaticProps({ params }: StaticProps) {
 export async function getStaticPaths() {
   const allPosts = await getAllPosts(["slug"]);
   const pageParams = [];
-  for (let i = 1; i < allPosts.totalPosts / 5; i++) {
+  for (
+    let i = 1;
+    i < Math.ceil(allPosts.totalPosts / MAX_DISPLAY_ITEM) + 1;
+    i++
+  ) {
     pageParams.push({ params: { page: `${i}` } });
   }
 

@@ -1,19 +1,16 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
+import { MAX_DISPLAY_ITEM } from "../../const";
 
 type Props = {
   totalCounts: number;
   currentPageNumber?: number;
 };
 
-const MAX_DISPLAY_ITEM = 5;
-
 const Pagination: React.FC<Props> = ({ totalCounts, currentPageNumber }) => {
   let links = [];
 
-  // set link number (currently, 5)
-
-  for (let i = 1; i < totalCounts / MAX_DISPLAY_ITEM; i++) {
+  for (let i = 1; i < Math.ceil(totalCounts / MAX_DISPLAY_ITEM) + 1; i++) {
     let dynamicClass = "pagination__item";
     if (!currentPageNumber && i === 1) {
       dynamicClass += " active";
