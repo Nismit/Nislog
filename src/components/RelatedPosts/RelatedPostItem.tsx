@@ -9,30 +9,31 @@ type Props = {
 };
 
 const RelatedPostItem: React.FC<Props> = ({ post }) => (
-  <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/${post.slug}`} passHref>
-    <_RelatedPostItem className="related-articles--item">
-      <div>
-        <Image
-          src={post.eyecatch ? `${post.eyecatch}` : `/no-image.jpg`}
-          width="130"
-          height="76"
-          alt="thumbnail"
-        />
-      </div>
-      <div>
-        <span>{post.title}</span>
-        <br />
-        <PostDate
-          publishDate={post.date}
-          lastModifiedDate={post.lastmod}
-          withoutIcon
-        />
-      </div>
-    </_RelatedPostItem>
-  </Link>
+  <_RelatedPostItem
+    href={`${process.env.NEXT_PUBLIC_BASE_URL}/${post.slug}`}
+    className="related-articles--item"
+  >
+    <div>
+      <Image
+        src={post.eyecatch ? `${post.eyecatch}` : `/no-image.jpg`}
+        width="130"
+        height="76"
+        alt="thumbnail"
+      />
+    </div>
+    <div>
+      <span>{post.title}</span>
+      <br />
+      <PostDate
+        publishDate={post.date}
+        lastModifiedDate={post.lastmod}
+        withoutIcon
+      />
+    </div>
+  </_RelatedPostItem>
 );
 
-const _RelatedPostItem = styled.a`
+const _RelatedPostItem = styled(Link)`
   display: flex;
   gap: 1rem;
   padding: 1rem;

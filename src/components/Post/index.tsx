@@ -12,12 +12,10 @@ const Post: React.FC<Props> = ({ post }) => {
 
   return (
     <_Post>
-      <Link href={`/${slug}`}>
-        <a className="post__link" title={title}>
-          <h1 className="post__title">{title}</h1>
-          <p className="post__desc">{description}</p>
-          <PostDate publishDate={date} lastModifiedDate={lastmod} />
-        </a>
+      <Link href={`/${slug}`} className="post__link" title={title}>
+        <h1 className="post__title">{title}</h1>
+        <p className="post__desc">{description}</p>
+        <PostDate publishDate={date} lastModifiedDate={lastmod} />
       </Link>
     </_Post>
   );
