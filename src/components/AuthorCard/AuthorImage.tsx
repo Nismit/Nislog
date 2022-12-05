@@ -7,7 +7,7 @@ type Props = {
 
 const AuthorImage: React.FC<Props> = ({ imagePath }) => (
   <_AuthorImage>
-    <Image src={imagePath} width="300" height="300" alt="Author" />
+    <Image src={imagePath} width="165" height="165" alt="Author" />
   </_AuthorImage>
 );
 
