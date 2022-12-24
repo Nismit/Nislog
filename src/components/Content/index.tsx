@@ -21,25 +21,26 @@ const _Content = styled.section`
   h2 {
     padding: 0.25em 0 0.25em 0.45em;
     margin-top: 2rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.2rem;
     border-left: 6px solid var(--cta);
-    font-size: 1.56rem;
+    font-size: 1.47rem;
     line-height: 1.5;
   }
 
   h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.35rem;
   }
 
   h4 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1.2rem;
     font-size: 1.28rem;
   }
 
   h5 {
+    font-size: 1.24rem;
     margin-bottom: 0.7rem;
   }
 
@@ -59,6 +60,7 @@ const _Content = styled.section`
 
   // Image
   img {
+    height: auto;
     max-width: 100%;
     vertical-align: bottom;
   }
