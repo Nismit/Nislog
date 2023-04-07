@@ -52,6 +52,6 @@
     "eslint-config-next": "13.2.4",
     "fast-glob": "^3.2.12",
     "storybook-dark-mode": "^3.0.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   }
 }
