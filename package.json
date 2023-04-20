@@ -41,9 +41,9 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-essentials": "^7.0.6",
     "@storybook/addon-links": "^6.5.16",
-    "@storybook/react": "^6.5.16",
+    "@storybook/react": "^7.0.6",
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
