@@ -1,12 +1,11 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import PostType from "../../../types/post";
 import PaginationComponent from "./index";
 
-export default {
+const meta = {
   title: "Pagination",
   component: PaginationComponent,
-} as ComponentMeta<typeof PaginationComponent>;
+} satisfies Meta<typeof PaginationComponent>;
 
 const PostMock: PostType = {
   slug: "test-mock",
@@ -20,6 +19,12 @@ const PostMock: PostType = {
   content: "Test Content",
 };
 
-export const Pagination: ComponentStory<typeof PaginationComponent> = () => (
-  <PaginationComponent totalCounts={42} currentPageNumber={2} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Pagination: Story = {
+  args: {
+    totalCounts: 42,
+    currentPageNumber: 2,
+  },
+};

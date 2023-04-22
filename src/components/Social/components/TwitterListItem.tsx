@@ -4,7 +4,7 @@ type Props = {
   userName: string;
 };
 
-const TwitterListItem: React.VFC<Props> = ({ userName }) => (
+const TwitterListItem: React.FC<Props> = ({ userName }) => (
   <a
     title="Twitter Profile"
     href={`https://twitter.com/${userName}`}

@@ -6,7 +6,7 @@ type Props = {
   tags: MetaType;
 };
 
-const HeadMeta: React.VFC<Props> = ({ tags }) => (
+const HeadMeta: React.FC<Props> = ({ tags }) => (
   <Head>
     <title key="title">{tags.title ? tags.title : data.siteName}</title>
     <meta

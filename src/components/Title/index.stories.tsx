@@ -1,28 +1,17 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import TitleComponent from "./index";
 
-export default {
+const meta = {
   title: "Title",
   component: TitleComponent,
-} as ComponentMeta<typeof TitleComponent>;
+} satisfies Meta<typeof TitleComponent>;
 
-//👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof TitleComponent> = (args) => (
-  <TitleComponent {...args} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Title = Template.bind({});
-
-Title.args = {
-  h1: true,
-  children: "Heading 1",
+export const Title: Story = {
+  args: {
+    h1: true,
+    children: "Heading 1",
+  },
 };
-
-// export const Default: ComponentStory<typeof TitleComponent> = () => (
-//   <>
-//     <TitleComponent h1>Title</TitleComponent>
-//     <TitleComponent h2 h3>Title</TitleComponent>
-//   </>
-// );

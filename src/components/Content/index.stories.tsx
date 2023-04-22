@@ -1,12 +1,10 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import ContentComponent from "./index";
 
-export default {
+const meta = {
   title: "Content",
   component: ContentComponent,
-} as ComponentMeta<typeof ContentComponent>;
+} satisfies Meta<typeof ContentComponent>;
 
 const ExampleContent = () => (
   <>
@@ -100,6 +98,11 @@ const ExampleContent = () => (
   </>
 );
 
-export const Content: ComponentStory<typeof ContentComponent> = () => (
-  <ContentComponent>{ExampleContent()}</ContentComponent>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Content: Story = {
+  args: {
+    children: ExampleContent()
+  },
+};

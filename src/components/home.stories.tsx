@@ -1,6 +1,4 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import { PostMock } from "../utils/postMock";
 
 import { ThemeProvider } from "./ThemeProvider";
@@ -11,26 +9,31 @@ import Pagination from "./Pagination";
 import TagCloud from "./TagCloud";
 import Footer from "./Footer";
 
-export default {
+const meta = {
   title: "Page/Home",
   component: Layout,
-} as ComponentMeta<typeof Layout>;
+} satisfies Meta<typeof Layout>;
 
-const Template: ComponentStory<typeof Layout> = () => (
-  <Layout>
-    <Header />
-    <Post post={PostMock} />
-    <Post post={PostMock} />
-    <Post post={PostMock} />
-    <Post post={PostMock} />
-    <Post post={PostMock} />
-    <Pagination totalCounts={42} currentPageNumber={1} />
-    <TagCloud tags={["test", "vancouver", "mock", "tags", "Init"]} />
-    <Footer />
-  </Layout>
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Home = Template.bind({});
+export const Home: Story = {
+  args: {
+    children: (
+      <>
+        <Header />
+        <Post post={PostMock} />
+        <Post post={PostMock} />
+        <Post post={PostMock} />
+        <Post post={PostMock} />
+        <Post post={PostMock} />
+        <Pagination totalCounts={42} currentPageNumber={1} />
+        <TagCloud tags={["test", "vancouver", "mock", "tags", "Init"]} />
+        <Footer />
+      </>
+    )
+  }
+};
 
 Home.decorators = [
   (Story) => (

@@ -1,15 +1,18 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import TagsComponrnt from "./index";
 
-export default {
+const meta = {
   title: "Tags",
   component: TagsComponrnt,
-} as ComponentMeta<typeof TagsComponrnt>;
+} satisfies Meta<typeof TagsComponrnt>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const tagsMock = ["test", "example", "tagTest", "vancouver"];
 
-export const Tags: ComponentStory<typeof TagsComponrnt> = () => (
-  <TagsComponrnt data={tagsMock} />
-);
+export const Tags: Story = {
+  args: {
+    data: tagsMock,
+  },
+};
