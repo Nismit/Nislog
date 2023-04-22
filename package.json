@@ -8,8 +8,8 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "chromatic": "chromatic --exit-zero-on-changes --project-token=CHROMATIC_PROJECT_TOKEN"
   },
@@ -41,9 +41,10 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.2",
-    "@storybook/addon-links": "^7.0.2",
-    "@storybook/react": "^7.0.2",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/nextjs": "^7.0.6",
+    "@storybook/react": "^7.0.6",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
@@ -51,7 +52,7 @@
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "fast-glob": "^3.2.12",
-    "storybook-dark-mode": "^3.0.0",
+    "storybook": "^7.0.6",
     "typescript": "^5.0.4"
   }
 }
