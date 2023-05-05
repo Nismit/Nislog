@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
+    "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.6",
     "gray-matter": "^4.0.3",
     "next": "^13.3.4",
