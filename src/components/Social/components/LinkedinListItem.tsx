@@ -4,7 +4,7 @@ type Props = {
   userName: string;
 };
 
-const LinkedinListItem: React.VFC<Props> = ({ userName }) => (
+const LinkedinListItem: React.FC<Props> = ({ userName }) => (
   <a
     title="LinkedIn Profile"
     href={`https://ca.linkedin.com/in/${userName}`}

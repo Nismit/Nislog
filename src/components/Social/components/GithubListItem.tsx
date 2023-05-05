@@ -4,7 +4,7 @@ type Props = {
   userName: string;
 };
 
-const GithubListItem: React.VFC<Props> = ({ userName }) => (
+const GithubListItem: React.FC<Props> = ({ userName }) => (
   <a
     title="GitHub Profile"
     href={`https://github.com/${userName}`}

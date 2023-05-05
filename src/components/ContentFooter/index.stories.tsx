@@ -1,13 +1,17 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import ContentFooterComponent from "./index";
 
-export default {
+const meta = {
   title: "Content Footer",
   component: ContentFooterComponent,
-} as ComponentMeta<typeof ContentFooterComponent>;
+} satisfies Meta<typeof ContentFooterComponent>;
 
-export const ContentFooter: ComponentStory<
-  typeof ContentFooterComponent
-> = () => <ContentFooterComponent slug="/some-slug" title="Example Title" />;
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ContentFooter: Story = {
+  args: {
+    slug: 'some-slug',
+    title: 'Example Title'
+  }
+};

@@ -1,22 +1,30 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import type { Meta, StoryObj } from "@storybook/react";
 import { PostMock } from "../../utils/postMock";
 import PostComponent from "./index";
 
-export default {
+const meta = {
   title: "Post",
   component: PostComponent,
-} as ComponentMeta<typeof PostComponent>;
+} satisfies Meta<typeof PostComponent>;
 
-export const Single: ComponentStory<typeof PostComponent> = () => (
-  <PostComponent post={PostMock} />
-);
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Multiple: ComponentStory<typeof PostComponent> = () => (
-  <>
-    <PostComponent post={PostMock} />
-    <PostComponent post={PostMock} />
-    <PostComponent post={PostMock} />
-  </>
-);
+export const Single: Story = {
+  args: {
+    post: PostMock,
+  },
+};
+
+export const Multiple: Story = {
+  args: {
+    post: PostMock,
+  },
+  render: () => (
+    <>
+      <PostComponent post={PostMock} />
+      <PostComponent post={PostMock} />
+      <PostComponent post={PostMock} />
+    </>
+  ),
+};

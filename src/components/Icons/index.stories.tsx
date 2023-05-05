@@ -1,5 +1,4 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Layout from "../Layout";
 
 import {
@@ -19,19 +18,23 @@ import {
   ArrowForwardCircle,
 } from "./index";
 
-export default {
+const meta = {
   title: "Icons",
   component: Layout,
-} as ComponentMeta<typeof Layout>;
+} satisfies Meta<typeof Layout>;
 
 const svgStyle = {
   width: "64px",
   height: "64px",
 };
 
-export const Icons: ComponentStory<typeof Layout> = () => (
-  <Layout>
-    <div
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Icons: Story = {
+  args: {
+    children: (
+      <div
       style={{
         display: "flex",
         flexWrap: "wrap",
@@ -82,5 +85,7 @@ export const Icons: ComponentStory<typeof Layout> = () => (
         <ArrowForwardCircle />
       </div>
     </div>
-  </Layout>
-);
+    ),
+  },
+};
+
