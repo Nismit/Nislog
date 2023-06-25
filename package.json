@@ -46,7 +46,7 @@
     "@storybook/nextjs": "^7.0.20",
     "@storybook/react": "^7.0.20",
     "@types/node": "^20.3.1",
-    "@types/react": "^18.2.8",
+    "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "chromatic": "^6.18.0",
     "eslint": "8.41.0",
