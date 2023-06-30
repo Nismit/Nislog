@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.4.10",
+  "version": "2.4.11",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
-    "@emotion/react": "^11.11.0",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "gray-matter": "^4.0.3",
     "next": "^13.3.4",
@@ -41,18 +41,18 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.18",
-    "@storybook/addon-links": "^7.0.18",
-    "@storybook/nextjs": "^7.0.18",
-    "@storybook/react": "^7.0.18",
-    "@types/node": "^20.2.5",
-    "@types/react": "^18.2.8",
-    "@types/react-dom": "^18.2.4",
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-links": "^7.0.24",
+    "@storybook/nextjs": "^7.0.24",
+    "@storybook/react": "^7.0.24",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "chromatic": "^6.18.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.3.4",
     "fast-glob": "^3.2.12",
-    "storybook": "^7.0.18",
-    "typescript": "^5.0.4"
+    "storybook": "^7.0.24",
+    "typescript": "^5.1.3"
   }
 }
