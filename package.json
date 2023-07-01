@@ -50,7 +50,7 @@
     "@types/react-dom": "^18.2.6",
     "chromatic": "^6.18.0",
     "eslint": "8.43.0",
-    "eslint-config-next": "13.3.4",
+    "eslint-config-next": "13.4.7",
     "fast-glob": "^3.2.12",
     "storybook": "^7.0.24",
     "typescript": "^5.1.3"
