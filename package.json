@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.26",
-    "@storybook/addon-links": "^7.0.26",
+    "@storybook/addon-links": "^7.0.27",
     "@storybook/nextjs": "^7.0.26",
     "@storybook/react": "^7.0.26",
     "@types/node": "^20.3.1",
