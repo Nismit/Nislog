@@ -111,7 +111,15 @@ const _Content = styled.section`
     margin: 1rem 0;
     padding-left: 1em;
     li {
-      margin: 0.7rem 0;
+      margin: 0.75rem 0;
+    }
+
+    ul {
+      margin: 0;
+
+      li {
+        margin: 0.55rem 0;
+      }
     }
   }
 
