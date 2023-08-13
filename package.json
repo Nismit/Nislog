@@ -41,10 +41,10 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.1.1",
-    "@storybook/addon-links": "^7.1.1",
-    "@storybook/nextjs": "^7.1.1",
-    "@storybook/react": "^7.1.1",
+    "@storybook/addon-essentials": "^7.2.3",
+    "@storybook/addon-links": "^7.2.3",
+    "@storybook/nextjs": "^7.2.3",
+    "@storybook/react": "^7.2.3",
     "@types/node": "^20.4.6",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
@@ -52,7 +52,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "fast-glob": "^3.3.1",
-    "storybook": "^7.1.1",
+    "storybook": "^7.2.3",
     "typescript": "^5.1.6"
   }
 }
