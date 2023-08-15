@@ -38,7 +38,7 @@
     "remark-parse": "^10.0.2",
     "remark-rehype": "^10.1.0",
     "remark-unwrap-images": "^3.0.1",
-    "unified": "^10.1.2"
+    "unified": "^11.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.2.3",
