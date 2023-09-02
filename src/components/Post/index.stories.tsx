@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PostMock } from "../../utils/postMock";
 import PostComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof PostComponent> = {
   title: "Post",
   component: PostComponent,
-} satisfies Meta<typeof PostComponent>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -18,10 +18,10 @@ import {
   ArrowForwardCircle,
 } from "./index";
 
-const meta = {
+const meta: Meta<typeof Layout> = {
   title: "Icons",
   component: Layout,
-} satisfies Meta<typeof Layout>;
+};
 
 const svgStyle = {
   width: "64px",
@@ -35,57 +35,56 @@ export const Icons: Story = {
   args: {
     children: (
       <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        gap: "2rem",
-      }}
-    >
-      <div style={svgStyle}>
-        <ReloadOutline />
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          gap: "2rem",
+        }}
+      >
+        <div style={svgStyle}>
+          <ReloadOutline />
+        </div>
+        <div style={svgStyle}>
+          <Calendar />
+        </div>
+        <div style={svgStyle}>
+          <Hatena />
+        </div>
+        <div style={svgStyle}>
+          <Feedly />
+        </div>
+        <div style={svgStyle}>
+          <Pocket />
+        </div>
+        <div style={svgStyle}>
+          <Twitter />
+        </div>
+        <div style={svgStyle}>
+          <Linkedin />
+        </div>
+        <div style={svgStyle}>
+          <Github />
+        </div>
+        <div style={svgStyle}>
+          <Rss />
+        </div>
+        <div style={svgStyle}>
+          <ChevronForward />
+        </div>
+        <div style={svgStyle}>
+          <ChevronBack />
+        </div>
+        <div style={svgStyle}>
+          <ChevronCircle />
+        </div>
+        <div style={svgStyle}>
+          <ArrowForward />
+        </div>
+        <div style={svgStyle}>
+          <ArrowForwardCircle />
+        </div>
       </div>
-      <div style={svgStyle}>
-        <Calendar />
-      </div>
-      <div style={svgStyle}>
-        <Hatena />
-      </div>
-      <div style={svgStyle}>
-        <Feedly />
-      </div>
-      <div style={svgStyle}>
-        <Pocket />
-      </div>
-      <div style={svgStyle}>
-        <Twitter />
-      </div>
-      <div style={svgStyle}>
-        <Linkedin />
-      </div>
-      <div style={svgStyle}>
-        <Github />
-      </div>
-      <div style={svgStyle}>
-        <Rss />
-      </div>
-      <div style={svgStyle}>
-        <ChevronForward />
-      </div>
-      <div style={svgStyle}>
-        <ChevronBack />
-      </div>
-      <div style={svgStyle}>
-        <ChevronCircle />
-      </div>
-      <div style={svgStyle}>
-        <ArrowForward />
-      </div>
-      <div style={svgStyle}>
-        <ArrowForwardCircle />
-      </div>
-    </div>
     ),
   },
 };
-

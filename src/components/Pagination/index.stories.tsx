@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import PostType from "../../../types/post";
 import PaginationComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof PaginationComponent> = {
   title: "Pagination",
   component: PaginationComponent,
-} satisfies Meta<typeof PaginationComponent>;
+};
 
 const PostMock: PostType = {
   slug: "test-mock",

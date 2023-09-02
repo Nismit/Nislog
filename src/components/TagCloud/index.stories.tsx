@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import TagCloudComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof TagCloudComponent> = {
   title: "Tag Cloud",
   component: TagCloudComponent,
-} satisfies Meta<typeof TagCloudComponent>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

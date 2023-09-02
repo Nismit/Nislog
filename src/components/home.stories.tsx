@@ -9,10 +9,10 @@ import Pagination from "./Pagination";
 import TagCloud from "./TagCloud";
 import Footer from "./Footer";
 
-const meta = {
+const meta: Meta<typeof Layout> = {
   title: "Page/Home",
   component: Layout,
-} satisfies Meta<typeof Layout>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -31,8 +31,8 @@ export const Home: Story = {
         <TagCloud tags={["test", "vancouver", "mock", "tags", "Init"]} />
         <Footer />
       </>
-    )
-  }
+    ),
+  },
 };
 
 Home.decorators = [

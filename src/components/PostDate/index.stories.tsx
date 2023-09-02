@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import PostDate from "./index";
 
-const meta = {
+const meta: Meta<typeof PostDate> = {
   title: "Post Date",
   component: PostDate,
-} satisfies Meta<typeof PostDate>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Layout from "./Layout";
 
-const meta = {
+const meta: Meta<typeof Layout> = {
   title: "Global/Colors",
   component: Layout,
-} satisfies Meta<typeof Layout>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;

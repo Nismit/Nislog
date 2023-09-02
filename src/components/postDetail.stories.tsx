@@ -13,10 +13,10 @@ import AuthorCard from "./AuthorCard";
 import RelatedPosts from "./RelatedPosts";
 import Footer from "./Footer";
 
-const meta = {
+const meta: Meta<typeof Layout> = {
   title: "Page/Post Detail",
   component: Layout,
-} satisfies Meta<typeof Layout>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -83,10 +83,11 @@ export const PostDetail: Story = {
               <h6>Heading 6 タイトル</h6>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                lobortis erat vulputate facilisis dignissim. Praesent gravida arcu
-                et libero iaculis facilisis. Nam a erat sit amet turpis commodo
-                aliquet. <code>function double(x: number) return (x * x)</code>{" "}
-                Nulla lobortis tortor in magna maximus facilisis. Nulla laoreet,
+                lobortis erat vulputate facilisis dignissim. Praesent gravida
+                arcu et libero iaculis facilisis. Nam a erat sit amet turpis
+                commodo aliquet.{" "}
+                <code>function double(x: number) return (x * x)</code> Nulla
+                lobortis tortor in magna maximus facilisis. Nulla laoreet,
                 あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
                 またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、
                 いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。
