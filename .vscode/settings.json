@@ -30,4 +30,5 @@
   "editor.lineNumbers": "on",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
+  "deno.enable": false,
 }

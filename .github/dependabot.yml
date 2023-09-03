@@ -11,3 +11,8 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - "Nismit"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "@types/*"
+          - "storybook"

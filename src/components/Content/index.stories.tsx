@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ContentComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof ContentComponent> = {
   title: "Content",
   component: ContentComponent,
-} satisfies Meta<typeof ContentComponent>;
+};
 
 const ExampleContent = () => (
   <>
@@ -103,6 +103,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Content: Story = {
   args: {
-    children: ExampleContent()
+    children: ExampleContent(),
   },
 };

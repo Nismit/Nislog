@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { SocialList } from "../../../types/social";
 import SocialComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof SocialComponent> = {
   title: "Social",
   component: SocialComponent,
-} satisfies Meta<typeof SocialComponent>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,11 +18,9 @@ export const Social: Story = {
       { type: SocialList.RSS, name: "" },
     ],
   },
-  render: () => (
+  render: (args) => (
     <div className="parent">
-      <SocialComponent
-        items={Social.args.items}
-      />
+      <SocialComponent items={args.items} />
     </div>
   ),
 };

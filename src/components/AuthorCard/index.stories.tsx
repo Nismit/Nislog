@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import AuthorCardComponent from "./index";
 
-const meta = {
+const meta: Meta<typeof AuthorCardComponent> = {
   title: "Author Card",
   component: AuthorCardComponent,
-} satisfies Meta<typeof AuthorCardComponent>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const AuthorCard: Story = {
   args: {
