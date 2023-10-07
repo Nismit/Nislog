@@ -1,4 +1,5 @@
 import React from "react";
+import * as production from "react/jsx-runtime";
 import { unified } from "unified";
 import rehypeParse from "rehype-parse";
 import rehypeReact, { Options } from "rehype-react";
@@ -15,8 +16,12 @@ type Props = {
 
 const rehypeReactOptions: Options = {
   passNode: true,
-  Fragment: React.Fragment,
-  createElement: React.createElement,
+  // @ts-expect-error: the react types are missing.
+  Fragment: production.Fragment,
+  // @ts-expect-error: the react types are missing.
+  jsx: production.jsx,
+  // @ts-expect-error: the react types are missing.
+  jsxs: production.jsxs,
   components: {},
 };
 
