@@ -12,7 +12,20 @@ updates:
     reviewers:
       - "Nismit"
     groups:
-      dev-dependencies:
+      storybook:
         patterns:
-          - "@types/*"
+          - "@storybook/*"
           - "storybook"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/node"
+          - "@types/react"
+          - "@types/react-dom"
+      emotion:
+        patterns:
+          - "@emotion/*"
+      eslint:
+        patterns:
+          - "eslint*"
