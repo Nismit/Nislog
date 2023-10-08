@@ -15,4 +15,4 @@ updates:
       dev-dependencies:
         patterns:
           - "@types/*"
-          - "storybook"
+          - "storybook*"
