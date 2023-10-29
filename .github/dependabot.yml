@@ -29,3 +29,4 @@ updates:
       eslint:
         patterns:
           - "eslint*"
+          - "@typescript-eslint/*"
