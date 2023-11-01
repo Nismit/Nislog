@@ -30,3 +30,4 @@ updates:
         patterns:
           - "eslint*"
           - "@typescript-eslint/*"
+          - "eslint-config-next"
