@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "gray-matter": "^4.0.3",
-    "next": "^13.4.19",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-parse": "^9.0.0",
@@ -38,21 +38,22 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.0.0",
     "remark-unwrap-images": "^4.0.0",
-    "unified": "^11.0.3"
+    "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.4.1",
-    "@storybook/addon-links": "^7.4.1",
-    "@storybook/nextjs": "^7.4.1",
-    "@storybook/react": "^7.4.1",
-    "@types/node": "^20.5.9",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "chromatic": "^6.24.1",
-    "eslint": "8.49.0",
-    "eslint-config-next": "13.4.19",
+    "@storybook/addon-essentials": "^7.5.1",
+    "@storybook/addon-links": "^7.5.1",
+    "@storybook/nextjs": "^7.5.1",
+    "@storybook/react": "^7.5.1",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "chromatic": "^7.5.4",
+    "eslint": "8.52.0",
+    "eslint-config-next": "13.5.6",
     "fast-glob": "^3.3.1",
-    "storybook": "^7.4.1",
-    "typescript": "^5.1.6"
+    "storybook": "^7.5.1",
+    "typescript": "^5.2.2"
   }
 }
