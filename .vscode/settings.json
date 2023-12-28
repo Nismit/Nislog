@@ -1,20 +1,20 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "eslint.format.enable": false,
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -25,10 +25,10 @@
       "strings": "off",
       "other": "off"
     },
-    "editor.defaultFormatter": "vscode.markdown-language-features",
+    "editor.defaultFormatter": "vscode.markdown-language-features"
   },
   "editor.lineNumbers": "on",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "deno.enable": false,
+  "deno.enable": false
 }
