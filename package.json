@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "Blog Development Tools",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "gray-matter": "^4.0.3",
-    "next": "^14.0.2",
+    "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-parse": "^9.0.0",
@@ -41,19 +41,19 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-links": "^7.5.3",
-    "@storybook/nextjs": "^7.5.3",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/nextjs": "^7.6.6",
     "@storybook/react": "^7.5.1",
-    "@types/node": "^20.10.1",
-    "@types/react": "^18.2.39",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "chromatic": "^9.1.0",
-    "eslint": "8.52.0",
-    "eslint-config-next": "13.5.6",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "chromatic": "^10.2.0",
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.4",
     "fast-glob": "^3.3.2",
-    "storybook": "^7.5.3",
-    "typescript": "^5.2.2"
+    "storybook": "^7.6.6",
+    "typescript": "^5.3.3"
   }
 }
