@@ -37,3 +37,4 @@ yarn-error.log*
 /resource
 .firebase
 commandlist.md
+tmp
