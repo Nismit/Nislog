@@ -1,0 +1,124 @@
+:root {
+  --base-font-size: 16px;
+  --base-font-weight: 500;
+  --base-font-line-height: 1.6;
+  --body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root.light {
+  color-scheme: light;
+  --primary: hsl(215, 90%, 10%);
+  --secondary: hsl(215, 90%, 20%);
+  --tertiary: hsl(215, 6%, 60%);
+  --accent: hsl(215, 6%, 40%);
+  --card: hsl(215, 11%, 15%);
+  --background: hsl(215, 20%, 95%);
+  --cta: hsl(215, 80%, 40%);
+  --ctaInvert: hsl(215, 25%, 60%);
+  --code-background-color: rgba(36, 46, 56, 0.15);
+  --pre-background-color: #e5ecf3;
+  --main-border-color: #ddd;
+  --logo-color: #333;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --primary: hsl(215, 4%, 95%);
+  --secondary: hsl(215, 4%, 80%);
+  --tertiary: hsl(215, 6%, 60%);
+  --accent: hsl(215, 6%, 40%);
+  --card: hsl(215, 11%, 15%);
+  --background: hsl(215, 20%, 20%);
+  --cta: hsl(215, 85%, 68%);
+  --ctaInvert: hsl(215, 65%, 80%);
+  --code-background-color: rgba(200, 211, 221, 0.15);
+  --pre-background-color: #1E2131;
+  --main-border-color: rgba(221, 221, 221, 0.4);
+  --logo-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --primary: hsl(215, 4%, 95%);
+    --secondary: hsl(215, 4%, 80%);
+    --tertiary: hsl(215, 6%, 60%);
+    --accent: hsl(215, 6%, 40%);
+    --card: hsl(215, 11%, 15%);
+    --background: hsl(215, 20%, 20%);
+    --cta: hsl(215, 85%, 68%);
+    --ctaInvert: hsl(215, 65%, 80%);
+    --code-background-color: rgba(200, 211, 221, 0.15);
+    --pre-background-color: #1E2131;
+    --main-border-color: rgba(221, 221, 221, 0.4);
+    --logo-color: #fff;
+  }
+}
+
+body {
+  font-size: var(--base-font-size);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-font-line-height);
+  font-kerning: normal;
+  color: var(--primary);
+  background-color: var(--background);
+  font-family: var(--body-font-family);
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1,
+.h1 {
+  font-size: 2.7rem;
+  line-height: 1.35;
+  margin-top: 0;
+}
+
+h2,
+.h2 {
+  font-size: 2.1rem;
+  line-height: 1.38;
+  margin-top: 0;
+}
+
+h3,
+.h3 {
+  font-size: 1.8rem;
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+h4,
+.h4 {
+  font-size: 1.45rem;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+h5,
+.h5 {
+  font-size: 1.27rem;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+h6,
+.h6 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  line-height: 1.53;
+}
+
+a {
+  color: var(--cta);
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--ctaInvert);
+  text-decoration: none;
+}
