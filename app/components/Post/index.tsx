@@ -1,6 +1,7 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
 import { RootContent } from "mdast";
+import PostType from "../../types/post";
 import { PostHeader } from "./PostHeader";
 import { PostContainer } from "./PostContainer";
 import { PostTags } from "./PostTags";
@@ -24,7 +25,7 @@ const postClass = css`
 `;
 
 type Props = {
-  post: any;
+  post: PostType;
   nodes: RootContent[];
   isPage?: boolean;
 };

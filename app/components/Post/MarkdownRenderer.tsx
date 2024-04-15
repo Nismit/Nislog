@@ -88,7 +88,6 @@ const HeadingNode: FC<{ node: RootContentMap["heading"] }> = ({ node }) => {
     } as const
   )[node.depth];
 
-  // TOC用にもう少し改良した方が良さげ
   const childrenText = (function getChildrenText(
     children: PhrasingContent[]
   ): string {
