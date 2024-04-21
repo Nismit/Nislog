@@ -1,7 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
 import { Logo } from "../Icons";
-import ColorToggle from "../../islands/ColorToggle";
 
 const headerClass = css`
   display: flex;
@@ -24,13 +23,17 @@ const headerClass = css`
   }
 `;
 
-export const Header: FC = () => (
+type Props = {
+  toggleButton?: JSX.Element;
+};
+
+export const Header: FC<Props> = ({ toggleButton }) => (
   <header class={headerClass}>
     <a href="/" className="logoLink" title="NISLOG">
       <Logo />
     </a>
     <div className="subMenu">
-      <ColorToggle />
+      {toggleButton ? toggleButton : null}
       <a href="/about" title="About">
         About
       </a>

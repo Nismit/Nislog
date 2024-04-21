@@ -1,10 +1,11 @@
 import { ssgParams } from "hono/ssg";
 import { createRoute } from "honox/factory";
 import PostType from "#/types/post";
-import { getAllPosts } from "#/lib/posts";
+import { getAllPosts, getAllTags } from "#/lib/posts";
 import { MAX_DISPLAY_ITEM } from "#/consts";
 import { PostCard } from "#/components/PostCard";
 import { Pagination } from "#/components/Pagination";
+import { TagCloud } from "#/components/TagCloud";
 import buildData from "#/tmp/build.json";
 
 // The pager starts from 2 because the first page is the root page.
@@ -29,6 +30,7 @@ export default createRoute(
         nextNumberOfPosts,
         nextNumberOfPosts + MAX_DISPLAY_ITEM
       );
+      const allTags = await getAllTags();
 
       if (!slicedPosts.length) {
         return c.notFound();
@@ -43,8 +45,9 @@ export default createRoute(
             totalCounts={allPosts.totalPosts}
             currentPageNumber={page}
           />
+          <TagCloud tags={allTags} />
         </>,
-        { title: "NISLOG" }
+        { title: `Page ${page} | NISLOG` }
       );
     } catch (err) {
       console.error(err);

@@ -1,6 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import PostType from "../../../types/post";
+import PostType from "#/types/post";
 import { RelatedPostItem } from "./RelatedPostItem";
 
 const relatedPostsClass = css`

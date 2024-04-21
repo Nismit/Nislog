@@ -1,11 +1,11 @@
 import { FC, Fragment } from "hono/jsx";
-import MetaType from "../../types/meta";
+import MetaType from "#/types/meta";
 import {
   SITE_NAME,
   SITE_DESCRIPTION,
   SITE_OGP_IMAGE,
   BASE_PATH,
-} from "../../consts";
+} from "#/consts";
 
 type Props = {
   tags?: MetaType;
@@ -13,7 +13,6 @@ type Props = {
 
 export const Meta: FC<Props> = ({ tags }) => (
   <Fragment>
-    <title key="title">{tags?.title ? tags.title : SITE_NAME}</title>
     <meta
       name="description"
       key="description"

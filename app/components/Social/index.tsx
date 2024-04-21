@@ -1,5 +1,5 @@
 import type { FC } from "hono/jsx";
-import { SocialList, SocialType } from "../../types/social";
+import { SocialList, SocialType } from "#/types/social";
 import { GithubListItem } from "./components/GithubListItem";
 import { LinkedinListItem } from "./components/LinkedinListItem";
 import { TwitterListItem } from "./components/TwitterListItem";

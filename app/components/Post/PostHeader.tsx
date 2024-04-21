@@ -1,6 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { ASSETS_PREFIX_PATH } from "../../consts";
+import { ASSETS_PREFIX_PATH } from "#/consts";
 import { PostDate } from "../PostDate";
 
 const postHeaderClass = css`

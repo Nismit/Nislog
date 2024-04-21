@@ -1,6 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { SocialList } from "../../types/social";
+import { SocialList } from "#/types/social";
 import { Social } from "../Social";
 import { ArrowForwardCircle } from "../Icons";
 

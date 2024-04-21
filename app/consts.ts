@@ -6,10 +6,11 @@ export const DEFAULT_FIELDS = [
   "eyecatch",
   "description",
   "tags",
+  "lastmod",
 ];
 
 export const BASE_PATH = () => {
-  if (import.meta.env.MODE === "development") {
+  if (!import.meta.env.PROD) {
     return "http://localhost:5173";
   }
 
@@ -19,4 +20,4 @@ export const BASE_PATH = () => {
 export const SITE_NAME = "NISLOG";
 export const SITE_DESCRIPTION =
   "フロントエンドやバックエンドに関する情報や勉強した事をアウトプットしています。カナダのバンクーバー在住ならではの情報なども少し書いています。";
-export const SITE_OGP_IMAGE = "static/images/og_image.jpg";
+export const SITE_OGP_IMAGE = `${ASSETS_PREFIX_PATH}/images/og_image.jpg`;

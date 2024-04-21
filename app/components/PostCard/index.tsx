@@ -1,7 +1,7 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
+import PostType from "#/types/post";
 import { PostDate } from "../PostDate";
-import PostType from "../../../types/post";
 
 const postCardClass = css`
   .postCard__link {

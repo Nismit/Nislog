@@ -2,10 +2,12 @@ import { html } from "hono/html";
 import { Style } from "hono/css";
 import { jsxRenderer } from "hono/jsx-renderer";
 import { Script } from "honox/server";
+import { SITE_NAME } from "#/consts";
 import { Meta } from "#/components/Meta";
 import { Layout } from "#/components/Layout";
 import { Header } from "#/components/Header";
 import { Footer } from "#/components/Footer";
+import ColorToggle from "#/islands/ColorToggle";
 
 const GA_TRACKING_ID = "UA-90679064-2";
 
@@ -14,10 +16,10 @@ export default jsxRenderer(({ children, title, post }) => {
     <html lang="en">
       <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/x-icon" href="/static/favicon.ico"></link>
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="/static/styles.css" rel="stylesheet" />
-        <title>{title}</title>
+        <title>{title ? title : SITE_NAME}</title>
         <Meta tags={post} />
         {html`
           <script>
@@ -59,7 +61,7 @@ export default jsxRenderer(({ children, title, post }) => {
       </head>
       <body>
         <Layout>
-          <Header />
+          <Header toggleButton={<ColorToggle />} />
           {children}
           <Footer />
         </Layout>

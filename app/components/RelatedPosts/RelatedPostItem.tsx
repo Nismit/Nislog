@@ -1,7 +1,7 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import PostType from "../../types/post";
-import { ASSETS_PREFIX_PATH } from "../../consts";
+import PostType from "#/types/post";
+import { ASSETS_PREFIX_PATH } from "#/consts";
 import { PostDate } from "../PostDate";
 
 const relatedPostItemClass = css`

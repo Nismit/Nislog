@@ -1,6 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { BASE_PATH } from "../../consts";
+import { BASE_PATH } from "#/consts";
 import { Twitter, Hatena, Pocket, Feedly } from "../Icons";
 
 const postFooterClass = css`

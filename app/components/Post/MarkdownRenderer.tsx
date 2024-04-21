@@ -1,6 +1,6 @@
 import { FC, Fragment } from "hono/jsx";
 import { RootContent, RootContentMap, PhrasingContent } from "mdast";
-import { ASSETS_PREFIX_PATH } from "../../consts";
+import { ASSETS_PREFIX_PATH } from "#/consts";
 
 type Props = {
   key?: string | undefined;

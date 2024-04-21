@@ -1,6 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { MAX_DISPLAY_ITEM } from "../../consts";
+import { MAX_DISPLAY_ITEM } from "#/consts";
 
 const paginationClass = css`
   margin: 3rem 0 1rem;

@@ -1,23 +1,7 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { SocialList } from "../../types/social";
+import { SocialList } from "#/types/social";
 import { Social } from "../Social";
-
-export const Footer: FC = () => (
-  <footer class={footerClass}>
-    <div class={socialContainerClass}>
-      <Social
-        items={[
-          { type: SocialList.RSS, name: "rss" },
-          { type: SocialList.TWITTER, name: "nismit_" },
-          { type: SocialList.GITHUB, name: "Nismit" },
-          { type: SocialList.LINKEDIN, name: "nismit" },
-        ]}
-      />
-    </div>
-    <p className="copyright">© 2017 - {new Date().getFullYear()} NISLOG</p>
-  </footer>
-);
 
 const footerClass = css`
   display: flex;
@@ -58,3 +42,19 @@ const socialContainerClass = css`
     }
   }
 `;
+
+export const Footer: FC = () => (
+  <footer class={footerClass}>
+    <div class={socialContainerClass}>
+      <Social
+        items={[
+          { type: SocialList.RSS, name: "rss" },
+          { type: SocialList.TWITTER, name: "nismit_" },
+          { type: SocialList.GITHUB, name: "Nismit" },
+          { type: SocialList.LINKEDIN, name: "nismit" },
+        ]}
+      />
+    </div>
+    <p className="copyright">© 2017 - {new Date().getFullYear()} NISLOG</p>
+  </footer>
+);
