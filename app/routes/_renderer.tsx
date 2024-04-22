@@ -9,7 +9,7 @@ import { Header } from "#/components/Header";
 import { Footer } from "#/components/Footer";
 import ColorToggle from "#/islands/ColorToggle";
 
-const GA_TRACKING_ID = "UA-90679064-2";
+const GA_TRACKING_ID = "G-5GKP3RLDMV";
 
 export default jsxRenderer(({ children, title, post }) => {
   return (
@@ -44,16 +44,15 @@ export default jsxRenderer(({ children, title, post }) => {
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}"
-          />
+          ></script>
           <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
               dataLayer.push(arguments);
             }
             gtag("js", new Date());
-            gtag("config", "${GA_TRACKING_ID}", {
-              page_path: window.location.pathname,
-            });
+
+            gtag("config", "${GA_TRACKING_ID}");
           </script>
         `}
         <Script src="/app/client.ts" async />
