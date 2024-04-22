@@ -2,6 +2,4 @@
 
 Personal Blog
 
-- React
-- Next.js
-- Vercel
+- Hono + HonoX

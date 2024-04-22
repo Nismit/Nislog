@@ -1,31 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "ESNext"
     ],
-    "allowJs": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "incremental": true
+    "types": [
+      "vite/client"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "paths": {
+      "#/*": ["./app/*"],
+    },
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "gtag.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
 }

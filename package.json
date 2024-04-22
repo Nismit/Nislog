@@ -1,13 +1,13 @@
 {
   "name": "blog",
-  "version": "2.5.2",
+  "version": "3.0.0",
   "description": "Blog Development Tools",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "lint": "next lint",
-    "start": "next start",
+    "dev": "npm run prebuild && vite",
+    "build": "npm run prebuild && vite build --mode client && NODE_ENV='production' && vite build",
+    "prebuild": "node ./app/build.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,36 +24,16 @@
   },
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "gray-matter": "^4.0.3",
-    "next": "^14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rehype-parse": "^9.0.0",
-    "rehype-react": "^8.0.0",
-    "rehype-stringify": "^10.0.0",
-    "remark-breaks": "^4.0.0",
-    "remark-gfm": "^4.0.0",
-    "remark-parse": "^11.0.0",
-    "remark-rehype": "^11.1.0",
-    "remark-unwrap-images": "^4.0.0",
-    "unified": "^11.0.4"
+    "hono": "^4.2.5",
+    "honox": "^0.1.15"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.17",
-    "@storybook/addon-links": "^7.6.17",
-    "@storybook/nextjs": "^7.6.17",
-    "@storybook/react": "^7.5.1",
-    "@types/node": "^20.11.16",
-    "@types/react": "^18.2.52",
-    "@types/react-dom": "^18.2.18",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "chromatic": "^10.7.1",
-    "eslint": "8.56.0",
-    "eslint-config-next": "14.1.1",
+    "@hono/vite-ssg": "^0.1.0",
+    "@types/mdast": "^4.0.3",
     "fast-glob": "^3.3.2",
-    "storybook": "^7.6.17",
-    "typescript": "^5.3.3"
+    "gray-matter": "^4.0.3",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "vite": "^5.2.10"
   }
 }
