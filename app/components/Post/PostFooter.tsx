@@ -1,7 +1,7 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
 import { BASE_PATH } from "#/consts";
-import { Twitter, Hatena, Pocket, Feedly } from "../Icons";
+import { Twitter, Hatena, Pocket, Feedly, Bluesky } from "../Icons";
 
 const postFooterClass = css`
   display: flex;
@@ -46,6 +46,10 @@ const postFooterClass = css`
       background-color: #2bb24c;
     }
 
+    &.bluesky {
+      background-color: #1185fe;
+    }
+
     &:hover {
       opacity: 0.7;
     }
@@ -67,6 +71,15 @@ export const PostFooter: FC<Props> = ({ slug, title }) => (
       rel="noreferrer"
     >
       <Twitter />
+    </a>
+    <a
+      className="single-share__link bluesky"
+      href={`https://bsky.app/intent/compose?text=${title}+%7C+${BASE_PATH()}/${slug}`}
+      title="Blueskyでシェア"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <Bluesky />
     </a>
     <a
       className="single-share__link hatena"
