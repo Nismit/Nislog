@@ -38,3 +38,12 @@ yarn-error.log*
 .firebase
 commandlist.md
 tmp
+
+# test data
+content/post/2050/*
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
