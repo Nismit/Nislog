@@ -4,6 +4,7 @@ import { GithubListItem } from "./components/GithubListItem";
 import { LinkedinListItem } from "./components/LinkedinListItem";
 import { TwitterListItem } from "./components/TwitterListItem";
 import { RssListItem } from "./components/RssListItem";
+import { BlueskyListItem } from "./components/BlueskyListItem";
 
 type Props = {
   items: Array<{ type: SocialType; name: string }>;
@@ -14,6 +15,7 @@ const SocialMapping = {
   [SocialList.LINKEDIN]: LinkedinListItem,
   [SocialList.TWITTER]: TwitterListItem,
   [SocialList.RSS]: RssListItem,
+  [SocialList.BLUESKY]: BlueskyListItem,
 };
 
 export const Social: FC<Props> = ({ items }) => {

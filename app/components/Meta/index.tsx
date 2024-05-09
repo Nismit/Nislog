@@ -51,7 +51,7 @@ export const Meta: FC<Props> = ({ tags }) => (
       key="og_image"
       content={
         tags?.eyecatch
-          ? `${BASE_PATH()}${tags.eyecatch}`
+          ? `${BASE_PATH()}/static${tags.eyecatch}`
           : `${BASE_PATH()}${SITE_OGP_IMAGE}`
       }
     />
@@ -77,7 +77,7 @@ export const Meta: FC<Props> = ({ tags }) => (
       key="twitter_img"
       content={
         tags?.eyecatch
-          ? `${BASE_PATH()}${tags.eyecatch}`
+          ? `${BASE_PATH()}/static${tags.eyecatch}`
           : `${BASE_PATH()}${SITE_OGP_IMAGE}`
       }
     />
