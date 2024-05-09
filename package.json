@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
     "hono": "^4.2.5",
-    "honox": "^0.1.15"
+    "honox": "^0.1.16"
   },
   "devDependencies": {
     "@hono/vite-ssg": "^0.1.0",
