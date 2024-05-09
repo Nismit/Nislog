@@ -50,6 +50,7 @@ export const Footer: FC = () => (
         items={[
           { type: SocialList.RSS, name: "rss" },
           { type: SocialList.TWITTER, name: "nismit_" },
+          { type: SocialList.BLUESKY, name: "nismit" },
           { type: SocialList.GITHUB, name: "Nismit" },
           { type: SocialList.LINKEDIN, name: "nismit" },
         ]}
