@@ -81,6 +81,7 @@ export const AuthorDescription: FC<Props> = ({
       <Social
         items={[
           { type: SocialList.TWITTER, name: "nismit_" },
+          { type: SocialList.BLUESKY, name: "nismit" },
           { type: SocialList.GITHUB, name: "Nismit" },
         ]}
       />
