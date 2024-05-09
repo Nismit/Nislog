@@ -9,26 +9,3 @@ updates:
       interval: "daily"
     target-branch: "develop"
     open-pull-requests-limit: 10
-    reviewers:
-      - "Nismit"
-    groups:
-      storybook:
-        patterns:
-          - "@storybook/*"
-          - "@storybook/react"
-          - "storybook"
-      react:
-        patterns:
-          - "react"
-          - "react-dom"
-          - "@types/node"
-          - "@types/react"
-          - "@types/react-dom"
-      emotion:
-        patterns:
-          - "@emotion/*"
-      eslint:
-        patterns:
-          - "eslint*"
-          - "@typescript-eslint/*"
-          - "eslint-config-next"
