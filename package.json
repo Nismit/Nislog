@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Nismit/Nislog#readme",
   "dependencies": {
-    "hono": "^4.2.5",
+    "hono": "^4.3.4",
     "honox": "^0.1.16"
   },
   "devDependencies": {
