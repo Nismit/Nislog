@@ -39,8 +39,7 @@ jobs:
       - name: Approve & Auto Merge
         if: |
           steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-          (steps.metadata.outputs.update-type == 'version-update:semver-minor'
-          && steps.metadata.outputs.dependency-type == 'direct:development')
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
         run: |
           gh pr review --approve "$PR_URL"
           gh pr edit "$PR_URL" -t "(auto merged) $PR_TITLE"
