@@ -29,7 +29,7 @@
   "devDependencies": {
     "@hono/vite-ssg": "^0.1.0",
     "@playwright/test": "^1.44.0",
-    "@types/mdast": "^4.0.3",
+    "@types/mdast": "^4.0.4",
     "@types/node": "^20.12.11",
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
