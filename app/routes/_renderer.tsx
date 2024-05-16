@@ -41,20 +41,21 @@ export default jsxRenderer(({ children, title, post }) => {
               }
             })();
           </script>
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}"
-          ></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "${GA_TRACKING_ID}");
-          </script>
         `}
+        {import.meta.env.MODE !== "development" &&
+          html` <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}"
+            ></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag() {
+                dataLayer.push(arguments);
+              }
+              gtag("js", new Date());
+
+              gtag("config", "${GA_TRACKING_ID}");
+            </script>`}
         <Script src="/app/client.ts" async />
         <Style />
       </head>
