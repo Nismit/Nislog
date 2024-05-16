@@ -42,7 +42,7 @@ export default jsxRenderer(({ children, title, post }) => {
             })();
           </script>
         `}
-        {import.meta.env.MODE !== "development" &&
+        {!import.meta.env.DEV &&
           html` <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}"
