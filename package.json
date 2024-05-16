@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npm run prebuild && vite",
+    "dev": "npm run prebuild && vite dev",
     "build": "npm run prebuild && vite build --mode client && NODE_ENV='production' && vite build",
     "prebuild": "node ./app/build.js",
     "storybook": "storybook dev -p 6006",
