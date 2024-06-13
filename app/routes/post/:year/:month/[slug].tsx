@@ -29,8 +29,9 @@ export default createRoute(
         return c.notFound();
       }
 
-      const post = getPostBySlug<PostType>(path, DEFAULT_FIELDS);
-      const postAst = markdownParser(post.content);
+      const post = getPostBySlug<PostType>(path, ["toc", ...DEFAULT_FIELDS]);
+      const postAst = await markdownParser(post.content);
+      const { toc } = postAst.data;
       const tags: string[] = [...new Set(post.tags)];
       const postsFromTags = await getPostsFromTag<PostType>(
         tags,
@@ -42,7 +43,11 @@ export default createRoute(
 
       return c.render(
         <>
-          <Post post={post} nodes={postAst.children} />
+          <Post
+            post={post}
+            nodes={postAst.children}
+            toc={post.toc ? toc : undefined}
+          />
           <AuthorCard />
           <RelatedPosts posts={filteredPostsFromTags} />
         </>,

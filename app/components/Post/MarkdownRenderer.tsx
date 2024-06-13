@@ -1,6 +1,8 @@
 import { FC, Fragment } from "hono/jsx";
-import { RootContent, RootContentMap, PhrasingContent } from "mdast";
+import { JSX } from "hono/jsx/jsx-runtime";
+import { RootContent, RootContentMap } from "mdast";
 import { ASSETS_PREFIX_PATH } from "#/consts";
+import type { HeadingProperties } from "#/types/remark";
 
 type Props = {
   key?: string | undefined;
@@ -88,22 +90,10 @@ const HeadingNode: FC<{ node: RootContentMap["heading"] }> = ({ node }) => {
     } as const
   )[node.depth];
 
-  const childrenText = (function getChildrenText(
-    children: PhrasingContent[]
-  ): string {
-    return children.reduce((acc, child) => {
-      if ("value" in child) {
-        return acc + child.value;
-      }
-      if ("children" in child) {
-        return acc + getChildrenText(child.children);
-      }
-      return acc;
-    }, "");
-  })(node.children);
+  const { hProperties } = node.data as HeadingProperties;
 
   return (
-    <Component id={encodeURIComponent(childrenText)}>
+    <Component id={hProperties?.id ?? ""}>
       <MarkdownRenderer nodes={node.children} />
     </Component>
   );
@@ -149,6 +139,9 @@ const ListItemNode: FC<{ node: RootContentMap["listItem"] }> = ({ node }) => {
   if (node.children.length === 1 && node.children[0].type === "paragraph") {
     return (
       <li>
+        {node.checked !== null && (
+          <input type="checkbox" checked={node.checked} />
+        )}
         <MarkdownRenderer nodes={node.children[0].children} />
       </li>
     );
@@ -156,6 +149,9 @@ const ListItemNode: FC<{ node: RootContentMap["listItem"] }> = ({ node }) => {
 
   return (
     <li>
+      {node.checked !== null && (
+        <input type="checkbox" checked={node.checked} />
+      )}
       <MarkdownRenderer nodes={node.children} />
     </li>
   );
