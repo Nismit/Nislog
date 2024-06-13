@@ -1,3 +1,4 @@
+import { JSX } from "hono/jsx/jsx-runtime";
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
 import { Logo } from "../Icons";
