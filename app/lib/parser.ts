@@ -1,8 +1,8 @@
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
-import { remarkToc } from "./plugin";
+import { remarkToc, remarkGfmFootnote } from "./plugin";
 
-const parser = remark().use(remarkGfm).use(remarkToc);
+const parser = remark().use(remarkGfm).use(remarkToc).use(remarkGfmFootnote);
 
 export const markdownParser = async (markdown: string) => {
   const mdAst = parser.parse(markdown);
