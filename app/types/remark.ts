@@ -1,4 +1,10 @@
-import type { Root, RootData, HeadingData } from "mdast";
+import type {
+  Root,
+  RootData,
+  HeadingData,
+  FootnoteDefinition,
+  Parent,
+} from "mdast";
 
 export interface HeadingProperties extends HeadingData {
   hProperties?: {
@@ -8,6 +14,7 @@ export interface HeadingProperties extends HeadingData {
 
 interface ExtendedRootData extends RootData {
   toc?: TocNode[];
+  footnotes?: FootnotesParentNode;
 }
 
 export interface ExtendedRoot extends Root {
@@ -20,3 +27,8 @@ export type TocNode = {
   data: any;
   children: TocNode[];
 };
+
+export interface FootnotesParentNode extends Parent {
+  type: "footnotesParent";
+  children: FootnoteDefinition[];
+}

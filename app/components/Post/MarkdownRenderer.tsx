@@ -2,7 +2,7 @@ import { FC, Fragment } from "hono/jsx";
 import { JSX } from "hono/jsx/jsx-runtime";
 import { RootContent, RootContentMap } from "mdast";
 import { ASSETS_PREFIX_PATH } from "#/consts";
-import type { HeadingProperties } from "#/types/remark";
+import type { HeadingProperties, FootnotesParentNode } from "#/types/remark";
 
 type Props = {
   key?: string | undefined;
@@ -56,6 +56,12 @@ export const MarkdownRenderer: FC<Props> = ({ nodes }) => {
       }
       case "break": {
         return <br />;
+      }
+      case "footnoteReference": {
+        return <FootnoteReferenceNode node={node} />;
+      }
+      case "footnoteDefinition": {
+        return <FootnoteDefinitionNode node={node} />;
       }
       default: {
         return <div key={index}>node: {node.type}</div>;
@@ -221,4 +227,29 @@ const TableNode: FC<{ node: RootContentMap["table"] }> = ({ node }) => {
 
 const HTMLNode: FC<{ node: RootContentMap["html"] }> = ({ node }) => {
   return <div dangerouslySetInnerHTML={{ __html: node.value }} />;
+};
+
+const FootnoteReferenceNode: FC<{
+  node: RootContentMap["footnoteReference"];
+}> = ({ node }) => {
+  return (
+    <sup>
+      <a
+        id={`ref-${encodeURIComponent(node.identifier)}`}
+        href={`#${encodeURIComponent(node.identifier)}`}
+      >
+        [{node.identifier}]
+      </a>
+    </sup>
+  );
+};
+
+const FootnoteDefinitionNode: FC<{
+  node: RootContentMap["footnoteDefinition"];
+}> = ({ node }) => {
+  return (
+    <li id={encodeURIComponent(node.identifier)}>
+      <MarkdownRenderer nodes={node.children} />
+    </li>
+  );
 };
