@@ -1,5 +1,5 @@
 import type { FC } from "hono/jsx";
-import type { TocNode } from "#/types/remark";
+import type { TocNode, FootnotesParentNode } from "#/types/remark";
 import { css } from "hono/css";
 import { RootContent } from "mdast";
 import PostType from "#/types/post";
@@ -8,6 +8,7 @@ import { PostContainer } from "./PostContainer";
 import { PostTags } from "./PostTags";
 import { PostFooter } from "./PostFooter";
 import { TableOfContents } from "./TableOfContents";
+import { Footnotes } from "./Footnotes";
 
 const postClass = css`
   width: 100%;
@@ -47,9 +48,10 @@ type Props = {
   nodes: RootContent[];
   isPage?: boolean;
   toc?: TocNode[];
+  footnotes?: FootnotesParentNode;
 };
 
-export const Post: FC<Props> = ({ post, nodes, isPage, toc }) => (
+export const Post: FC<Props> = ({ post, nodes, isPage, toc, footnotes }) => (
   <article className={postClass}>
     <PostHeader
       title={post.title}
@@ -59,6 +61,7 @@ export const Post: FC<Props> = ({ post, nodes, isPage, toc }) => (
     />
     <TableOfContents toc={toc} />
     <PostContainer nodes={nodes} />
+    <Footnotes node={footnotes} />
     {!isPage ? <PostTags data={post.tags} /> : null}
     {!isPage ? <PostFooter slug={post.slug} title={post.title} /> : null}
   </article>
