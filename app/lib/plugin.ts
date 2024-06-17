@@ -1,6 +1,10 @@
 import { visit } from "unist-util-visit";
 import type { Root, Heading, PhrasingContent } from "mdast";
-import type { ExtendedRoot, TocNode } from "#/types/remark";
+import type {
+  ExtendedRoot,
+  TocNode,
+  FootnotesParentNode,
+} from "#/types/remark";
 
 const transformNode = (
   node: Heading,
@@ -62,4 +66,29 @@ const getHeadings = (tree: Root) => {
 
 export const remarkToc = () => {
   return (root: Root) => getHeadings(root);
+};
+
+const transformFootnote = (tree: Root) => {
+  const footnotesParentNode: FootnotesParentNode = {
+    type: "footnotesParent",
+    children: [],
+  };
+
+  visit(tree, "footnoteDefinition", (node) => {
+    footnotesParentNode.children.push(node);
+  });
+
+  const filteredChildren = tree.children.filter(
+    (node) => node.type !== "footnoteDefinition"
+  );
+
+  if (footnotesParentNode.children.length > 0) {
+    tree.children = filteredChildren;
+    tree.data = { footnotes: footnotesParentNode, ...tree.data };
+    return tree as ExtendedRoot;
+  }
+};
+
+export const remarkGfmFootnote = () => {
+  return (root: Root) => transformFootnote(root);
 };
