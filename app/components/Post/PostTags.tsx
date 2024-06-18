@@ -79,7 +79,7 @@ export const PostTags: FC<Props> = ({ data }) => (
       {data.map((item: string, i: number) => {
         return (
           <li className="article__tags__item" key={i}>
-            <a href={`/tags/${item}`} title={item}>
+            <a href={`/tags/${encodeURIComponent(item)}`} title={item}>
               {item}
             </a>
           </li>

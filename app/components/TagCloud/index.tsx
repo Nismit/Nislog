@@ -89,7 +89,10 @@ export const TagCloud: FC<Props> = ({ tags }) => (
       {tags.map((tag, i) => {
         return (
           <li className="tagCloud__list__item" key={i}>
-            <a href={`/tags/${tag}`} className="tagCloud__link">
+            <a
+              href={`/tags/${encodeURIComponent(tag)}`}
+              className="tagCloud__link"
+            >
               {tag}
             </a>
           </li>
