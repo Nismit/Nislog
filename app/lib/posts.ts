@@ -75,7 +75,7 @@ export const getAllTags = async () => {
   const filter = allTags.filter(
     (tag): tag is Exclude<typeof tag, null> => tag !== null
   );
-  const tags = [...new Set(filter.flat())];
+  const tags = [...new Set(filter.flat())].sort((a, b) => a.localeCompare(b));
   return tags;
 };
 
