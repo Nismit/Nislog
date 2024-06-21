@@ -5,7 +5,7 @@ import { PostDate } from "../PostDate";
 
 const postHeaderClass = css`
   h1 {
-    font-size: 1.72rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     margin-top: 0.6rem;
     margin-bottom: 1rem;

@@ -12,7 +12,7 @@ export default createRoute(async (c) => {
       DEFAULT_FIELDS,
       "content/pages/"
     );
-    const articleAst = markdownParser(article.content);
+    const articleAst = await markdownParser(article.content);
 
     return c.render(
       <Post post={article} nodes={articleAst.children} isPage />,

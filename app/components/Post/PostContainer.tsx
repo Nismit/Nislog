@@ -7,25 +7,22 @@ const postContainerClass = css`
   h1 {
     padding-bottom: 0.1em;
     margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 4px solid var(--cta);
-    font-size: 1.65rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.75rem;
     line-height: 1.5;
   }
 
   h2 {
-    padding: 0.25em 0 0.25em 0.45em;
-    margin-top: 2rem;
-    margin-bottom: 1.2rem;
-    border-left: 6px solid var(--cta);
-    font-size: 1.47rem;
+    margin-top: 2.3rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.53rem;
     line-height: 1.5;
   }
 
   h3 {
-    margin-top: 1.4rem;
-    margin-bottom: 1.2rem;
-    font-size: 1.35rem;
+    margin-top: 1.9rem;
+    margin-bottom: 1rem;
+    font-size: 1.33rem;
   }
 
   h4 {
@@ -108,6 +105,10 @@ const postContainerClass = css`
 
     li {
       margin: 0.75rem 0;
+
+      a {
+        word-break: break-all;
+      }
     }
 
     ul {
