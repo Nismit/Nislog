@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@hono/vite-ssg": "^0.1.0",
-    "@playwright/test": "^1.45.0",
+    "@playwright/test": "^1.45.1",
     "@types/mdast": "^4.0.4",
     "@types/node": "^20.14.9",
     "fast-glob": "^3.3.2",
