@@ -1,6 +1,5 @@
 import fs from "fs";
 import { join } from "path";
-import fg from "fast-glob";
 import matter from "gray-matter";
 
 const CONTENT_PATH = "content/";
@@ -10,11 +9,11 @@ const FIELDS = ["slug", "tags", "draft"];
 const TMP_PATH = "./app/tmp";
 const TMP_FILE_NAME = "build.json";
 
-const getContentsByPath = async (
+const getContentsByPath = (
   pathPrefix = `${CONTENT_PATH}${POST_PATH}`,
   extension = EXTENSION
 ) => {
-  return await fg(`${pathPrefix}**/*${extension}`);
+  return fs.globSync(`${pathPrefix}**/*${extension}`);
 };
 
 const getSlugFromPath = (
@@ -53,7 +52,7 @@ const getPostByPath = (
 
 const generateBuildData = async () => {
   try {
-    const allPostsPath = await getContentsByPath();
+    const allPostsPath = getContentsByPath();
     const posts = allPostsPath
       .map((path) => getPostByPath(path, FIELDS))
       .filter((post) => !post.draft);
