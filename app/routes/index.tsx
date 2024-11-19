@@ -8,7 +8,9 @@ import { TagCloud } from "#/components/TagCloud";
 
 export default createRoute(async (c) => {
   const allPosts = await getAllPosts<PostType>(DEFAULT_FIELDS);
-  const filteredPosts = allPosts.posts.filter((post) => !post.draft);
+  const filteredPosts = allPosts.posts.filter((post) =>
+    !import.meta.env.PROD ? true : !post.draft
+  );
   const slicedPosts = filteredPosts.slice(0, MAX_DISPLAY_ITEM);
   const allTags = await getAllTags();
 
