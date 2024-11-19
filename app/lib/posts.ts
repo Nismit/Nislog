@@ -1,6 +1,5 @@
-import fs from "fs";
+import { readFileSync, globSync } from "node:fs";
 import { join } from "path";
-import fg from "fast-glob";
 import matter from "gray-matter";
 
 interface Post {
@@ -13,11 +12,11 @@ const CONTENT_PATH = "content/";
 const POST_PATH = "post/";
 const EXTENSION = ".md";
 
-const getContentsByPath = async (
+const getContentsByPath = (
   pathPrefix = `${CONTENT_PATH}${POST_PATH}`,
   extension = EXTENSION
 ) => {
-  return await fg(`${pathPrefix}**/*${extension}`);
+  return globSync(`${pathPrefix}**/*${extension}`);
 };
 
 const getSlugFromPath = (
@@ -29,7 +28,7 @@ const getSlugFromPath = (
 };
 
 const getTagsFromPosts = (slug: string): string | null => {
-  const fileContents = fs.readFileSync(slug, "utf8");
+  const fileContents = readFileSync(slug, "utf8");
   const { data } = matter(fileContents);
   return !data["draft"] ? data["tags"] : null;
 };
@@ -42,7 +41,7 @@ export const getPostBySlug = <T = {}>(
 ): T & Post => {
   const realSlug = getSlugFromPath(slug);
   const fullPath = join(process.cwd(), `${pathPrefix}${realSlug}${extension}`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   const items: Post = {
@@ -61,7 +60,7 @@ export const getPostBySlug = <T = {}>(
 
 // TODO: Generate Post List as JSON
 export const getAllPosts = async <T>(fields: string[] = ["date"]) => {
-  const allPostsPath = await getContentsByPath();
+  const allPostsPath = getContentsByPath();
   const posts = allPostsPath
     .map((slug) => getPostBySlug<T>(slug, fields))
     .sort((prev, next) => (prev.date > next.date ? -1 : 1));
@@ -70,7 +69,7 @@ export const getAllPosts = async <T>(fields: string[] = ["date"]) => {
 
 // TODO: Generate Tag List as JSON
 export const getAllTags = async () => {
-  const allPostsPath = await getContentsByPath();
+  const allPostsPath = getContentsByPath();
   const allTags = allPostsPath.map((slug) => getTagsFromPosts(slug));
   const filter = allTags.filter(
     (tag): tag is Exclude<typeof tag, null> => tag !== null
@@ -83,7 +82,7 @@ export const getPostsFromTag = async <T>(
   tag: string[],
   fields: string[] = []
 ) => {
-  const allPostsPath = await getContentsByPath();
+  const allPostsPath = getContentsByPath();
   const posts = allPostsPath
     .map((slug) => getPostBySlug<T>(slug, fields))
     .sort((prev, next) => (prev.date > next.date ? -1 : 1));
