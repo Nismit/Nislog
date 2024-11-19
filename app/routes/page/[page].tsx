@@ -19,13 +19,16 @@ export default createRoute(
     try {
       const page = Number(c.req.param("page"));
       const allPosts = await getAllPosts<PostType>([
+        "draft",
         "date",
         "title",
         "description",
         "tags",
       ]);
       const nextNumberOfPosts = MAX_DISPLAY_ITEM * (page - 1);
-      const filteredPosts = allPosts.posts.filter((post) => !post.draft);
+      const filteredPosts = allPosts.posts.filter((post) =>
+        !import.meta.env.PROD ? true : !post.draft
+      );
       const slicedPosts = filteredPosts.slice(
         nextNumberOfPosts,
         nextNumberOfPosts + MAX_DISPLAY_ITEM

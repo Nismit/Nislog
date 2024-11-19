@@ -1,6 +1,7 @@
 export const MAX_DISPLAY_ITEM = 10;
 export const ASSETS_PREFIX_PATH = "/static";
 export const DEFAULT_FIELDS = [
+  "draft",
   "date",
   "title",
   "eyecatch",
