@@ -1,0 +1,27 @@
+name: Weekly Build
+on:
+  schedule:
+    # Run every Saturday at 00:00
+    - cron: "0 0 * * 6"
+  workflow_dispatch:
+
+jobs:
+  create_pull_reques:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check and Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_EXISTS=$(gh pr list --base master --head develop --json title --jq '.[] | select(.title == "Weekly Build") | .title')
+          if [ "$PR_EXISTS" == "Weekly Build" ]; then
+            echo "PR already exists. Exiting."
+            exit 0
+          fi
+
+          gh pr create \
+            --base master \
+            --head develop \
+            --title "Weekly Build" \
+            --body "This is an automated pull request for weekly build."
