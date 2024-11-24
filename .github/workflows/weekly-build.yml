@@ -18,9 +18,8 @@ jobs:
           if [[ $PR_COUNT == 0 ]]; then
             gh pr create \
               -B master \
-              -t "${{ github.event.head_commit.message }}" \
-              -a "${{ github.actor }}"  \
-              -F ./.github/workflows/PR_template.md
+              -t "Weekly Build" \
+              -a "${{ github.actor }}"
           else
             echo "PR already exists."
           fi
