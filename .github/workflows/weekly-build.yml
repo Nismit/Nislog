@@ -3,7 +3,7 @@ on:
   schedule:
     # At 00:00 on Saturday
     # - cron: "0 0 * * 6"
-    - cron: "28 14 * * *"
+    - cron: "05 15 * * *"
 
 jobs:
   create_pull_reques:
