@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check and Create Pull Request
         env:
-          GH_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_COUNT=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '. | length')
           if [[ $PR_COUNT == 0 ]]; then
