@@ -1,0 +1,26 @@
+name: Weekly Build
+on:
+  schedule:
+    # Run every Saturday at 00:00
+    - cron: "0 0 * * 6"
+  workflow_dispatch:
+
+jobs:
+  create_pull_reques:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check and Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_COUNT=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '. | length')
+          if [[ $PR_COUNT == 0 ]]; then
+            gh pr create \
+              -B master \
+              --title "Weekly Build" \
+              --body "This is an automated pull request for weekly build." \
+              -a "${{ github.actor }}"
+          else
+            echo "PR already exists."
+          fi
