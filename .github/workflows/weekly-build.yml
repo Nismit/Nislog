@@ -18,7 +18,8 @@ jobs:
           if [[ $PR_COUNT == 0 ]]; then
             gh pr create \
               -B master \
-              -t "Weekly Build" \
+              --title "Weekly Build" \
+              --body "This is an automated pull request for weekly build." \
               -a "${{ github.actor }}"
           else
             echo "PR already exists."
