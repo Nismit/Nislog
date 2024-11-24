@@ -1,8 +1,9 @@
 name: Weekly Build
 on:
-  schedule:
-    # At 00:00 on Saturday
-    - cron: "0 0 * * 6"
+  [push]
+  # schedule:
+  #   # At 00:00 on Saturday
+  #   - cron: "0 0 * * 6"
 
 jobs:
   create_pull_reques:
