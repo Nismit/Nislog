@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_pull_reques:
+  create_pull_request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,14 +14,25 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_EXISTS=$(gh pr list --base master --head develop --json title --jq '.[] | select(.title == "Weekly Build") | .title')
-          if [ "$PR_EXISTS" == "Weekly Build" ]; then
-            echo "PR already exists. Exiting."
-            exit 0
+          PR_URL=$(gh pr list --base master --head develop --json url --jq '.[] | select(.title == "Weekly Build") | .url')
+          if [ -z "$PR_URL" ]; then
+            PR_URL=$(gh pr create \
+              --base master \
+              --head develop \
+              --title "Weekly Build" \
+              --body "This is an automated pull request for weekly build." \
+              --json url --jq '.url')
+            echo "Created new PR: $PR_URL"
+          else
+            echo "PR already exists: $PR_URL"
           fi
-
-          gh pr create \
-            --base master \
-            --head develop \
-            --title "Weekly Build" \
-            --body "This is an automated pull request for weekly build."
+          echo "pr_url=$PR_URL" >> $GITHUB_ENV
+  auto_merge:
+    needs: create_pull_request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto merge PR
+        if: env.pr_url != ''
+        run: |
+          gh pr merge "${{ env.pr_url }}" --rebase --auto \
+            || echo "Failed to auto-merge the PR"
