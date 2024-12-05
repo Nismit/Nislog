@@ -14,13 +14,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_COUNT=$(gh pr list --head "${{ github.ref_name }}" --json number --jq '. | length')
-          if [[ $PR_COUNT == 0 ]]; then
-            gh pr create \
-              -B master \
-              --title "Weekly Build" \
-              --body "This is an automated pull request for weekly build." \
-              -a "${{ github.actor }}"
-          else
-            echo "PR already exists."
+          PR_EXISTS=$(gh pr list --base master --head develop --json title --jq '.[] | select(.title == "Weekly Build") | .title')
+          if [ "$PR_EXISTS" == "Weekly Build" ]; then
+            echo "PR already exists. Exiting."
+            exit 0
           fi
+
+          gh pr create \
+            --base master \
+            --head develop \
+            --title "Weekly Build" \
+            --body "This is an automated pull request for weekly build."
