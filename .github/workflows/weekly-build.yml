@@ -16,12 +16,13 @@ jobs:
         run: |
           PR_URL=$(gh pr list --base master --head develop --json url --jq '.[] | select(.title == "Weekly Build") | .url')
           if [ -z "$PR_URL" ]; then
-            PR_URL=$(gh pr create \
+            gh pr create \
               --base master \
               --head develop \
               --title "Weekly Build" \
-              --body "This is an automated pull request for weekly build." \
-              --json url --jq '.url')
+              --body "This is an automated pull request for weekly build."
+            # 作成されたPRのURLを取得
+            PR_URL=$(gh pr list --base master --head develop --jq '.[] | select(.title == "Weekly Build") | .url')
             echo "Created new PR: $PR_URL"
           else
             echo "PR already exists: $PR_URL"
