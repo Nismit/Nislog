@@ -1,0 +1,40 @@
+name: Sync from another repository
+on:
+  schedule:
+    # Run every day at 15:00 UTC (PST 07:00)
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+jobs:
+  copy-directory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Current Repository
+        uses: actions/checkout@v4
+        with:
+          path: current-repo
+
+      - name: Checkout Target Repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.REPO }}
+          token: ${{ secrets.TOKEN }}
+          path: target-repo # チェックアウトするパスを指定
+
+      - name: Copy Specific Directory
+        run: |
+          cp -pR ./target-repo/blog/* ./current-repo/content
+
+      - name: Commit and Push Changes
+        run: |
+          cd current-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          # 変更があるかをチェック
+          if git diff --cached --quiet; then
+            echo "No changes to commit. Fully Synced."
+            exit 0
+          fi
+          git commit -m ":robot: Sync content"
+          git push
