@@ -3,7 +3,7 @@ draft: true
 date: 2024-12-10T21:57:43
 title: 子育てログ2
 description: 子育ての大変さの一部が分かってきたり、父親の育児について今思っていることを残しています
-eyecatch: /images/eyecatch/eye-child-care-log.jpg
+eyecatch: /images/eyecatch/eye-child-care-log-2.jpg
 tags:
   - 雑記
 toc: false
