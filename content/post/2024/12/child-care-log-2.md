@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2024-12-10T21:57:43
 title: 子育てログ2
 description: 子育ての大変さの一部が分かってきたり、父親の育児について今思っていることを残しています
