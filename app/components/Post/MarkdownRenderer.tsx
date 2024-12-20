@@ -172,7 +172,10 @@ const StrongNode: FC<{ node: RootContentMap["strong"] }> = ({ node }) => {
 };
 
 const ImageNode: FC<{ node: RootContentMap["image"] }> = ({ node }) => {
-  return <img src={`${ASSETS_PREFIX_PATH}${node.url}`} alt={node.alt ?? ""} />;
+  const imageSrc = /^http(s)?:\/\//.test(node.url)
+    ? node.url
+    : `${ASSETS_PREFIX_PATH}${node.url}`;
+  return <img src={imageSrc} alt={node.alt ?? ""} />;
 };
 
 const CodeNode: FC<{ node: RootContentMap["code"] }> = async ({ node }) => {
