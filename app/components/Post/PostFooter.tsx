@@ -6,13 +6,11 @@ import { Twitter, Hatena, Pocket, Feedly, Bluesky } from "../Icons";
 const postFooterClass = css`
   display: flex;
   gap: 1rem;
-  margin: 1rem 0;
-  border-top: 3px solid var(--main-border-color);
-  border-bottom: 3px solid var(--main-border-color);
+  margin-top: 2rem;
 
   svg {
-    width: 23px;
-    height: 23px;
+    width: 19px;
+    height: 19px;
     color: #fff;
   }
 
@@ -21,7 +19,7 @@ const postFooterClass = css`
     align-items: center;
     background-color: var(--main-border-color);
     border-radius: 3px;
-    padding: 0.4rem 0.55rem;
+    padding: 0.4rem 0.5rem;
     margin: 0.5rem 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;

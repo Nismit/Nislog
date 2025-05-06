@@ -1,7 +1,5 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { SocialList } from "#/types/social";
-import { Social } from "../Social";
 import { ArrowForwardCircle } from "../Icons";
 
 const authorDescriptionClass = css`
@@ -22,33 +20,6 @@ const detailLinkClass = css`
 
   svg {
     width: 1.3rem;
-  }
-`;
-
-const socialContainerClass = css`
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1.7rem;
-
-  & > div {
-    width: 24px;
-    height: 24px;
-  }
-
-  a {
-    display: block;
-    transition: all 0.35s;
-    color: var(--primary);
-    line-height: 1;
-
-    &:hover,
-    &:active {
-      opacity: 0.6;
-    }
-
-    &:focus {
-      outline: 1px solid var(--primary);
-    }
   }
 `;
 
@@ -76,15 +47,5 @@ export const AuthorDescription: FC<Props> = ({
         </span>
       </div>
     )}
-
-    <div class={socialContainerClass}>
-      <Social
-        items={[
-          { type: SocialList.TWITTER, name: "nismit_" },
-          { type: SocialList.BLUESKY, name: "nismit" },
-          { type: SocialList.GITHUB, name: "Nismit" },
-        ]}
-      />
-    </div>
   </div>
 );

@@ -1,13 +1,15 @@
-import { css } from "hono/css";
+import { css, cx } from "hono/css";
 import type { FC } from "hono/jsx";
 import PostType from "#/types/post";
-import { RelatedPostItem } from "./RelatedPostItem";
+import { PostCard } from "#/components/PostCard";
 
 const relatedPostsClass = css`
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  background-color: #1e1e20;
 
   ul {
+    margin: 0;
     padding-left: 0;
     list-style: none;
   }
@@ -18,16 +20,16 @@ type Props = {
 };
 
 export const RelatedPosts: FC<Props> = ({ posts }) => {
-  const sliced = posts.slice(0, 5);
+  const slicedPosts = posts.slice(0, 5);
 
   return (
-    <section class={relatedPostsClass}>
-      <h2 className="h4">See Also</h2>
+    <section class={cx("full-bleed-center", relatedPostsClass)}>
+      <h2 class="h4">See Also</h2>
 
       <ul>
-        {sliced.map((postData, index) => (
-          <li className="related-articles--container" key={index}>
-            <RelatedPostItem post={postData} />
+        {slicedPosts.map((post, index) => (
+          <li key={index}>
+            <PostCard post={post} isHideTags={true} />
           </li>
         ))}
       </ul>

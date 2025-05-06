@@ -7,7 +7,6 @@ import { Meta } from "#/components/Meta";
 import { Layout } from "#/components/Layout";
 import { Header } from "#/components/Header";
 import { Footer } from "#/components/Footer";
-import ColorToggle from "#/islands/ColorToggle";
 
 const GA_TRACKING_ID = "G-5GKP3RLDMV";
 
@@ -21,27 +20,6 @@ export default jsxRenderer(({ children, title, post }) => {
         <link href="/static/styles.css" rel="stylesheet" />
         <title>{title ? title : SITE_NAME}</title>
         <Meta tags={post} />
-        {html`
-          <script>
-            (() => {
-              const theme = localStorage.getItem("colorTheme");
-              if (theme !== null) {
-                document.querySelector("html").classList.add(theme);
-                return;
-              }
-
-              const isSystemDarkMode =
-                window.matchMedia &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-              if (isSystemDarkMode) {
-                document.querySelector("html").classList.add("dark");
-              } else {
-                document.querySelector("html").classList.add("light");
-              }
-            })();
-          </script>
-        `}
         {!import.meta.env.DEV &&
           html` <script
               async
@@ -61,7 +39,7 @@ export default jsxRenderer(({ children, title, post }) => {
       </head>
       <body>
         <Layout>
-          <Header toggleButton={<ColorToggle />} />
+          <Header />
           {children}
           <Footer />
         </Layout>

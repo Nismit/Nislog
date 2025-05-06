@@ -1,5 +1,6 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
+import { getTagColor } from "#/utils/color";
 
 const tagCloudClass = css`
   margin: 3rem 0 2rem;
@@ -15,65 +16,17 @@ const tagCloudClass = css`
 
   .tagCloud__list__item {
     display: inline-block;
-    margin: 0.3rem 0.1rem;
+    margin: 0.4rem 0.7rem 0.4rem 0;
   }
 
   .tagCloud__link {
     display: inline-block;
-    padding: 0.4rem 0.8rem;
-    border: 2px solid var(--main-border-color);
+    padding: 0.1rem 0.3rem;
     font-size: 0.9rem;
     text-decoration: none;
-    position: relative;
-    outline: none;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
+    border-radius: 0.2rem;
+    color: var(--primary);
     text-transform: capitalize;
-    color: var(--cta);
-
-    &:after,
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      width: 0;
-      height: 0;
-      border: 2px solid transparent;
-      -webkit-box-sizing: content-box;
-      box-sizing: content-box;
-    }
-
-    &:before {
-      top: -2px;
-      left: -2px;
-    }
-
-    &:after {
-      bottom: -2px;
-      right: -2px;
-    }
-
-    &:hover {
-      text-decoration: none;
-      color: var(--secondly);
-
-      &::before,
-      &::after {
-        width: 100%;
-        height: 100%;
-        transition: height 0.3s, width 0.3s 0.3s;
-      }
-
-      &::before {
-        border-bottom-color: var(--secondly);
-        border-left-color: var(--secondly);
-      }
-
-      &::after {
-        border-top-color: var(--secondly);
-        border-right-color: var(--secondly);
-      }
-    }
   }
 `;
 
@@ -83,15 +36,16 @@ type Props = {
 
 export const TagCloud: FC<Props> = ({ tags }) => (
   <section class={tagCloudClass}>
-    <h2 className="h4 tagCloud__title">Tags</h2>
+    <h2 class="h4 tagCloud__title">Tags</h2>
 
-    <ul className="tagCloud__list" role="navigation">
+    <ul class="tagCloud__list" role="navigation">
       {tags.map((tag, i) => {
         return (
-          <li className="tagCloud__list__item" key={i}>
+          <li class="tagCloud__list__item" key={i}>
             <a
               href={`/tags/${encodeURIComponent(tag)}`}
-              className="tagCloud__link"
+              class="tagCloud__link"
+              style={{ backgroundColor: getTagColor(tag) }}
             >
               {tag}
             </a>

@@ -1,13 +1,15 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
+import PostType from "#/types/post";
 import { ASSETS_PREFIX_PATH } from "#/consts";
 import { PostDate } from "../PostDate";
+import { PostTag } from "../PostTag";
 
 const postHeaderClass = css`
   h1 {
     font-size: 1.8rem;
     line-height: 1.5;
-    margin-top: 0.6rem;
+    margin-top: 0.2rem;
     margin-bottom: 1rem;
   }
 
@@ -15,18 +17,37 @@ const postHeaderClass = css`
     width: 100%;
     height: auto;
   }
+
+  .postHeader__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+      height: 19.52px;
+    }
+  }
 `;
 
 type Props = {
-  title: string;
-  date: string;
-  lastmod?: string;
-  eyecatch?: string;
+  title: PostType["title"];
+  date: PostType["date"];
+  lastmod: PostType["lastmod"];
+  eyecatch: PostType["eyecatch"];
+  tags: PostType["tags"];
 };
 
-export const PostHeader: FC<Props> = ({ title, date, lastmod, eyecatch }) => (
+export const PostHeader: FC<Props> = ({
+  title,
+  date,
+  lastmod,
+  eyecatch,
+  tags,
+}) => (
   <section class={postHeaderClass}>
-    <PostDate publishDate={date} lastModifiedDate={lastmod} />
+    <div class="postHeader__meta">
+      <PostDate publishDate={date} lastModifiedDate={lastmod} />
+      <PostTag tags={tags} />
+    </div>
 
     <h1>{title}</h1>
 
