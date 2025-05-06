@@ -5,7 +5,6 @@ import PostType from "#/types/post";
 import { markdownParser } from "#/lib/parser";
 import { getPostBySlug, getPostsFromTag } from "#/lib/posts";
 import { Post } from "#/components/Post";
-import { AuthorCard } from "#/components/AuthorCard";
 import { RelatedPosts } from "#/components/RelatedPosts";
 import buildData from "#/tmp/build.json";
 
@@ -49,7 +48,6 @@ export default createRoute(
             toc={post.toc ? toc : undefined}
             footnotes={footnotes}
           />
-          <AuthorCard />
           <RelatedPosts posts={filteredPostsFromTags} />
         </>,
         { title: post.title, post }

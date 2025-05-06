@@ -2,14 +2,20 @@ import { css } from "hono/css";
 import type { FC } from "hono/jsx";
 import PostType from "#/types/post";
 import { PostDate } from "../PostDate";
+import { PostTag } from "../PostTag";
 
 const postCardClass = css`
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  .postCard__date {
+    margin-top: 0.03rem;
+  }
+
   .postCard__link {
-    display: block;
-    padding: 1.3rem 0;
     text-decoration: none;
     color: var(--main-font-color);
-    border-bottom: 1px solid var(--main-border-color);
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
 
@@ -20,30 +26,37 @@ const postCardClass = css`
   }
 
   .postCard__title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
 
-  .postCard__desc {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+  .postCard__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 `;
 
 type Props = {
   post: PostType;
+  isHideTags?: boolean;
 };
 
-export const PostCard: FC<Props> = ({ post }) => {
-  const { slug, title, date, lastmod, description } = post;
+export const PostCard: FC<Props> = ({ post, isHideTags }) => {
+  const { slug, title, date, lastmod, tags } = post;
 
   return (
     <article class={postCardClass}>
-      <a href={`/${slug}`} class="postCard__link" title={title}>
-        <h1 className="postCard__title">{title}</h1>
-        <p className="postCard__desc">{description}</p>
+      <span class="postCard__date">
         <PostDate publishDate={date} lastModifiedDate={lastmod} />
-      </a>
+      </span>
+
+      <div class="postCard__content">
+        <a href={`/${slug}`} class="postCard__link" title={title}>
+          <h1 class="postCard__title">{title}</h1>
+        </a>
+        {isHideTags ? null : <PostTag tags={tags} />}
+      </div>
     </article>
   );
 };

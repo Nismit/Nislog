@@ -6,32 +6,13 @@
     "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Arial,
     "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-}
+  --tag-text-color: hslab(95.05% -0.3 -1.21)
 
-:root.light {
-  color-scheme: light;
-  --primary: hsl(215, 90%, 10%);
-  --secondary: hsl(215, 90%, 20%);
-  --tertiary: hsl(215, 6%, 60%);
-  --accent: hsl(215, 6%, 40%);
-  --card: hsl(215, 11%, 15%);
-  --background: hsl(45, 29%, 97%);
-  --cta: hsl(215, 80%, 40%);
-  --ctaInvert: hsl(215, 25%, 60%);
-  --code-background-color: rgba(36, 46, 56, 0.15);
-  --pre-background-color: #e5ecf3;
-  --main-border-color: #ddd;
-  --logo-color: #333;
-}
-
-:root.dark {
   color-scheme: dark;
-  --primary: hsl(215, 4%, 95%);
-  --secondary: hsl(215, 4%, 80%);
+  --primary: hsl(0, 0%, 88%);
   --tertiary: hsl(215, 6%, 60%);
   --accent: hsl(215, 6%, 40%);
-  --card: hsl(215, 11%, 15%);
-  --background: hsl(215, 20%, 20%);
+  --background: hsl(0, 0%, 7%);
   --cta: hsl(215, 85%, 68%);
   --ctaInvert: hsl(215, 65%, 80%);
   --code-background-color: rgba(200, 211, 221, 0.15);
@@ -40,25 +21,8 @@
   --logo-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --primary: hsl(215, 4%, 95%);
-    --secondary: hsl(215, 4%, 80%);
-    --tertiary: hsl(215, 6%, 60%);
-    --accent: hsl(215, 6%, 40%);
-    --card: hsl(215, 11%, 15%);
-    --background: hsl(215, 20%, 20%);
-    --cta: hsl(215, 85%, 68%);
-    --ctaInvert: hsl(215, 65%, 80%);
-    --code-background-color: rgba(200, 211, 221, 0.15);
-    --pre-background-color: #1E2131;
-    --main-border-color: rgba(221, 221, 221, 0.4);
-    --logo-color: #fff;
-  }
-}
-
 body {
+  margin: 0;
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
   line-height: var(--base-font-line-height);

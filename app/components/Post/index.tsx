@@ -5,7 +5,6 @@ import { RootContent } from "mdast";
 import PostType from "#/types/post";
 import { PostHeader } from "./PostHeader";
 import { PostContainer } from "./PostContainer";
-import { PostTags } from "./PostTags";
 import { PostFooter } from "./PostFooter";
 import { TableOfContents } from "./TableOfContents";
 import { Footnotes } from "./Footnotes";
@@ -58,11 +57,11 @@ export const Post: FC<Props> = ({ post, nodes, isPage, toc, footnotes }) => (
       date={post.date}
       lastmod={post.lastmod}
       eyecatch={post.eyecatch}
+      tags={post.tags}
     />
     <TableOfContents toc={toc} />
     <PostContainer nodes={nodes} />
     <Footnotes node={footnotes} />
-    {!isPage ? <PostTags data={post.tags} /> : null}
     {!isPage ? <PostFooter slug={post.slug} title={post.title} /> : null}
   </article>
 );

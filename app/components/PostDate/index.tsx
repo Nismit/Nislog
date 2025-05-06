@@ -1,10 +1,11 @@
 import { css } from "hono/css";
 import type { FC } from "hono/jsx";
-import { ReloadOutline, Calendar } from "../Icons";
 
 const postDateClass = css`
   margin: 0;
   font-size: 0.9rem;
+  width: 80px;
+  font-weight: 400;
 
   .postDate__icon {
     width: 18px;
@@ -32,14 +33,9 @@ const postDateClass = css`
 type Props = {
   publishDate: string;
   lastModifiedDate?: string;
-  withoutIcon?: boolean;
 };
 
-export const PostDate: FC<Props> = ({
-  publishDate,
-  lastModifiedDate,
-  withoutIcon,
-}) => {
+export const PostDate: FC<Props> = ({ publishDate, lastModifiedDate }) => {
   const lastEditDate = lastModifiedDate ? lastModifiedDate : publishDate;
   const convertedDate = new Date(lastEditDate);
   const formattedDate = convertedDate.toLocaleDateString("ja-JP", {
@@ -50,14 +46,7 @@ export const PostDate: FC<Props> = ({
 
   return (
     <p class={postDateClass}>
-      <time dateTime={lastEditDate}>
-        {!withoutIcon && (
-          <span className="postDate__icon">
-            {lastModifiedDate ? <ReloadOutline /> : <Calendar />}
-          </span>
-        )}
-        {formattedDate}
-      </time>
+      <time dateTime={lastEditDate}>{formattedDate}</time>
     </p>
   );
 };

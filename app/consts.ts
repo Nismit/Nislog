@@ -1,4 +1,4 @@
-export const MAX_DISPLAY_ITEM = 10;
+export const MAX_DISPLAY_ITEM = 20;
 export const ASSETS_PREFIX_PATH = "/static";
 export const DEFAULT_FIELDS = [
   "draft",
@@ -11,11 +11,9 @@ export const DEFAULT_FIELDS = [
 ];
 
 export const BASE_PATH = () => {
-  if (!import.meta.env.PROD) {
-    return "http://localhost:5173";
-  }
-
-  return "https://blog.nismit.me";
+  return !import.meta.env.PROD
+    ? "http://localhost:5173"
+    : "https://blog.nismit.me";
 };
 
 export const SITE_NAME = "NISLOG";

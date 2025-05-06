@@ -14,6 +14,17 @@ const layoutClass = css`
     width: 100%;
     grid-column: 1 / 4;
   }
+
+  .full-bleed-center {
+    width: 100%;
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: inherit;
+
+    > * {
+      grid-column: 2;
+    }
+  }
 `;
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => (
