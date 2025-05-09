@@ -9,7 +9,7 @@ test.describe("Root Page general UI tests", () => {
   test("has proper articles", async ({ page }) => {
     await page.goto("/");
     const locator = page.locator("article");
-    await expect(locator).toHaveCount(10);
+    await expect(locator).toHaveCount(20);
   });
 
   test("has logo with root page link", async ({ page }) => {
