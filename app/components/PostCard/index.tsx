@@ -10,7 +10,8 @@ const postCardClass = css`
   margin-bottom: 1.5rem;
 
   .postCard__date {
-    margin-top: 0.03rem;
+    margin-top: 0.35rem;
+    line-height: 1;
   }
 
   .postCard__link {
