@@ -20,7 +20,16 @@ type Props = {
 };
 
 export const RelatedPosts: FC<Props> = ({ posts }) => {
-  const slicedPosts = posts.slice(0, 5);
+  const shuffleArray = (array: PostType[]): PostType[] => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const slicedPosts = shuffleArray(posts).slice(0, 5);
 
   return (
     <section class={cx("full-bleed-center", relatedPostsClass)}>
