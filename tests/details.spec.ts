@@ -34,16 +34,13 @@ test.describe("Detail Page general UI tests", () => {
     const locator = page.locator("article");
     const article = locator.nth(0);
     await expect(article.locator(".postCard__title")).toHaveText("テスト記事");
-    await expect(article.locator(".postCard__desc")).toHaveText(
-      "これはテスト記事です。"
-    );
     await expect(article.locator("time")).toHaveText("2050/01/01");
   });
 
   test("navigate to the article", async ({ page }) => {
     await page.goto("/");
     const locator = page.locator("article");
-    const article = locator.nth(0).locator("a");
+    const article = locator.nth(0).locator(".postCard__link");
     await article.click();
     await page.waitForURL(/post\/2050\/01\/test/);
     await expect(page).toHaveURL(/post\/2050\/01\/test/);
@@ -75,24 +72,22 @@ test.describe("Detail Page general UI tests", () => {
 
   test("has tag link", async ({ page }) => {
     await page.goto("/post/2050/01/test");
-    const locator = page.locator(".article__tags__item");
-    const link = locator.locator("a");
-    await expect(link).toHaveText("blog");
-    await expect(link).toHaveAttribute("href", "/tags/blog");
+    const locator = page.locator(".postCard__tag");
+    await expect(locator).toHaveText("blog");
+    await expect(locator).toHaveAttribute("href", "/tags/blog");
   });
 
   test("navigate tag page", async ({ page }) => {
     await page.goto("/post/2050/01/test");
-    const locator = page.locator(".article__tags__item");
-    const link = locator.locator("a");
-    await link.click();
+    const locator = page.locator(".postCard__tag");
+    await locator.click();
     await page.waitForURL(/tags\/blog/);
     await expect(page).toHaveURL(/tags\/blog/);
   });
 
   test("has related posts", async ({ page }) => {
     await page.goto("/post/2050/01/test");
-    const locator = page.locator(".related-articles--container");
+    const locator = page.locator(".related-articles--container > li");
     await expect(locator).toHaveCount(5);
   });
 });

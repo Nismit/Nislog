@@ -26,7 +26,7 @@ export const RelatedPosts: FC<Props> = ({ posts }) => {
     <section class={cx("full-bleed-center", relatedPostsClass)}>
       <h2 class="h4">See Also</h2>
 
-      <ul>
+      <ul class="related-articles--container">
         {slicedPosts.map((post, index) => (
           <li key={index}>
             <PostCard post={post} isHideTags={true} />
