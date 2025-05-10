@@ -4,46 +4,52 @@ import { RootContent } from "mdast";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 
 const postContainerClass = css`
-  h1 {
-    padding-bottom: 0.1em;
-    margin-top: 3rem;
-    margin-bottom: 0.9rem;
-    font-size: 1.75rem;
-    line-height: 1.5;
+  > *:first-child {
+    margin-top: 1.5rem;
   }
 
-  h2 {
-    margin-top: 2.3rem;
+  h1 {
+    padding-bottom: 0.1em;
+    margin-top: 4rem;
     margin-bottom: 0.9rem;
     font-size: 1.53rem;
     line-height: 1.5;
   }
 
-  h3 {
-    margin-top: 1.9rem;
-    margin-bottom: 1rem;
-    font-size: 1.33rem;
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.38rem;
+    line-height: 1.5;
   }
 
-  h4 {
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+    font-size: 1.18rem;
+  }
+
+  // h4-h6 are the same
+  h4,
+  h5,
+  h6 {
     margin-top: 1.3rem;
     margin-bottom: 1.2rem;
-    font-size: 1.28rem;
+    font-size: 1.1rem;
   }
 
-  h5 {
-    font-size: 1.24rem;
-    margin-bottom: 0.7rem;
-  }
-
-  h6 {
-    margin-bottom: 0.5rem;
+  h1 + h2 {
+    margin-top: 1.5rem;
   }
 
   // Typography
   p {
     line-height: 1.7;
     margin-bottom: 1.45rem;
+    // Ref: https://ics.media/entry/240411/
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
   }
 
   strong {

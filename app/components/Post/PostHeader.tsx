@@ -7,9 +7,9 @@ import { PostTag } from "../PostTag";
 
 const postHeaderClass = css`
   h1 {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    margin-top: 0.2rem;
+    font-size: 1.65rem;
+    line-height: 1.4;
+    margin-top: 0.3rem;
     margin-bottom: 1rem;
   }
 

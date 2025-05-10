@@ -10,6 +10,12 @@ const footnoteClass = css`
     padding-left: 1.05rem;
     font-size: 0.85rem;
   }
+
+  a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
+  }
 `;
 
 export const Footnotes: FC<{ node?: FootnotesParentNode }> = ({ node }) => {
