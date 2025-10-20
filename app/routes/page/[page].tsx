@@ -50,7 +50,7 @@ export default createRoute(
           />
           <TagCloud tags={allTags} />
         </>,
-        { title: `Page ${page} | NISLOG` }
+        { title: `Page ${page} | NISLOG`, noIndex: true }
       );
     } catch (err) {
       console.error(err);
