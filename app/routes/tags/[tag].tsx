@@ -29,7 +29,7 @@ export default createRoute(
           ))}
           <TagCloud tags={allTags} />
         </>,
-        { title: "NISLOG" }
+        { title: "NISLOG", noIndex: true }
       );
     } catch (err) {
       console.error(err);

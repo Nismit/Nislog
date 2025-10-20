@@ -10,13 +10,14 @@ import { Footer } from "#/components/Footer";
 
 const GA_TRACKING_ID = "G-5GKP3RLDMV";
 
-export default jsxRenderer(({ children, title, post }) => {
+export default jsxRenderer(({ children, title, post, noIndex }) => {
   return (
     <html lang="en">
       <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {noIndex && <meta name="robots" content="noindex,nofollow" />}
         <link href="/static/styles.css" rel="stylesheet" />
         <title>{title ? title : SITE_NAME}</title>
         <Meta tags={post} />
