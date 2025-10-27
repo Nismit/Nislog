@@ -30,7 +30,7 @@
     "@hono/vite-ssg": "^0.2.1",
     "@playwright/test": "^1.56.1",
     "@types/mdast": "^4.0.4",
-    "@types/node": "^24.8.1",
+    "@types/node": "^24.9.1",
     "gray-matter": "^4.0.3",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
