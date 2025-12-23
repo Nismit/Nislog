@@ -11,7 +11,7 @@ import buildData from "#/tmp/build.json";
 // The pager starts from 2 because the first page is the root page.
 // Total Post = 68, Display Item = 10, equals 6.8 pages and ceil to 7.
 const MAX_PAGE = Math.ceil(buildData.totalPosts / MAX_DISPLAY_ITEM) - 1;
-const pager = [...Array(MAX_PAGE).keys()];
+const pager = [...Array(MAX_PAGE).keys()].map((i) => i + 2); // [2, 3, 4]
 
 export default createRoute(
   ssgParams(() => pager.map((page) => ({ page: `${page + 1}` }))),

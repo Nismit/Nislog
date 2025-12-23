@@ -66,9 +66,7 @@ const generateBuildData = async () => {
 
     const data = JSON.stringify({ slugs, tags, totalPosts: posts.length });
     await fs.promises.mkdir(TMP_PATH, { recursive: true });
-    fs.writeFile(`${TMP_PATH}/${TMP_FILE_NAME}`, data, "utf8", (err) =>
-      console.log(err)
-    );
+    await fs.promises.writeFile(`${TMP_PATH}/${TMP_FILE_NAME}`, data, "utf8");
     return;
   } catch (error) {
     console.log(error);

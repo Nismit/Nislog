@@ -21,7 +21,9 @@ export default createRoute(
   ),
   async (c) => {
     try {
-      const { year, month, slug } = c.req.param();
+      const year = c.req.param("year");
+      const month = c.req.param("month");
+      const slug = c.req.param("slug");
       const path = `post/${year}/${month}/${slug}`;
 
       if (year === ":year" || month === ":month" || slug === ":slug") {
