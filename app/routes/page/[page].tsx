@@ -45,7 +45,7 @@ export default createRoute(
             <PostCard post={post} />
           ))}
           <Pagination
-            totalCounts={allPosts.totalPosts}
+            totalCounts={filteredPosts.length}
             currentPageNumber={page}
           />
           <TagCloud tags={allTags} />
