@@ -14,7 +14,7 @@ const MAX_PAGE = Math.ceil(buildData.totalPosts / MAX_DISPLAY_ITEM) - 1;
 const pager = [...Array(MAX_PAGE).keys()].map((i) => i + 2); // [2, 3, 4]
 
 export default createRoute(
-  ssgParams(() => pager.map((page) => ({ page: `${page + 1}` }))),
+  ssgParams(() => pager.map((page) => ({ page: `${page}` }))),
   async (c) => {
     try {
       const page = Number(c.req.param("page"));
