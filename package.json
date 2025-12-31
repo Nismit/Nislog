@@ -27,7 +27,7 @@
     "honox": "^0.1.52"
   },
   "devDependencies": {
-    "@hono/vite-ssg": "^0.3.0",
+    "@hono/vite-ssg": "0.3.0",
     "@playwright/test": "^1.57.0",
     "@types/mdast": "^4.0.4",
     "@types/node": "^25.0.3",
