@@ -23,7 +23,7 @@ export default createRoute(async (c) => {
       {slicedPosts.map((post) => (
         <PostCard post={post} />
       ))}
-      <Pagination totalCounts={allPosts.totalPosts} />
+      <Pagination totalCounts={filteredPosts.length} />
       <TagCloud tags={allTags} />
     </>,
     { title: "NISLOG" }
