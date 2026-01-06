@@ -17,16 +17,15 @@ export default defineConfig(({ mode }) => {
     return {
       build: {
         emptyOutDir: false,
-        build: {
-          // assetsDir: "public/static/", // make all non-island asset imports map to the /dist/static directory when emitted
-          ssrEmitAssets: true, // emit all the assets required during the SSR build
-        },
+        // assetsDir: "public/static/", // make all non-island asset imports map to the /dist/static directory when emitted
+        ssrEmitAssets: true, // emit all the assets required during the SSR build
       },
       ssr: {
         external: ["remark", "remark-gfm", "fast-glob", "gray-matter"],
       },
       resolve: {
         alias: [{ find: /#/, replacement: "/app/" }],
+        builtins: [/^node:/],
       },
       plugins: [honox(), ssg({ entry })],
     };

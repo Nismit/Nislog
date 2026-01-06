@@ -1,5 +1,5 @@
 import { readFileSync, globSync } from "node:fs";
-import { join } from "path";
+import { join } from "node:path";
 import matter from "gray-matter";
 
 interface Post {
