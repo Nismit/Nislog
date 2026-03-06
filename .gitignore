@@ -40,6 +40,7 @@ commandlist.md
 tmp
 
 # test data
+content/post/2049/*
 content/post/2050/*
 
 # playwright

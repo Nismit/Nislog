@@ -24,8 +24,10 @@ test.describe.configure({ mode: "serial" });
 test.describe("Detail Page general UI tests", () => {
   test.beforeAll(async () => {
     await fs.promises.mkdir("./content/post/2050/01", { recursive: true });
-    fs.writeFile(`./content/post/2050/01/test.md`, TEST_DATA, "utf8", (err) =>
-      console.log(err)
+    await fs.promises.writeFile(
+      "./content/post/2050/01/test.md",
+      TEST_DATA,
+      "utf8"
     );
   });
 
