@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 date: 2026-05-26T09:07:00
 title: 日本一時帰国2026
 description: 出来る限り毎年日本へ帰っていてその時の記録
